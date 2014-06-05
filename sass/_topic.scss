@@ -1,0 +1,16 @@
+/* color */
+$darkgray: #565656;
+$gray: #D6D6D6;
+$pink: #FF1D68;
+$movie: #2E4C9D;
+$music: #F20F4A;
+$book: #3D701B;
+
+.topic{
+	@include span-columns(12,12);
+	margin: 12px 0;
+	img{
+		max-width: 100%;
+		height: auto;
+	}
+}
