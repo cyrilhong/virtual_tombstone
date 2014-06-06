@@ -4,10 +4,12 @@
 	width: 100%;
 	margin: 0 auto;
 	height: 12px;
-	padding: 8px 0 12px 0;
+	padding: 6px 0 14px 0;
 	text-align: center;
 	display: inline-block;
 	background-color: $lightgreen;
-	font-size: 8pt;
 	font-weight: 300;
+	p{
+		font-size: 10pt;
+	}
 }

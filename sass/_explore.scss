@@ -1,0 +1,51 @@
+@import"color";
+
+.tombstone{
+	width: 234px;
+	display: inline-block;
+	padding: 10px;
+}
+.face{
+	width: 142px;
+	display: inline-block;
+	margin: 0 36px;
+	font-size: 10pt;
+	padding: 10px;
+	background-color: $gray;
+	height: 350px;
+	h2{
+		padding: 5px 0;
+		text-align: center;
+		font-weight: 400;
+	}
+	img{
+		width: 142px;
+		height: 108px;
+		-webkit-border-radius: 8px;
+		        border-radius: 8px;
+	}
+	p{
+		font-size: 10pt;
+		line-height: 12pt;
+		text-align: center;
+	}
+	.date{
+		width: 142px;
+		padding: 10px 0;
+		display: inline-block;
+		text-align: center;
+		font-weight: 300;
+	}
+}
+.count{
+	width: 162px;
+	display: inline-block;
+	padding: 6px 36px;
+	border-top: 1px solid $gray;
+	div{
+		display: inline-block;
+		i{
+			margin: 0 2px;
+		}
+	}
+}

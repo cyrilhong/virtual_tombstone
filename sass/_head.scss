@@ -30,6 +30,9 @@ $small: 320px 4;
 			height: 32px;
 			padding: 35px 0 15px 0;
 			color: white;
+			a{
+				color: #FFF;
+			}
 		}
 		.signup{
 			@include span-columns(1 ,8);

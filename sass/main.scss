@@ -9,6 +9,7 @@
 @import"search";
 @import"article";
 @import"footer";
+@import"explore";
 @import"compass/reset";
 @import"compass/css3";
 /* -------------------------------------------------------------------------*/
@@ -33,7 +34,8 @@ body {
 	font-size:1em;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
-	color: #777777;
+	background-color: #FFF;
+	color: $black;
 }
 
 a:link {
@@ -41,16 +43,17 @@ a:link {
 	color: $darkgray;
 	}
 
-p,a{
-}
-
 p{
-	font-size: 1.2em;
-	line-height: 1.4em;
+	font-size: 12pt;
+	line-height: 16pt;
+	color: $black;
 }
 
 h1{
 	font-size: 3em;
+}
+h2{
+	font-size: 12pt;
 }
 
 .page{
@@ -83,9 +86,9 @@ h1{
 	}
 }
 .main{
-	// background-color: $bg;
-	height: 700px;
-	max-width: 960px;
+	min-height: 700px;
+	max-width: 1080px;
 	margin: 0 auto;
-	border: 1px solid;
+	padding: 20px;
+	// border: 1px solid;
 }

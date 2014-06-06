@@ -29,26 +29,30 @@
   padding: 35px 0 15px 0;
   color: white;
 }
-/* line 34, ../sass/_head.scss */
+/* line 33, ../sass/_head.scss */
+.header ul li a {
+  color: #FFF;
+}
+/* line 37, ../sass/_head.scss */
 .header ul .signup {
   width: 10.25641%;
   float: left;
   margin-right: 2.5641%;
   display: inline;
 }
-/* line 37, ../sass/_head.scss */
+/* line 40, ../sass/_head.scss */
 .header ul .login {
   width: 10.25641%;
   float: left;
   margin-right: 2.5641%;
   display: inline;
 }
-/* line 40, ../sass/_head.scss */
+/* line 43, ../sass/_head.scss */
 .header ul .search {
   width: 220px;
   border-left: 1px solid white;
 }
-/* line 43, ../sass/_head.scss */
+/* line 46, ../sass/_head.scss */
 .header ul .search i {
   margin: 0 10px 0 10px;
 }
@@ -521,15 +525,80 @@
   width: 100%;
   margin: 0 auto;
   height: 12px;
-  padding: 8px 0 12px 0;
+  padding: 6px 0 14px 0;
   text-align: center;
   display: inline-block;
   background-color: #e6fc8b;
-  font-size: 8pt;
+  font-weight: 300;
+}
+/* line 12, ../sass/_footer.scss */
+#footer p {
+  font-size: 10pt;
+}
+
+/* color */
+/* line 3, ../sass/_explore.scss */
+.tombstone {
+  width: 234px;
+  display: inline-block;
+  padding: 10px;
+}
+
+/* line 8, ../sass/_explore.scss */
+.face {
+  width: 142px;
+  display: inline-block;
+  margin: 0 36px;
+  font-size: 10pt;
+  padding: 10px;
+  background-color: #cccccc;
+  height: 350px;
+}
+/* line 16, ../sass/_explore.scss */
+.face h2 {
+  padding: 5px 0;
+  text-align: center;
+  font-weight: 400;
+}
+/* line 21, ../sass/_explore.scss */
+.face img {
+  width: 142px;
+  height: 108px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+/* line 27, ../sass/_explore.scss */
+.face p {
+  font-size: 10pt;
+  line-height: 12pt;
+  text-align: center;
+}
+/* line 32, ../sass/_explore.scss */
+.face .date {
+  width: 142px;
+  padding: 10px 0;
+  display: inline-block;
+  text-align: center;
   font-weight: 300;
 }
 
-/* line 17, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 40, ../sass/_explore.scss */
+.count {
+  width: 162px;
+  display: inline-block;
+  padding: 6px 36px;
+  border-top: 1px solid #cccccc;
+}
+/* line 45, ../sass/_explore.scss */
+.count div {
+  display: inline-block;
+}
+/* line 47, ../sass/_explore.scss */
+.count div i {
+  margin: 0 2px;
+}
+
+/* line 17, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -551,45 +620,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -597,29 +666,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* -------------------------------------------------------------------------*/
 /* Layout */
 /* Media Layout */
-/* line 28, ../sass/main.scss */
+/* line 29, ../sass/main.scss */
 html {
   font-size: 100%;
 }
 
-/* line 32, ../sass/main.scss */
+/* line 33, ../sass/main.scss */
 body {
   font-size: 1em;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
-  color: #777777;
+  background-color: #FFF;
+  color: #6d6d6d;
 }
 
-/* line 39, ../sass/main.scss */
+/* line 41, ../sass/main.scss */
 a:link {
   text-decoration: none;
   color: #afafaf;
 }
 
-/* line 47, ../sass/main.scss */
+/* line 46, ../sass/main.scss */
 p {
-  font-size: 1.2em;
-  line-height: 1.4em;
+  font-size: 12pt;
+  line-height: 16pt;
+  color: #6d6d6d;
 }
 
 /* line 52, ../sass/main.scss */
@@ -627,7 +698,12 @@ h1 {
   font-size: 3em;
 }
 
-/* line 56, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
+h2 {
+  font-size: 12pt;
+}
+
+/* line 59, ../sass/main.scss */
 .page {
   *zoom: 1;
   padding-left: 0px;
@@ -635,14 +711,14 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 38, ../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .page:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 64, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 .index {
   height: 800px;
   background-image: url("../img/bg.png");
@@ -652,7 +728,7 @@ h1 {
   background-size: cover;
   color: #FFF;
 }
-/* line 72, ../sass/main.scss */
+/* line 75, ../sass/main.scss */
 .index p {
   width: 49.09091%;
   float: right;
@@ -664,17 +740,17 @@ h1 {
   width: 340px;
   font-weight: 300;
 }
-/* line 79, ../sass/main.scss */
+/* line 82, ../sass/main.scss */
 .index i {
   font-size: 64pt;
   position: absolute;
   margin: -140px 0 0 140px;
 }
 
-/* line 85, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 .main {
-  height: 700px;
-  max-width: 960px;
+  min-height: 700px;
+  max-width: 1080px;
   margin: 0 auto;
-  border: 1px solid;
+  padding: 20px;
 }
