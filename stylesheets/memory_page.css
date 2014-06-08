@@ -141,7 +141,7 @@
   margin-top: -80px;
   border: none;
   background-color: #9dbf21;
-  color: #FFF;
+  color: #FFF!important;
   padding: 10px 15px;
   font-size: 14pt;
   text-align: center;
