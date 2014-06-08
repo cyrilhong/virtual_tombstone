@@ -682,30 +682,35 @@ body {
   color: #6d6d6d;
 }
 
-/* line 41, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
+a {
+  color: #FFF;
+}
+
+/* line 43, ../sass/main.scss */
 a:link {
   text-decoration: none;
   color: #afafaf;
 }
 
-/* line 46, ../sass/main.scss */
+/* line 48, ../sass/main.scss */
 p {
   font-size: 12pt;
   line-height: 16pt;
   color: #6d6d6d;
 }
 
-/* line 52, ../sass/main.scss */
+/* line 54, ../sass/main.scss */
 h1 {
   font-size: 3em;
 }
 
-/* line 55, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 h2 {
   font-size: 12pt;
 }
 
-/* line 59, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 .page {
   *zoom: 1;
   padding-left: 0px;
@@ -720,7 +725,7 @@ h2 {
   clear: both;
 }
 
-/* line 67, ../sass/main.scss */
+/* line 69, ../sass/main.scss */
 .index {
   min-height: 800px;
   background-image: url("../img/bg.png");
@@ -730,7 +735,7 @@ h2 {
   background-size: cover;
   color: #FFF;
 }
-/* line 75, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 .index p {
   width: 49.09091%;
   float: right;
@@ -744,14 +749,14 @@ h2 {
   color: #FFF;
   line-height: 40pt;
 }
-/* line 84, ../sass/main.scss */
+/* line 86, ../sass/main.scss */
 .index i {
   font-size: 64pt;
   position: absolute;
   margin: -130px 0 0 140px;
 }
 
-/* line 90, ../sass/main.scss */
+/* line 92, ../sass/main.scss */
 .main {
   min-height: 700px;
   max-width: 1080px;
