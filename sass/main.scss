@@ -65,7 +65,7 @@ h2{
   }
 
 .index{
-	height: 800px;
+	min-height: 800px;
 	background-image: url('../img/bg.png');
 	background-repeat: no-repeat;
 	max-width: 100%;
@@ -78,11 +78,13 @@ h2{
 		font-size: 36pt;
 		width: 340px;
 		font-weight: 300;
+		color: #FFF;
+		line-height: 40pt;
 	}
 	i{
 		font-size: 64pt;
 		position: absolute;
-		margin: -140px 0 0 140px;
+		margin: -130px 0 0 140px;
 	}
 }
 .main{
