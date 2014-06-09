@@ -3,13 +3,10 @@
 @import"susy";
 @import"base";
 @import"head";
-@import"sidebar";
-@import"slide";
-@import"topic";
-@import"search";
-@import"article";
 @import"footer";
 @import"explore";
+@import"signup";
+@import"color";
 @import"compass/reset";
 @import"compass/css3";
 /* -------------------------------------------------------------------------*/
@@ -64,6 +61,7 @@ h2{
   @include at-breakpoint($pad) {
   };
   @include at-breakpoint($small);
+  background-color: $bg;
   }
 
 .index{
@@ -90,6 +88,8 @@ h2{
 	}
 }
 .main{
+	float: none!important;
+	@include span-columns(12,12);
 	min-height: 700px;
 	max-width: 1080px;
 	margin: 0 auto;
