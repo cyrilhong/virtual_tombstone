@@ -265,6 +265,11 @@
 }
 
 /* line 237, ../sass/memory_page.scss */
+.wire:hover {
+  cursor: url(img/scissors.ico), auto;
+}
+
+/* line 240, ../sass/memory_page.scss */
 .wire_off {
   height: 0px;
   -webkit-transition: 0.5s;
@@ -274,7 +279,7 @@
   transition: 0.5s;
 }
 
-/* line 245, ../sass/memory_page.scss */
+/* line 248, ../sass/memory_page.scss */
 .fly_away {
   -webkit-transition: 3s ease-in;
   -moz-transition: 3s ease-in;

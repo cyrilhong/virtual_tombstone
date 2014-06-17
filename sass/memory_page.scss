@@ -234,6 +234,9 @@
 	margin-left: 248px;
 	z-index: 0;
 }
+.wire:hover{
+	cursor: url(img/scissors.ico),auto;
+}
 .wire_off{
 	height: 0px;
 	-webkit-transition: 0.5s;
