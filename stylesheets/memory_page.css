@@ -6,7 +6,7 @@
 
 /* line 6, ../sass/memory_page.scss */
 .sky {
-  min-height: 750px;
+  min-height: 800px;
   background-color: #f2ede4;
 }
 
@@ -124,7 +124,7 @@
   height: 109px;
   display: inline-block;
   margin-left: -217px;
-  margin-top: 32px;
+  margin-top: 136px;
   background-image: url("../img/shadow.png");
 }
 
