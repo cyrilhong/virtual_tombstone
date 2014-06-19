@@ -86,9 +86,10 @@
   display: inline;
   width: 200px;
   padding: 20px 0;
+  margin-left: 20px;
 }
 
-/* line 8, ../sass/_explore.scss */
+/* line 9, ../sass/_explore.scss */
 .face {
   width: 142px;
   height: 380px;
@@ -98,26 +99,26 @@
   padding: 10px;
   background-color: #cccccc;
 }
-/* line 16, ../sass/_explore.scss */
+/* line 17, ../sass/_explore.scss */
 .face h2 {
   padding: 5px 0;
   text-align: center;
   font-weight: 400;
 }
-/* line 21, ../sass/_explore.scss */
+/* line 22, ../sass/_explore.scss */
 .face img {
   width: 142px;
   height: 108px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-/* line 27, ../sass/_explore.scss */
+/* line 28, ../sass/_explore.scss */
 .face p {
   font-size: 10pt;
   line-height: 12pt;
   text-align: center;
 }
-/* line 32, ../sass/_explore.scss */
+/* line 33, ../sass/_explore.scss */
 .face .date {
   width: 142px;
   padding: 10px 0;
@@ -126,20 +127,27 @@
   font-weight: 300;
 }
 
-/* line 40, ../sass/_explore.scss */
+/* line 41, ../sass/_explore.scss */
 .count {
   width: 162px;
   display: inline-block;
   padding: 6px 36px;
   border-top: 1px solid #cccccc;
 }
-/* line 45, ../sass/_explore.scss */
+/* line 46, ../sass/_explore.scss */
 .count div {
   display: inline-block;
 }
-/* line 47, ../sass/_explore.scss */
+/* line 48, ../sass/_explore.scss */
 .count div i {
   margin: 0 2px;
+}
+
+/* line 54, ../sass/_explore.scss */
+.flower img {
+  margin-bottom: -4px;
+  display: inline-block;
+  margin-right: 2px;
 }
 
 /* color */

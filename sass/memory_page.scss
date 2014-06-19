@@ -118,7 +118,7 @@
 	position: absolute;
 	left: 0;
 	right: 0;
-	margin-left: auto;
+	margin-left:20px;
 	margin-right: auto;
 	margin-top: -80px;
 	border: none;
@@ -134,6 +134,27 @@
 		padding: 0;
 		margin: 0 0 0 4px!important;
 	}
+}
+.lily{
+	-webkit-border-radius: 5px;
+	        border-radius: 5px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	margin-left: 280px;
+	margin-top: -79px;
+	border: none;
+	background-color: $green;
+	display: inline-block;
+	img{
+		width: 25px;
+		height: 29px;
+		display: inline-block;
+		padding: 7px;
+		margin: 0;
+		}
 }
 .land{
 	height: 1230px;

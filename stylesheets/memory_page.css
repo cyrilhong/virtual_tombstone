@@ -136,7 +136,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin-left: auto;
+  margin-left: 20px;
   margin-right: auto;
   margin-top: -80px;
   border: none;
@@ -156,13 +156,37 @@
 }
 
 /* line 138, ../sass/memory_page.scss */
+.lily {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin-left: 280px;
+  margin-top: -79px;
+  border: none;
+  background-color: #9dbf21;
+  display: inline-block;
+}
+/* line 151, ../sass/memory_page.scss */
+.lily img {
+  width: 25px;
+  height: 29px;
+  display: inline-block;
+  padding: 7px;
+  margin: 0;
+}
+
+/* line 159, ../sass/memory_page.scss */
 .land {
   height: 1230px;
   width: 100%;
   background-color: #E9F7B0;
   margin: 0 auto;
 }
-/* line 143, ../sass/memory_page.scss */
+/* line 164, ../sass/memory_page.scss */
 .land .btn_message {
   width: 220px;
   margin-top: 280px;
@@ -171,7 +195,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* line 151, ../sass/memory_page.scss */
+/* line 172, ../sass/memory_page.scss */
 .land .write {
   width: 500px;
   height: 500px;
@@ -188,7 +212,7 @@
   color: #afafaf;
   opacity: 1;
 }
-/* line 166, ../sass/memory_page.scss */
+/* line 187, ../sass/memory_page.scss */
 .land .write input {
   width: 250px;
   margin-left: 120px;
@@ -204,11 +228,11 @@
   font-weight: 300;
   font-family: "Roboto";
 }
-/* line 181, ../sass/memory_page.scss */
+/* line 202, ../sass/memory_page.scss */
 .land .write ::-webkit-input-placeholder {
   color: lightgray;
 }
-/* line 184, ../sass/memory_page.scss */
+/* line 205, ../sass/memory_page.scss */
 .land .write #write_content {
   color: #afafaf;
   border: 1px solid;
@@ -226,21 +250,21 @@
   resize: none;
   text-align: center;
 }
-/* line 202, ../sass/memory_page.scss */
+/* line 223, ../sass/memory_page.scss */
 .land .write .restrict {
   float: left;
   margin-left: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
-/* line 208, ../sass/memory_page.scss */
+/* line 229, ../sass/memory_page.scss */
 .land .write .author {
   float: right;
   margin-right: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
-/* line 215, ../sass/memory_page.scss */
+/* line 236, ../sass/memory_page.scss */
 .land .write::after {
   content: "";
   -webkit-border-radius: 13px;
@@ -253,7 +277,7 @@
   position: absolute;
 }
 
-/* line 228, ../sass/memory_page.scss */
+/* line 249, ../sass/memory_page.scss */
 .wire {
   width: 7px;
   height: 440px;
@@ -264,12 +288,12 @@
   z-index: 0;
 }
 
-/* line 237, ../sass/memory_page.scss */
+/* line 258, ../sass/memory_page.scss */
 .wire:hover {
   cursor: url(img/scissors.ico), auto;
 }
 
-/* line 240, ../sass/memory_page.scss */
+/* line 261, ../sass/memory_page.scss */
 .wire_off {
   height: 0px;
   -webkit-transition: 0.5s;
@@ -279,7 +303,7 @@
   transition: 0.5s;
 }
 
-/* line 248, ../sass/memory_page.scss */
+/* line 269, ../sass/memory_page.scss */
 .fly_away {
   -webkit-transition: 3s ease-in;
   -moz-transition: 3s ease-in;

@@ -4,6 +4,7 @@
 	@include span-columns(1,5);
 	width: 200px;
 	padding: 20px 0;
+	margin-left: 20px;
 }
 .face{
 	width: 142px;
@@ -47,5 +48,12 @@
 		i{
 			margin: 0 2px;
 		}
+	}
+}
+.flower{
+	img{
+		margin-bottom: -4px;
+		display: inline-block;
+		margin-right: 2px;
 	}
 }
