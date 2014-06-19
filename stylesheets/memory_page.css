@@ -6,7 +6,7 @@
 
 /* line 6, ../sass/memory_page.scss */
 .sky {
-  min-height: 800px;
+  min-height: 900px;
   background-color: #f2ede4;
 }
 
@@ -180,13 +180,23 @@
 }
 
 /* line 159, ../sass/memory_page.scss */
+.flowers {
+  width: 919px;
+  height: 359px;
+  background-image: url("../img/flowers.png");
+  position: absolute;
+  margin-top: -317px;
+  margin-left: 201px;
+}
+
+/* line 167, ../sass/memory_page.scss */
 .land {
   height: 1230px;
   width: 100%;
   background-color: #E9F7B0;
   margin: 0 auto;
 }
-/* line 164, ../sass/memory_page.scss */
+/* line 172, ../sass/memory_page.scss */
 .land .btn_message {
   width: 220px;
   margin-top: 280px;
@@ -195,7 +205,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* line 172, ../sass/memory_page.scss */
+/* line 180, ../sass/memory_page.scss */
 .land .write {
   width: 500px;
   height: 500px;
@@ -212,7 +222,7 @@
   color: #afafaf;
   opacity: 1;
 }
-/* line 187, ../sass/memory_page.scss */
+/* line 195, ../sass/memory_page.scss */
 .land .write input {
   width: 250px;
   margin-left: 120px;
@@ -228,11 +238,11 @@
   font-weight: 300;
   font-family: "Roboto";
 }
-/* line 202, ../sass/memory_page.scss */
+/* line 210, ../sass/memory_page.scss */
 .land .write ::-webkit-input-placeholder {
   color: lightgray;
 }
-/* line 205, ../sass/memory_page.scss */
+/* line 213, ../sass/memory_page.scss */
 .land .write #write_content {
   color: #afafaf;
   border: 1px solid;
@@ -250,21 +260,21 @@
   resize: none;
   text-align: center;
 }
-/* line 223, ../sass/memory_page.scss */
+/* line 231, ../sass/memory_page.scss */
 .land .write .restrict {
   float: left;
   margin-left: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
-/* line 229, ../sass/memory_page.scss */
+/* line 237, ../sass/memory_page.scss */
 .land .write .author {
   float: right;
   margin-right: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
-/* line 236, ../sass/memory_page.scss */
+/* line 244, ../sass/memory_page.scss */
 .land .write::after {
   content: "";
   -webkit-border-radius: 13px;
@@ -277,7 +287,7 @@
   position: absolute;
 }
 
-/* line 249, ../sass/memory_page.scss */
+/* line 257, ../sass/memory_page.scss */
 .wire {
   width: 7px;
   height: 440px;
@@ -288,12 +298,12 @@
   z-index: 0;
 }
 
-/* line 258, ../sass/memory_page.scss */
+/* line 266, ../sass/memory_page.scss */
 .wire:hover {
   cursor: url(img/scissors.ico), auto;
 }
 
-/* line 261, ../sass/memory_page.scss */
+/* line 269, ../sass/memory_page.scss */
 .wire_off {
   height: 0px;
   -webkit-transition: 0.5s;
@@ -303,7 +313,7 @@
   transition: 0.5s;
 }
 
-/* line 269, ../sass/memory_page.scss */
+/* line 277, ../sass/memory_page.scss */
 .fly_away {
   -webkit-transition: 3s ease-in;
   -moz-transition: 3s ease-in;

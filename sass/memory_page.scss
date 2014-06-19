@@ -4,7 +4,7 @@
 	background-image: none;
 }
 .sky{
-	min-height: 800px;
+	min-height: 900px;
 	background-color: $bg;
 }
 .bloom1{
@@ -155,6 +155,14 @@
 		padding: 7px;
 		margin: 0;
 		}
+}
+.flowers{
+	width: 919px;
+	height: 359px;
+	background-image: url('../img/flowers.png');
+	position: absolute;
+	margin-top: -317px;
+	margin-left: 201px;
 }
 .land{
 	height: 1230px;
