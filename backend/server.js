@@ -22,5 +22,7 @@ app.post('/vts/:id/msgs', vts.addMessage);
 app.all(/^\/test$/, function(req, res) { res.redirect('/test/'); });
 app.use('/test/',express.static(__dirname+'/vt_test'));
 
+app.use(express.static(__dirname + '/public'));
+
 app.listen(3000);
 console.log('Listening on port 3000...');
