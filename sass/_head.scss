@@ -1,0 +1,52 @@
+@import"color";
+/* Media Layout */
+$pad: 1000px 12;
+$small: 320px 4;
+
+@mixin transition($second) {
+	-webkit-transition: $second;
+	   -moz-transition: $second;
+	    -ms-transition: $second;
+	     -o-transition: $second;
+	        transition: $second;
+}
+
+.header{
+	width: 100%;
+	margin: 0 auto;
+	height: 82px;
+	background-color: $darkgray;
+	z-index: 11;
+	-webkit-transform: translateZ(0);
+	.logo{
+		@include span-columns(1,8);
+		width: 205px;
+		margin-left: 20px;
+		margin-top: 15px;
+		margin-right: 87px;
+	}
+	ul{
+		li{
+			@include span-columns(1,8);
+			height: 32px;
+			padding: 35px 0 15px 0;
+			color: white;
+			a{
+				color: #FFF;
+			}
+		}
+		.signup{
+			@include span-columns(1 ,8);
+		}
+		.login{
+			@include span-columns(1,8);
+		}
+		.search{
+			width: 220px;
+			border-left: 1px solid #fff;
+			i{
+				margin: 0 10px 0 10px;
+			}
+		}
+	}
+}
