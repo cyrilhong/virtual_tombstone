@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>addvts</title>
+        <script src="jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+      <form id="addForm">
+        <label for="_id">_id: <label><input type="text" placeholder="url" name="_id" id="_id"><br>
+        <label for="owner_id">owner_id: <label><input type="text" value="2" name="owner_id" id="owner_id"><br>
+        <label for="vtName">name: <label><input type="text" placeholder="name" name="vtName" id="vtName"><br>
+        <label for="vtDate">vtDate: <label><input type="text" placeholder="05.08.1981" name="vtDate" id="vtDate"><br>
+        <label for="vtDes">vtDes: <label><input type="text" placeholder="description" name="vtDes" id="vtDes"><br>
+        <label for="vtPhoto">vtPhoto:<input type="text" name="vtPhoto" value=""><br>
+        <label for="vtLike">vtLike:<input type="text" name="vtLike" value=8><br>
+        <label for="vtStar">vtStar:<input type="text" name="vtStar" value=5><br>
+        
+      </form>
+      <button id="btnAdd">add</button>
+      <button id="btnUpdate">update</button>
+      <hr>
+      <form id="deleteForm">
+        <label for="d_id">_id: <label><input type="text" placeholder="url" name="d_id" id="d_id">
+      </form>
+      <button id="btnDelete">delete</button>
+      <hr>
+      <script>
+        $.fn.serializeObject = function()
+        {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function() {
+                if (o[this.name] !== undefined) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+
+        $(function(){
+          $("#btnAdd").click(function(e){
+            e.preventDefault();
+            var data = $('#addForm').serializeObject();
+            $.ajax({
+              url: "http://localhost:3000/vts", 
+              type: "post",
+              data: data, 
+              success: function(data){
+                console.log("post");
+              },
+              error: function(ex) {
+                console.log(ex);
+              }
+            });
+          });
+          $("#btnUpdate").click(function(e){
+            e.preventDefault();
+            var data = $('#addForm').serializeObject();
+            $.ajax({
+              url: "http://localhost:3000/vts/"+$("#_id").val(), 
+              type: "put",
+              data: data, 
+              success: function(data){
+                console.log("put");
+              },
+              error: function(ex) {
+                console.log(ex);
+              }
+            });
+          });
+          $("#btnDelete").click(function(e){
+            e.preventDefault();
+            console.log($("#d_id").val());
+            $.ajax({
+              url: "http://localhost:3000/vts/"+$("#d_id").val(), 
+              type: "DELETE",
+              crossDomain: true,
+              success: function(data){
+                console.log("delete");
+              },
+              error: function(ex) {
+                console.log(ex);
+              }
+            });
+          });
+        });
+      </script>
+    </body>
+</html>
