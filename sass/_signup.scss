@@ -1,0 +1,116 @@
+@import"color";
+
+.signup_cell{
+	width: 430px;
+	height: auto;
+	background-color: #FFF;
+	margin: 80px auto;
+	text-align: center;
+	float: none;
+	font-size: 14pt;
+	a,div,h1,p,input{
+		display: block;
+		padding: 10px;
+		margin: 0 auto;
+	}
+	h1{
+		padding: 20px;
+		font-weight: 300;
+	}
+	.fbconnect{
+		color: #fff;
+		width: 350px;
+		background-color: #3A5898;
+	}
+	i{
+		margin: 0 10px;
+	}
+	p{
+		font-size: 10pt;
+		color: $gray;
+	}
+	.horizen{
+		width: 20px;
+		height: 20px;
+		background-color: #FFF;
+		position: relative;
+		z-index: 12;
+		display: inline-block;
+		p{
+			font-size: 12pt;
+			display: inline-block;
+			background-color: #fff;
+			margin: 0;
+			padding: 0;
+			width: 30px;
+			height: 30px;
+			z-index: 1;
+			position: relative;
+		}
+		hr{
+			width: 300px;
+			position: relative;
+			float: left;
+			margin: -19px 0 0 -139px;
+			height: 0px;
+			border: 1px solid $gray;
+			z-index: 0;
+		}
+	}
+	input{
+		width: 350px;
+		background-color: $gray;
+		color: #FFF;
+		border: 0px;
+		margin-bottom: 20px;
+	}
+	::-webkit-input-placeholder {
+ 		color: #fff;
+ 		font-size: 10pt;
+ 		font-family: "Roboto";
+ 		font-weight: 100;
+	}
+	.confirm{
+		width: 150px;
+		background-color: $green;
+		color: #FFF;
+		float: left;
+		margin-left: 30px;
+	}
+	.termsofuse{
+		padding: 0;
+		font-size: 10pt;
+		padding-top: 2px;
+		line-height: 13pt;
+		width: 180px;
+		float: left;
+		text-align: left;
+		margin-left: 20px;
+		a{
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			color: $green;
+		}
+	}
+	.login{
+		width: 350px;
+		margin: 20px 0;
+		display: inline-block;
+		font-size: 14pt;
+		a{
+			padding: 0;
+			margin: 0;
+			color: $green;
+			display: inline-block;
+			margin-left: 10px;
+		}
+	}
+	.rememberme{
+		input{
+			display: inline-block;
+			width: 10px;
+			margin: 0 5px;
+		}
+	}	
+}

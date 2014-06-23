@@ -1,0 +1,98 @@
+/* color */
+$darkgray: #565656;
+$gray: #D6D6D6;
+$pink: #FF1D68;
+$movie: #2E4C9D;
+$music: #F20F4A;
+$book: #3D701B;
+
+@mixin transition($second) {
+	-webkit-transition: $second;
+	   -moz-transition: $second;
+	    -ms-transition: $second;
+	     -o-transition: $second;
+	        transition: $second;
+}
+@mixin sidebar_icon{
+	width: 60px;
+	height: 60px;
+	margin: 12px;
+	display: inline-block;
+	background-image: url('../img/ui.png');
+}
+
+.sidebar{
+	opacity: 1;
+	top: 85px;
+	width: 100%;
+	right: 0;
+	position: fixed;
+	z-index: 12;
+	height: 100%;
+	overflow-y: scroll;
+	background-color: rgba(0,0,0,0.5);
+	ul{
+		margin-left: 0;
+		@include transition(0.3s);
+		li{
+			display: block;
+			position: relative;
+			width: 50%;
+			height: 86px;
+			background-color: #FFF;
+			font-size: 1.4em;
+			list-style-type: none;
+			top: 0;
+			left: 50%;
+			i{
+				float: right;
+				width: 60px;
+				height: 60px;
+				margin: 12px;
+				display: inline-block;
+			}
+			p{
+				float: right;
+				margin: 28px 0 0 0;
+				font-size: 1.4em;
+			}
+			a{
+				border-bottom: 1px solid $gray;
+				float: left;
+				width: 90%;
+				margin-left: 12px;
+			}
+			.all{
+				@include sidebar_icon;
+				background-position: 0 0;
+			}
+			.topic{
+				@include sidebar_icon;
+				background-position: 0 -60px;
+			}
+			.movie{
+				@include sidebar_icon;
+				background-position: 0 -120px;
+			}
+			.music{
+				@include sidebar_icon;
+				background-position: 0 -180px;
+			}
+			.book{
+				@include sidebar_icon;
+				background-position: 0 -240px;
+			}
+		}
+	}
+}
+.hide{
+	opacity: 0;
+	visibility: hidden;
+	background-color: rgba(0,0,0,0);
+		@include transition(0.3s ease-in);
+	ul{
+		margin-top: -800px;
+		@include transition(0.3s);
+	}
+}
+
