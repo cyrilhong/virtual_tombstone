@@ -15,13 +15,13 @@
 	<div class="page">
 		<a href="#" name="tombstone"></a>
 		<div class="header">
-			<a class="logo" href="index.html"><img src="img/logo.png" alt="logo"></a>
+			<a class="logo" href="#"><img src="img/logo.png" alt="logo"></a>
 			<ul>
 				<li><a href="start.html">START</a></li>
 				<li><a href="explore.html">EXPLORE</a></li>
 				<li class="search"><i class="fa fa-search"></i>SEARCH TOMBSTONE</li>
-				<li class="login"><a href="login.html">LOGIN</a></li>
-				<li class="signup"><a href="signup.html">SIGN UP</a></li>
+				<li class="login"><a href="login.html">Facebook Login</a></li>
+				<!-- <li class="signup"><a href="signup.html">SIGN UP</a></li> -->
 			</ul>
 		</div>
 		<div class="index memory_page">
@@ -38,11 +38,11 @@ Steve Jobs</p></li>
 				<p>Stewart and his team put out several issues of The Whole Earth Catalog, and then when it had run its course, they put out a final issue. It was the mid-1970s, and I was your age. On the back cover of their final issue was a photograph of an early morning country road, the kind you might find yourself hitchhiking on if you were so adventurous. Beneath it were the words: "Stay Hungry. Stay Foolish." It was their farewell message as they signed off. Stay Hungry. Stay Foolish. And I have always wished that for myself. And now, as you graduate to begin anew, I wish that for you. <br><br>Stay Hungry. Stay Foolish. <br>Thank you all very much.</p>
 				<span class="date">-2005.06.12</span>
 				<div class="shadow"></div>
-				<a class="btn_message" href="#go_write">
-					Leave Something<i class="fa fa-arrow-down"></i>
+				<a class="btn_message btn_login" href="#go_write">
+					留言前請先登入<i class="fa fa-sign-in"></i>
 				</a>
 			</div>
-			<div class="land">
+			<div class="land hide">
 				<a class="btn_message" href="#tombstone">
 					Back<i class="fa fa-arrow-up"></i>
 				</a>
@@ -90,6 +90,10 @@ Steve Jobs</p></li>
 		      	$('.wire').addClass('wire_off');
 		      	$('.write').addClass('fly_away');
 			});
+			$('.btn_login').click(function(){
+				$(this).replaceWith("<a class=\'btn_message\' href=\"#go_write\">Leave Something<i class=\"fa fa-arrow-down\"></i></a>");
+				$('.land').toggleClass('hide');
+			})
 		});
 	</script>
 </html>

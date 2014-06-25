@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>balloon</title>
+    <script src="jquery.js"></script>
+    <style>
+      body {
+        margin:0;
+        padding: 0;
+      }
+      #container {
+        width: 100%;
+      }
+      .balloon {
+        border-radius: 50%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      
+    </div>
+    
+    
+    <script>
+      $(function(){
+        var count = 20;
+        var col = 5;
+        var row = count/col;
+        var width = $("#container").width()/col;
+        var baseR = width - 100;
+        $("#container").height(width*row);
+        var i = 0, j=0;
+        var balloons = [];
+        // 計算基本位置
+        for(i=0; i<row; i++) {
+          for(j=0; j<col;j++) {
+            var r = Math.floor(Math.random()*200);
+            // 增加混亂程度
+            var offset = 50/2 - Math.floor(Math.random()*50);
+            balloons.push({
+              x: j*width + offset, 
+              y: i*width + offset,
+              r: baseR+r,
+            });
+          }
+        }
+        // 洗牌
+        for(i=0; i<30; i++) {
+          var a = Math.floor(Math.random()*count);
+          var b = Math.floor(Math.random()*count);
+          var t = balloons[a];
+          balloons[a] = balloons[b];
+          balloons[b] = t;
+        }
+        // 畫出氣球
+        for(i=0;i<count;i++) {
+          $b = $('<div class="balloon">'+i+'</div>');
+          $b.css({
+            top: balloons[i].y, 
+            left: balloons[i].x,
+            width: balloons[i].r,
+            height: balloons[i].r,
+            'background-color': "#"+Math.floor(Math.random()*16777215).toString(16)
+          });
+          $("#container").append($b);
+          
+        }
+      });
+    </script>  
+  </body>
+</html>

@@ -284,3 +284,8 @@
   margin-top: -1000px!important;
   opacity: 0!important;
 }
+
+/* line 254, ../../../sass/memory_page.scss */
+.hide {
+  display: none;
+}
