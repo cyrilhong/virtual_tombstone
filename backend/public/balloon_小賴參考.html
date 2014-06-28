@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>balloon</title>
-    <script src="jquery.js"></script>
+  <script src="javascripts/jquery.js" type="text/javascript"></script>
     <style>
       body {
         margin:0;
@@ -17,15 +17,29 @@
       .balloon {
         border-radius: 50%;
         position: absolute;
+        text-align: center;
+      }
+      .balloon:hover{
+        z-index: 100;
+      }
+      .balloon:before{
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+      }
+      .balloon p{
+        display: inline-block;
+        vertical-align: middle;
+        color: #FFF;
+        margin: 20px;
       }
     </style>
   </head>
   <body>
     <div id="container">
-      
     </div>
-    
-    
     <script>
       $(function(){
         var count = 20;
@@ -59,16 +73,24 @@
         }
         // 畫出氣球
         for(i=0;i<count;i++) {
-          $b = $('<div class="balloon">'+i+'</div>');
+          var randomcolor = Math.floor(Math.random()*16777215);
+            if(randomcolor < 0x100000) {
+              console.log(i);
+              randomcolor = '0' + randomcolor.toString(16);
+            } else {
+              randomcolor = randomcolor.toString(16);
+            }
+          var blur = Math.floor(Math.random()*50);
+          $b = $('<div class="balloon">'+'<p>Stewart and his team put out several issues of The Whole Earth Catalog, and then when it had run its course, they put out a final issue. It was the mid-1970s, and I was your age. On the back cover of their final issue was a photograph of an early morning country road, the kind you might find yourself hitchhik'+i+'</p>'+'</div>');
           $b.css({
             top: balloons[i].y, 
             left: balloons[i].x,
             width: balloons[i].r,
             height: balloons[i].r,
-            'background-color': "#"+Math.floor(Math.random()*16777215).toString(16)
+            'background-color': "#"+randomcolor,
+            'box-shadow': '0px 0px '+ blur+'px #'+randomcolor
           });
           $("#container").append($b);
-          
         }
       });
     </script>  
