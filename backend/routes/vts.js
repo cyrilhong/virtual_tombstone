@@ -154,14 +154,18 @@ exports.findOneOrCreateUser = function(profile, done){
         console.log(err);
       }
       if(!err && user) {
+        user.name = profile.displayName;
+        user.email = profile.emails[0].value;
+        collection.update({'_id':user._id}, user);
         done(null, user);
       } else {
-        var user = {
+        var _user = {
           oauthID: profile.id,
           name: profile.displayName,
+          email: profile.emails[0].value,
           created: Date.now()
         };
-        collection.insert(user, {safe:true}, function(err, result) {
+        collection.insert(_user, {safe:true}, function(err, result) {
           if(err) {
             console.log(err);
           } else {
