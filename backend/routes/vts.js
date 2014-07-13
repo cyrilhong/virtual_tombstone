@@ -1,4 +1,5 @@
 var mongo = require('mongodb');
+var url = require('url');
 
 var Server = mongo.Server,
     Db = mongo.Db,
@@ -20,9 +21,17 @@ db.open(function(err, db) {
 });
 
 exports.findAll = function(req, res) {
+
+  var url_parts = url.parse(req.url, true);
+  var query = url_parts.query;
+  var condition = {};
+  if(query.user) {
+    condition.owner_id = query.user;
+  }
+  console.log(condition);
   db.collection('vts', function(err, collection) {
     // select fields
-    collection.find({}, {'vtPhoto': false}).toArray(function(err, items) {
+    collection.find(condition, {'vtPhoto': false}).toArray(function(err, items) {
       res.send(items);
     });
   });
@@ -198,6 +207,7 @@ function _findUserById(id, done) {
 
 // default create testing db
 var populateDB = function() {
+
   var vts = [
     {_id:"steve_jobs", owner_id:1,  vtPhoto:'', vtName:'STEVE JOBS', vtDes:'Stewart and his team put out several issues of The Whole Earth Catalog, and then when it had run its course, they put out a final issue. It was the mid-1970s, and I was your age. On the back cover of their final issue was.', vtDate: '12.06.2005', vtLike: 12, vtStare: 34, vtMsg: 5},
     {_id:"charlie_chaplin", owner_id:2,  vtPhoto:'', vtName:'CHARLIE CHAPLIN', vtDes:'Sir Charles Spencer "Charlie" Chaplin, KBE (16 April 1889 - 25 December 1977) was an English actor, comedian, and filmmaker, who rose to fame in the silent era.', vtDate: '25.12.1977', vtLike: 56, vtStare: 34, vtMsg: 10}
