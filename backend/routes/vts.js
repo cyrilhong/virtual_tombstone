@@ -147,7 +147,7 @@ exports.getUser = function(req, res){
   });
 };
 
-exports.findOneOrCreateUser = function(profile, done){
+exports.findOneOrCreateUser = function(accessToken, profile, done){
   db.collection('users', function(err, collection) {
     collection.findOne({'oauthID': profile.id}, function(err, user) {
       if (err) {
@@ -156,6 +156,7 @@ exports.findOneOrCreateUser = function(profile, done){
       if(!err && user) {
         user.name = profile.displayName;
         user.email = profile.emails[0].value;
+        user.token = accessToken;
         collection.update({'_id':user._id}, user);
         done(null, user);
       } else {
@@ -163,6 +164,7 @@ exports.findOneOrCreateUser = function(profile, done){
           oauthID: profile.id,
           name: profile.displayName,
           email: profile.emails[0].value,
+          token: accessToken,
           created: Date.now()
         };
         collection.insert(_user, {safe:true}, function(err, result) {

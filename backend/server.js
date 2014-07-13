@@ -15,8 +15,9 @@ passport.use(new FacebookStrategy({
     callbackURL: FACEBOOK_CALLBACK_URI
   },
   function(accessToken, refreshToken, profile, done) {
+    console.log(done);
     console.log(profile);
-    vts.findOneOrCreateUser(profile, done);
+    vts.findOneOrCreateUser(accessToken, profile, done);
   }
 ));
  
@@ -56,7 +57,7 @@ app.post('/vts/:id/msgs', ensureAuthenticated, vts.addMessage);
 
 app.get('/user', vts.getUser);
 
-app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends']}));
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists']}));
 app.get('/auth/facebook/callback',
         passport.authenticate('facebook', { successRedirect: '/',
                                       failureRedirect: '/login' }));
