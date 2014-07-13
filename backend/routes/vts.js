@@ -134,6 +134,62 @@ exports.addMessage = function(req, res) {
   });
 };
 
+exports.getUser = function(req, res){
+  if(req.session.passport.user);
+  _findUserById(req.session.passport.user, function(err, user){
+    if(!err && user) {
+      res.send(user);
+    } else {
+      res.send({
+        code: 99
+      });
+    }
+  });
+};
+
+exports.findOneOrCreateUser = function(profile, done){
+  db.collection('users', function(err, collection) {
+    collection.findOne({'oauthID': profile.id}, function(err, user) {
+      if (err) {
+        console.log(err);
+      }
+      if(!err && user) {
+        done(null, user);
+      } else {
+        var user = {
+          oauthID: profile.id,
+          name: profile.displayName,
+          created: Date.now()
+        };
+        collection.insert(user, {safe:true}, function(err, result) {
+          if(err) {
+            console.log(err);
+          } else {
+            console.log("saving user ...");
+            done(null, user);
+          }
+        });
+      }
+    });
+  });
+};
+
+exports.findUserById = function(id, done){
+  _findUserById(id, done);
+};
+
+function _findUserById(id, done) {
+  db.collection('users', function(err, collection) {
+    collection.findOne({'_id': new BSON.ObjectID(id)}, function(err, user) {
+      if(!err && user) {
+        done(null, user);
+      } else {
+        done(err, null);
+      }
+    });
+  });
+}
+
 // default create testing db
 var populateDB = function() {
   var vts = [

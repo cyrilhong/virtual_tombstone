@@ -14,14 +14,14 @@
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="viewport" content="width=640; user-scalable=no;" />
+	<meta name="viewport" content="width=640,user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" href="stylesheets/main.css">
   	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   	<link href="stylesheets/elastislide.css" rel="stylesheet">
   	<link href="stylesheets/elastislide_custom.css" rel="stylesheet">
-  	<link href="stylesheets/jquery.nouislider.min.css" rel="stylesheet">
+  	<!--<link href="stylesheets/jquery.nouislider.min.css" rel="stylesheet">-->
   	<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -32,7 +32,8 @@
 				<li><a href="start.html">START</a></li>
 				<li><a href="explore.html">EXPLORE</a></li>
 				<li class="search"><i class="fa fa-search"></i>SEARCH TOMBSTONE</li>
-				<li class="login"><a href="login.html">Facebook Login</a></li>
+				<!--<li class="login"><a href="https://www.facebook.com/dialog/oauth?client_id=781476481883407&scope=email,user_birthday&redirect_uri=http://localhost:3000">Facebook Login</a></li>-->
+        <li class="login"><a href="/auth/facebook">Facebook Login</a></li>
 				<!-- <li class="signup"><a href="signup.html">SIGN UP</a></li> -->
 			</ul>
 		</div>
@@ -51,4 +52,5 @@
 </body>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="js/jquery.slides.min.js"></script>
+  <script src="javascripts/main.js"></script>
 </html>
