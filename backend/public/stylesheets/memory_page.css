@@ -107,8 +107,9 @@
   width: 284px;
   line-height: 13pt;
   color: #6d6d6d;
+  text-align: left;
 }
-/* line 96, ../../../sass/memory_page.scss */
+/* line 97, ../../../sass/memory_page.scss */
 .main_tombstone .date {
   display: inline-block;
   text-align: center;
@@ -118,7 +119,7 @@
   padding: 10px 30px 0px 0;
   float: right;
 }
-/* line 105, ../../../sass/memory_page.scss */
+/* line 106, ../../../sass/memory_page.scss */
 .main_tombstone .shadow {
   width: 778px;
   height: 109px;
@@ -128,7 +129,7 @@
   background-image: url("../img/shadow.png");
 }
 
-/* line 114, ../../../sass/memory_page.scss */
+/* line 115, ../../../sass/memory_page.scss */
 .btn_message {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -141,12 +142,12 @@
   margin-top: -80px;
   border: none;
   background-color: #9dbf21;
-  color: #FFF!important;
+  color: white !important;
   padding: 10px 15px;
   font-size: 14pt;
   text-align: center;
 }
-/* line 130, ../../../sass/memory_page.scss */
+/* line 131, ../../../sass/memory_page.scss */
 .btn_message i {
   font-size: 16pt;
   display: inline-block;
@@ -155,14 +156,14 @@
   margin: 0 0 0 4px !important;
 }
 
-/* line 138, ../../../sass/memory_page.scss */
+/* line 139, ../../../sass/memory_page.scss */
 .land {
   height: 1230px;
   width: 100%;
   background-color: #E9F7B0;
   margin: 0 auto;
 }
-/* line 143, ../../../sass/memory_page.scss */
+/* line 144, ../../../sass/memory_page.scss */
 .land .btn_message {
   width: 220px;
   margin-top: 280px;
@@ -171,7 +172,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* line 151, ../../../sass/memory_page.scss */
+/* line 152, ../../../sass/memory_page.scss */
 .land .write {
   width: 500px;
   height: 500px;
@@ -188,7 +189,7 @@
   color: #afafaf;
   opacity: 1;
 }
-/* line 166, ../../../sass/memory_page.scss */
+/* line 167, ../../../sass/memory_page.scss */
 .land .write input {
   width: 250px;
   margin-left: 120px;
@@ -204,11 +205,11 @@
   font-weight: 300;
   font-family: "Roboto";
 }
-/* line 181, ../../../sass/memory_page.scss */
+/* line 182, ../../../sass/memory_page.scss */
 .land .write ::-webkit-input-placeholder {
   color: lightgray;
 }
-/* line 184, ../../../sass/memory_page.scss */
+/* line 185, ../../../sass/memory_page.scss */
 .land .write #write_content {
   color: #afafaf;
   border: 1px solid;
@@ -226,21 +227,21 @@
   resize: none;
   text-align: center;
 }
-/* line 202, ../../../sass/memory_page.scss */
+/* line 203, ../../../sass/memory_page.scss */
 .land .write .restrict {
   float: left;
   margin-left: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
-/* line 208, ../../../sass/memory_page.scss */
+/* line 209, ../../../sass/memory_page.scss */
 .land .write .author {
   float: right;
   margin-right: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
-/* line 215, ../../../sass/memory_page.scss */
+/* line 216, ../../../sass/memory_page.scss */
 .land .write::after {
   content: "";
   -webkit-border-radius: 13px;
@@ -253,7 +254,7 @@
   position: absolute;
 }
 
-/* line 228, ../../../sass/memory_page.scss */
+/* line 229, ../../../sass/memory_page.scss */
 .wire {
   width: 7px;
   height: 440px;
@@ -264,7 +265,7 @@
   z-index: 0;
 }
 
-/* line 237, ../../../sass/memory_page.scss */
+/* line 238, ../../../sass/memory_page.scss */
 .wire_off {
   height: 0px;
   -webkit-transition: 0.5s;
@@ -274,18 +275,18 @@
   transition: 0.5s;
 }
 
-/* line 245, ../../../sass/memory_page.scss */
+/* line 246, ../../../sass/memory_page.scss */
 .fly_away {
   -webkit-transition: 3s ease-in;
   -moz-transition: 3s ease-in;
   -ms-transition: 3s ease-in;
   -o-transition: 3s ease-in;
   transition: 3s ease-in;
-  margin-top: -1000px!important;
-  opacity: 0!important;
+  margin-top: -1000px !important;
+  opacity: 0 !important;
 }
 
-/* line 254, ../../../sass/memory_page.scss */
+/* line 255, ../../../sass/memory_page.scss */
 .hide {
   display: none;
 }
