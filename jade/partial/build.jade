@@ -1,0 +1,37 @@
+extends ../layout
+
+block head
+  title BUILD TOMBSTONE
+  meta(name="keywords", content="virtual tombstone")
+  meta(name="description", content="")
+
+block css
+  link(rel="stylesheet", type="text/css", href="stylesheets/memory_page.css")
+  link(rel="stylesheet", type="text/css", href="stylesheets/build.css")
+
+block content
+  .index.memory_page
+    .sky
+    .main_tombstone.build
+      .upload_img
+        p
+          | Upload an image
+          br
+          | （284*213px recomended）
+      input(type="text", placeholder="TOPIC")
+      textarea(placeholder="Write Something", id="build_content")
+      .submmit Submmit
+      .shadow
+
+block javascript
+  script.
+    $(document).ready(function() {
+      $('.wire').click(function(){
+        $('.wire').addClass('wire_off');
+        $('.write').addClass('fly_away');
+      });
+      $('.btn_login').click(function(){
+        $(this).replaceWith("<a class=\'btn_message\' href=\"#go_write\">Leave Something<i class=\"fa fa-arrow-down\"></i></a>");
+        $('.land').toggleClass('hide');
+      })
+    });
