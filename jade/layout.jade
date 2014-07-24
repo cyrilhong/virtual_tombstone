@@ -18,7 +18,7 @@ html
     link(rel="apple-touch-icon-precomposed", href="apple-touch-icon-57x57-precomposed.png")
     
     link(rel="stylesheet", type="text/css", href="stylesheets/main.css")
-    link(rel="stylesheet", type="text/css", href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
+    link(rel="stylesheet", type="text/css", href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
     link(rel="stylesheet", type="text/css", href='http://fonts.googleapis.com/css?family=Roboto:100,400,300')
     block css
 
@@ -29,5 +29,7 @@ html
       include include/footer
     #fb-root
     script(type="text/javascript", src="http://code.jquery.com/jquery-1.9.1.min.js")
-    script(type="text/javascript", src="javascripts/main.js")
+    script(type="text/javascript", src="javascripts/library/react.min.js")
+    script(type="text/javascript", src="javascripts/library/JSXTransformer.js")
+    script(type="text/jsx", src="javascripts/main.js")
     block javascript

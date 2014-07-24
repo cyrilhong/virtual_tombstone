@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EXPLORE</title>
+    <title>LOGIN FAILED</title>
     <meta name="keywords" content="virtual tombstone">
     <meta name="description" content="">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -32,7 +32,11 @@
           <li id="login" class="login"></li>
         </ul>
       </div>
-      <div id="main" class="main"></div>
+      <div class="main">
+        <div class="login_fail">
+          <p>登入失敗，<a href="/auth/facebook" target="_self">點此 </a>再試一次。</p>
+        </div>
+      </div>
       <div id="footer">
         <p>Copyright © 2014 VIRTUAL TOMBSTONE</p>
       </div>
@@ -42,6 +46,5 @@
     <script type="text/javascript" src="javascripts/library/react.min.js"></script>
     <script type="text/javascript" src="javascripts/library/JSXTransformer.js"></script>
     <script type="text/jsx" src="javascripts/main.js"></script>
-    <script type="text/jsx" src="javascripts/explore.js"></script>
   </body>
 </html>

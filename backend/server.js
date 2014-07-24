@@ -60,7 +60,7 @@ app.get('/user', vts.getUser);
 app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists']}));
 app.get('/auth/facebook/callback',
         passport.authenticate('facebook', { successRedirect: '/',
-                                      failureRedirect: '/login' }));
+                                      failureRedirect: '/login-failed.html' }));
 
 app.get('/logout', function(req, res){
   req.logout();

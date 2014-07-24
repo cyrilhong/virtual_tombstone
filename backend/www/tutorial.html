@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,400,300">
     <link rel="stylesheet" type="text/css" href="stylesheets/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/tutorial.css">
@@ -31,7 +31,7 @@
           <li><a href="build.html" target="_self">BUILD TOMBSTONE</a></li>
           <li><a href="explore.html" target="_self">EXPLORE</a></li>
           <li><a href="tutorial.html" target="_self">TUTORIAL</a></li>
-          <li id="beforeLogin" class="login"><a href="/auth/facebook" target="_self">Facebook Login</a></li>
+          <li id="login" class="login"></li>
         </ul>
       </div>
       <div class="main">
@@ -60,8 +60,10 @@
     </div>
     <div id="fb-root"></div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="javascripts/main.js"></script>
-    <script type="text/javascript" src="javascripts/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/react.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/JSXTransformer.js"></script>
+    <script type="text/jsx" src="javascripts/main.js"></script>
+    <script type="text/javascript" src="javascripts/library/jquery.bxslider.min.js"></script>
     <script>
       $(document).ready(function(){
         $('.bxslider').bxSlider();

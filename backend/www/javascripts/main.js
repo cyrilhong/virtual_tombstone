@@ -1,5 +1,44 @@
+/** @jsx React.DOM */
 $(function() {
-/*
+  $.get('/user', function(result) {
+    var LoginComponent;
+    if (result.code === 99) {
+      // 未登入 HTML 的結構
+      LoginComponent = React.createClass({
+        render: function(){
+          return (
+            <a href="/auth/facebook" target="_self">Facebook Login</a>
+          );
+        }
+      });
+    } else {
+      // 登入 HTML 的結構
+      document.getElementById('login').classList.add('after-login');
+      LoginComponent = React.createClass({
+        render: function(){
+          console.dir(this.props.data);
+          return (
+            <div>
+              <a href="javascript:void(0)" target="_self">
+                <img src="" alt="face" />
+                <p className="ID">{this.props.data.name}</p>
+              </a>
+              <div className="profile">
+                <ul></ul>
+                <a href="/logout" target="_self" className="logout">log out <i className="fa fa-sign-out"></i></a>
+              </div>
+            </div>
+          );
+        }
+      });
+    };
+
+    React.renderComponent(
+      <LoginComponent data={result} />,
+      document.getElementById('login')
+    );
+  });
+  /*
   $.get('/user', function(data){
     console.log(data);
     if(data.code == 99) {
