@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 var express = require('express'),
     vts = require('./routes/vts');
 

@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 var mongo = require('mongodb');
 var url = require('url');
 
@@ -6,7 +9,7 @@ var Server = mongo.Server,
     BSON = mongo.BSONPure;
 
 var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('vtdb', server);
+var db = new Db('vtdb', server);
 
 db.open(function(err, db) {
   if(!err) {
@@ -31,7 +34,7 @@ exports.findAll = function(req, res) {
   console.log(condition);
   db.collection('vts', function(err, collection) {
     // select fields
-    collection.find(condition, {'vtPhoto': false}).toArray(function(err, items) {
+    collection.find(condition).toArray(function(err, items) {
       res.send(items);
     });
   });
