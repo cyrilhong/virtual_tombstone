@@ -1,8 +1,9 @@
 /** @jsx React.DOM */
 $(function() {
-  $.get('/user', function(result) {
-    var LoginComponent;
-    if (result.code === 99) {
+  $.get('/user', function(_result) {
+    var LoginComponent = null,
+      userID = '';
+    if (_result.code === 99) {
       // 未登入 HTML 的結構
       LoginComponent = React.createClass({
         render: function(){
@@ -16,7 +17,9 @@ $(function() {
       document.getElementById('login').classList.add('after-login');
       LoginComponent = React.createClass({
         render: function(){
-          console.dir(this.props.data);
+          $.get('/vts?user=' + this.props.data._id, function(_tombstone) {
+            console.dir(_tombstone);
+          });
           return (
             <div>
               <a href="javascript:void(0)" target="_self">
@@ -34,7 +37,7 @@ $(function() {
     };
 
     React.renderComponent(
-      <LoginComponent data={result} />,
+      <LoginComponent data={_result} />,
       document.getElementById('login')
     );
   });

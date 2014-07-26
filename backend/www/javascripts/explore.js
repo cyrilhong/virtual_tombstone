@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 $(function() {
   $.get('/vts', function(result){
+    console.dir(result);
     var TombstoneBox = React.createClass({
       render: function(){
         var tombstoneNodes = this.props.data.map(function(item, index, data){
