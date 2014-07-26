@@ -41,7 +41,7 @@ http://localhost:3000/vts/steve_jobs/msgs
 ```
 ### 關於使用者
 
-##### /user  取得使用者資料，因為一定要登入後才能取得，所以不用設定使用者 id
+##### get /user  取得使用者資料，因為一定要登入後才能取得，所以不用設定使用者 id
 
 ##### get /user/[user_id]/vts  取得 user id 為 user_id 的墓碑資料
 http://localhost:3000/user/53d30c4b10a2273f03d93ba9/vts
