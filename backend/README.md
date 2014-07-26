@@ -1,8 +1,9 @@
 啟動
 -------------------
+```
  mongod --dbpath ./db          
  npm start
-
+```
  1. 目前預設會自己建立假的測試資料 routes/vts.js populateDB      
     等建立資料的表單完成就會移除      
 
@@ -12,12 +13,12 @@ API:
 -------------------
 ### 關於墓碑資料的：
 
-get /vts  取得全部墓碑資料，預計用在 explore 頁面             
+# get /vts  取得全部墓碑資料，預計用在 explore 頁面             
           http://localhost:3000/vts
 
-get /vts?user=[user_id]  取得 user id 為 user_id 的墓碑資料
+# get /vts?user=[user_id]  取得 user id 為 user_id 的墓碑資料
 
-get /vts/[vt_id]  取得墓碑 id 是 vt_id 的資料                
+# get /vts/[vt_id]  取得墓碑 id 是 vt_id 的資料                
                   http://localhost:3000/vts/steve_jobs
 
 post /vts  新建立墓碑資料，還差照片上傳
