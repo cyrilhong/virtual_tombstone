@@ -1,5 +1,9 @@
+/*jslint node: true */
+'use strict';
+
 var express = require('express'),
-    vts = require('./routes/vts');
+    vts = require('./routes/vts'),
+    users = require('./routes/users');
 
 var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy;
@@ -46,8 +50,6 @@ passport.deserializeUser(function(id, done) {
 // routes
 app.get('/vts', vts.findAll); // retrieve all virtual tombstones
 app.get('/vts/:id', vts.findById);  // retrieve the virtual tombstone by id
-//app.get('/vts/:url', vts.findByUrl);  // retrieve the virtual tombstone by url
-app.post('/vts', ensureAuthenticated, vts.addVt);  // add a new virtual tombstone
 app.put('/vts/:id', vts.updateVt);  // update virtual tombstone by id
 app.delete('/vts/:id', vts.deleteVt); // delete virtual tombstone by id
 //app.options('/vts/:id', vts.deleteVt);  // for jquery test
@@ -55,7 +57,9 @@ app.delete('/vts/:id', vts.deleteVt); // delete virtual tombstone by id
 app.get('/vts/:id/msgs', vts.getAllMessages);
 app.post('/vts/:id/msgs', ensureAuthenticated, vts.addMessage);
 
-app.get('/user', vts.getUser);
+app.get('/user', users.getUser);
+app.get('/user/:id/vts', users.findVtsByUser);
+app.post('/user/:id/vts', ensureAuthenticated, users.addVt);  // add vts for user
 
 app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists']}));
 app.get('/auth/facebook/callback',
