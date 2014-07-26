@@ -32,13 +32,14 @@ get /vts/[vt_id]/msgs  取得關於墓碑 id 為 vt_id 的所有留言
                    http://localhost:3000/vts/steve_jobs/msgs
 
 post /vts/[vt_id]/msgs  建立一筆關於墓碑 id 為 vt_id 的所有留言    
-    {    
-      "vts_id": "steve_jobs", // [vt_id]    
-      "owner_id": [user_id],    
-      "topic": "test topic2",    
-      "message": "message2",    
-    }    
-
+```
+{
+  "vts_id": "steve_jobs", // [vt_id]
+  "owner_id": [user_id],
+  "topic": "test topic2",
+  "message": "message2"
+}
+```
 ### 關於使用者
 
 /user  取得使用者資料，因為一定要登入後才能取得，所以不用設定使用者 id
