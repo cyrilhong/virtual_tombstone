@@ -24,17 +24,9 @@ db.open(function(err, db) {
 });
 
 exports.findAll = function(req, res) {
-
-  var url_parts = url.parse(req.url, true);
-  var query = url_parts.query;
-  var condition = {};
-  if(query.user) {
-    condition.owner_id = query.user;
-  }
-  console.log(condition);
   db.collection('vts', function(err, collection) {
     // select fields
-    collection.find(condition).toArray(function(err, items) {
+    collection.find().toArray(function(err, items) {
       res.send(items);
     });
   });
@@ -156,6 +148,21 @@ exports.getUser = function(req, res){
         code: 99
       });
     }
+  });
+};
+
+exports.findVtsByUser = function(req, res) {
+
+  var user_id = req.params.id;
+  
+  var condition = {
+    owner_id: user_id
+  };
+  db.collection('vts', function(err, collection) {
+    // select fields
+    collection.find(condition).toArray(function(err, items) {
+      res.send(items);
+    });
   });
 };
 

@@ -59,6 +59,7 @@ app.get('/vts/:id/msgs', vts.getAllMessages);
 app.post('/vts/:id/msgs', ensureAuthenticated, vts.addMessage);
 
 app.get('/user', vts.getUser);
+app.get('/user/:id/vts', vts.findVtsByUser);
 
 app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists']}));
 app.get('/auth/facebook/callback',

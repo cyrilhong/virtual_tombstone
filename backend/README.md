@@ -16,8 +16,6 @@ API:
 ##### get /vts  取得全部墓碑資料，預計用在 explore 頁面             
 http://localhost:3000/vts
 
-##### get /vts?user=[user_id]  取得 user id 為 user_id 的墓碑資料
-
 ##### get /vts/[vt_id]  取得墓碑 id 是 vt_id 的資料                
 http://localhost:3000/vts/steve_jobs
 
@@ -44,3 +42,8 @@ http://localhost:3000/vts/steve_jobs/msgs
 ### 關於使用者
 
 ##### /user  取得使用者資料，因為一定要登入後才能取得，所以不用設定使用者 id
+
+##### get /user/[user_id]/vts  取得 user id 為 user_id 的墓碑資料
+http://localhost:3000/user/53d30c4b10a2273f03d93ba9/vts
+
+
