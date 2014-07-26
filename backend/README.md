@@ -13,7 +13,7 @@ API:
 -------------------
 ### 關於墓碑資料的：
 
-# get /vts  取得全部墓碑資料，預計用在 explore 頁面             
+##### get /vts  取得全部墓碑資料，預計用在 explore 頁面             
           http://localhost:3000/vts
 
 # get /vts?user=[user_id]  取得 user id 為 user_id 的墓碑資料
