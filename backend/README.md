@@ -1,3 +1,11 @@
+啟動：
+ mongod --dbpath ./db
+ npm start
+
+ 1. 目前預設會自己建立假的測試資料 routes/vts.js populateDB 
+    等建立資料的表單完成就會移除
+ 2. 要修改 mongo 中的測試資料，可以修改 test.js 並執行
+
 API:
 
 關於墓碑資料的：
