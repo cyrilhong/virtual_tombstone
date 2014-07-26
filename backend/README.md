@@ -31,13 +31,13 @@ delete /vts/[vt_id]  刪除墓碑 id 是 vt_id 的資料
 get /vts/[vt_id]/msgs  取得關於墓碑 id 為 vt_id 的所有留言            
                    http://localhost:3000/vts/steve_jobs/msgs
 
-post /vts/[vt_id]/msgs  建立一筆關於墓碑 id 為 vt_id 的所有留言
-    {
-      "vts_id": "steve_jobs", // [vt_id]
-      "owner_id": [user_id],
-      "topic": "test topic2",
-      "message": "message2",
-    }
+post /vts/[vt_id]/msgs  建立一筆關於墓碑 id 為 vt_id 的所有留言    
+    {    
+      "vts_id": "steve_jobs", // [vt_id]    
+      "owner_id": [user_id],    
+      "topic": "test topic2",    
+      "message": "message2",    
+    }    
 
 ### 關於使用者
 
