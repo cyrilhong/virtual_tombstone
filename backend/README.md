@@ -19,8 +19,6 @@ http://localhost:3000/vts
 ##### get /vts/[vt_id]  取得墓碑 id 是 vt_id 的資料                
 http://localhost:3000/vts/steve_jobs
 
-##### post /vts  新建立墓碑資料，還差照片上傳
-
 ##### put /vts/[vt_id]  修改墓碑 id 是 vt_id 的資料
 
 ##### delete /vts/[vt_id]  刪除墓碑 id 是 vt_id 的資料
@@ -46,4 +44,5 @@ http://localhost:3000/vts/steve_jobs/msgs
 ##### get /user/[user_id]/vts  取得 user id 為 user_id 的墓碑資料
 http://localhost:3000/user/53d30c4b10a2273f03d93ba9/vts
 
+##### post /user/[user_id]/vts  為 user_id 這個使用者新建立墓碑資料，還差照片上傳
 
