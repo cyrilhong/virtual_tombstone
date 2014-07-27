@@ -1,15 +1,16 @@
 /** @jsx React.DOM */
 $(function() {
-  $.get('/vts', function(result){
-    console.dir(result);
-    var TombstoneBox = React.createClass({
+  var tombstoneUrl = 'tombstone.html', // 網頁路徑
+    uid = url('?uid', location.href) || '', // 使用者 ID
+    dataUrl = '', // 取資料的路徑
+    TombstoneBoxComponent = React.createClass({ // 墓碑列表
       render: function(){
         var tombstoneNodes = this.props.data.map(function(item, index, data){
           return (
             <div className="tombstone">
               <div className="face">
-                <a href="">
-                  <img src="" alt={item.vtName} />
+                <a href={tombstoneUrl + '?vtid=' + item._id}>
+                  <img src={item.vtPhoto} alt={item.vtName} />
                 </a>
                 <h2>{item.vtName}</h2>
                 <p>{item.vtDes}</p>
@@ -30,9 +31,19 @@ $(function() {
       }
     });
 
+  if (uid !== '') {
+    dataUrl = '/user/' + uid + '/vts';
+  } else {
+    dataUrl = '/vts';
+  };
+
+  $.when($.get(dataUrl)).then(function(res, status, e) {
+    // succes
     React.renderComponent(
-      <TombstoneBox data={result} />,
+      <TombstoneBoxComponent data={res} />,
       document.getElementById('main')
     );
+  }, function(res, status, e) {
+    // failure
   });
 });

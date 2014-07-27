@@ -21,7 +21,7 @@ passport.use(new FacebookStrategy({
   function(accessToken, refreshToken, profile, done) {
     console.log(done);
     console.log(profile);
-    vts.findOneOrCreateUser(accessToken, profile, done);
+    users.findOneOrCreateUser(accessToken, profile, done);
   }
 ));
  
@@ -44,7 +44,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  vts.findUserById(id, done);
+  users.findUserById(id, done);
 });
 
 // routes
@@ -62,9 +62,10 @@ app.get('/user/:id/vts', users.findVtsByUser);
 app.post('/user/:id/vts', ensureAuthenticated, users.addVt);  // add vts for user
 
 app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists']}));
-app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', { successRedirect: '/',
-                                      failureRedirect: '/login-failed.html' }));
+app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/login-failed.html'
+}));
 
 app.get('/logout', function(req, res){
   req.logout();
@@ -81,8 +82,8 @@ function ensureAuthenticated(req, res, next) {
 app.all(/^\/test$/, function(req, res) { res.redirect('/test/'); });
 app.use('/test/',express.static(__dirname+'/vt_test'));
 
-app.use(express.static(__dirname + '/public'));
-// app.use(express.static(__dirname + '/www')); // Eden 開發用資料夾
+// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/www')); // Eden 開發用資料夾
 
 app.listen(3000);
 console.log('Listening on port 3000...');
