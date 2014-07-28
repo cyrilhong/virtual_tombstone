@@ -47,7 +47,6 @@ exports.addVt = function(req, res) {
 
 
 exports.getUser = function(req, res){
-  if(req.session.passport.user);
   _findUserById(req.session.passport.user, function(err, user){
     if(!err && user) {
       res.send(user);
