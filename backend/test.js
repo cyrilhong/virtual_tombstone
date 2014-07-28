@@ -12,6 +12,11 @@ var server = new Server('localhost', 27017, {
 });
 var db = new Db('vtdb', server);
 
+/******************************************************************
+  user id 可以在登入後執行 http://localhost:3000/user 看到
+  msg id 可以執行 http://localhost:3000/vts/steve_jobs/msgs 看到 steve_jobs 的留言的 id
+******************************************************************/
+
 db.open(function(err, db) {
   if (!err) {
     console.log("Connected to 'vtdb' database");
@@ -55,19 +60,19 @@ db.open(function(err, db) {
     var msgs_id = ['53a4274daa71707a9945b8d0', '53a4274daa71707a9945b8d1'];
 
     var msgs = [{
-      vts_id: "steve_jobs",
+      vts_id: "steve_jobs", // 根據測試使用者的資料而改變（是否為 steve_jobs 的留言）
       owner: {
-        id: new BSON.ObjectID('53d30c4b10a2273f03d93ba9'),
+        id: new BSON.ObjectID('53d30c4b10a2273f03d93ba9'),  // 根據測試使用者的資料而改變
         name: 'Mplus  Lai'
-      }, // 根據測試使用者的資料而改變
+      },
       topic: "test topic1",
       message: "message1"
     }, {
-      vts_id: "steve_jobs",
+      vts_id: "steve_jobs", // 根據測試使用者的資料而改變（是否為 steve_jobs 的留言）
       owner_id: {
-        id: new BSON.ObjectID('53d30c4b10a2273f03d93ba9'),
+        id: new BSON.ObjectID('53d30c4b10a2273f03d93ba9'),  // 根據測試使用者的資料而改變
         name: 'Mplus Lai'
-      }, // 根據測試使用者的資料而改變
+      },
       topic: "test topic2",
       message: "message2"
     }];
