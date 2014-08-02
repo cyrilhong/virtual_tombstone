@@ -23,7 +23,7 @@ db.open(function(err, db) {
 
     var vts = [{
       _id: "steve_jobs",
-      owner_id: '53d30c4b10a2273f03d93ba9', // 根據測試使用者的資料而改變
+      owner_id: '53c901e33ee7aa2411c5753f', // 根據測試使用者的資料而改變
       vtPhoto: 'img/face/jobs.png',
       vtName: 'STEVE JOBS',
       vtDes: 'Stewart and his team put out several issues of The Whole Earth Catalog, and then when it had run its course, they put out a final issue. It was the mid-1970s, and I was your age. On the back cover of their final issue was.',
@@ -33,7 +33,7 @@ db.open(function(err, db) {
       vtMsg: 5
     }, {
       _id: "charlie_chaplin",
-      owner_id: '53d30c4b10a2273f03d93ba9', // 根據測試使用者的資料而改變
+      owner_id: '53c901e33ee7aa2411c5753f', // 根據測試使用者的資料而改變
       vtPhoto: 'img/face/chaplin.png',
       vtName: 'CHARLIE CHAPLIN',
       vtDes: 'Sir Charles Spencer "Charlie" Chaplin, KBE (16 April 1889 - 25 December 1977) was an English actor, comedian, and filmmaker, who rose to fame in the silent era.',
@@ -57,12 +57,12 @@ db.open(function(err, db) {
     });
 
     // 根據該機器的測試資料而改變
-    var msgs_id = ['53a4274daa71707a9945b8d0', '53a4274daa71707a9945b8d1'];
+    var msgs_id = ['53c9007ddb0907d0233fadfe', '53c9007ddb0907d0233fadff'];
 
     var msgs = [{
       vts_id: "steve_jobs", // 根據測試使用者的資料而改變（是否為 steve_jobs 的留言）
       owner: {
-        id: new BSON.ObjectID('53d30c4b10a2273f03d93ba9'),  // 根據測試使用者的資料而改變
+        id: new BSON.ObjectID('53c901e33ee7aa2411c5753f'),  // 根據測試使用者的資料而改變
         name: 'Mplus  Lai'
       },
       topic: "test topic1",
@@ -70,7 +70,7 @@ db.open(function(err, db) {
     }, {
       vts_id: "steve_jobs", // 根據測試使用者的資料而改變（是否為 steve_jobs 的留言）
       owner_id: {
-        id: new BSON.ObjectID('53d30c4b10a2273f03d93ba9'),  // 根據測試使用者的資料而改變
+        id: new BSON.ObjectID('53c901e33ee7aa2411c5753f'),  // 根據測試使用者的資料而改變
         name: 'Mplus Lai'
       },
       topic: "test topic2",

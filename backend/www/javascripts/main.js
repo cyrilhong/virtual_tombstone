@@ -7,151 +7,74 @@ $(function() {
     };
   };
 
-  var tombstoneListMax = 5, // 列出使用者所建立的墓碑最大值
-    tombstoneUrl = 'tombstone.html', // 墓碑資訊路徑
-    buildUrl = 'build.html', // 建立墓碑路徑
-    exploreUrl = 'explore.html', // 瀏覽墓碑路徑
-    LogoutComponent = React.createClass({ // 未登入的顯示元件
-      clickLoginHandler: function () {
-        $.cookie('beforeLoginURL', location.pathname);
-      },
-      render: function(){
-        return (
-          <a href="/auth/facebook" target="_self" onClick={this.clickLoginHandler}>Facebook Login</a>
-        );
-      }
-    }),
-    LoginComponent = React.createClass({ // 已登入的顯示元件
-      render: function(){
-        return (
-          <div>
-            <a href="javascript:void(0)" target="_self">
-              <img src={this.props.data.userPic} alt="face" />
-              <p className="ID">{this.props.data.userName}</p>
-            </a>
-            <div className="profile">
-              <TombstoneListComponent data={this.props.data.tombstone} />
-              <a href="/logout" target="_self" className="logout">log out <i className="fa fa-sign-out"></i></a>
-            </div>
-          </div>
-        );
-      }
-    }),
-    TombstoneListComponent = React.createClass({ // 使用者的墓碑列表
-      render: function(){
-        var tombstoneList = [],
-          extraLink = null,
-          _i = this.props.data.length - 1,
-          _count = 0,
-          _tempTombstone = {};
-
-        // 組墓碑列表
-        for (_i; _i >= 0; _i--) {
-          _tempTombstone = this.props.data[_i];
-          tombstoneList.push(
-            <li>
-              <a href={tombstoneUrl + '?vtid=' + _tempTombstone._id}>
-                <img src={_tempTombstone.vtPhoto} alt={_tempTombstone.vtName} />
-                <p>{_tempTombstone.vtName}<i class="fa fa-arrow-circle-right"></i></p>
-              </a>
-            </li>
-          );
-          _count++;
-          if (_count === tombstoneListMax) {
-            break;
+  // 未知狀態
+  if (!!$.cookie('status') === false) {
+    // 從 server 取得使用者登入狀況, 並顯示對應使用者的墓碑列表
+    $.when($.get('/user')).then(function(res, status, e) {
+      // succes
+      if (res.code && res.code === 99) {
+        $.cookie('status', 'logout');
+        useReactLogout();
+      } else {
+        $.when($.get('/user/' + res._id + '/vts'), $.get('http://graph.facebook.com/'+res.oauthID+'/picture?redirect=0&height=200&type=normal&width=200')).then(function(res1, res2) {
+          // succes
+          var length = res1[0].length,
+            i = length - 1,
+            count = 0;
+          $.cookie('status', 'login');
+          $.cookie('userID', res._id);
+          $.cookie('userName', res.name);
+          $.cookie('userPicture', res2[0].data.url);
+          $.cookie('userTombstonesNumber', length > 5 ? 5 : length);
+          for (i; i >= 0; i--) {
+            $.cookie('vbID' + count, res1[0][i]._id);
+            $.cookie('vbName' + count, res1[0][i].vtName);
+            $.cookie('vbPhoto' + count, res1[0][i].vtPhoto);
+            count++;
+            if (count === reactParam.tombstoneListMax) {
+              break;
+            };
           };
-        };
-
-        // 當完全沒有墓碑時, 新增墓碑
-        if (this.props.data.length === 0) {
-          extraLink = (
-            <a href={buildUrl} target="_self" className="build">BUILD TOMBSTONE</a>
-          );
-        } else if (this.props.data.length > tombstoneListMax) {
-          extraLink = (
-            <a href={exploreUrl + '?uid=' + _tempTombstone.owner_id} target="_self" className="more">MORE TOMBSTONE</a>
-          );
-        };
-        return (
-          <div>
-            <ul>
-              {tombstoneList}
-            </ul>
-            {extraLink}
-          </div>
-        );
-      }
+          useReactLogin();
+        }, function(res, status, e) {
+          // failure
+          $.cookie('status', 'logout');
+        });
+      };
+    }, function(res, status, e) {
+      // failure
+      $.cookie('status', 'logout');
     });
-
-  $.when($.get('/user')).then(function(res, status, e) {
-    // succes
-    if (res.code && res.code === 99) {
-      // 未登入 HTML 的結構
-      React.renderComponent(
-        <LogoutComponent data={res} />,
-        document.getElementById('login')
-      );
+  } else {
+    if ($.cookie('status') === 'login') {
+      useReactLogin();
     } else {
-      // 登入 HTML 的結構
-      document.getElementById('login').classList.add('after-login');
-      $.when($.get('/user/' + res._id + '/vts'), $.get('http://graph.facebook.com/'+res.oauthID+'/picture?redirect=0&height=200&type=normal&width=200')).then(function(res1, res2) {
-        // succes
-        React.renderComponent(
-          <LoginComponent data={{'userName': res.name, 'userPic': res2[0].data.url, 'tombstone': res1[0]}} />,
-          document.getElementById('login')
-        );
-      }, function(res, status, e) {
-        // failure
-      });
+      useReactLogout();
     };
-  }, function(res, status, e) {
-    // failure
-  });
+  };
 
-  /*
-  $.get('/user', function(data){
-    console.log(data);
-    if(data.code == 99) {
-      $("#afterLogin").hide();
-      $("#beforeLogin").show();
-      // not login
-    } else {
+  // 未登入 HTML 的結構
+  function useReactLogout() {
+    React.renderComponent(
+      <reactLogout />,
+      document.getElementById('login')
+    );
+  };
 
-      var user = data;
-      $("#fbDisplayname").html(user.name);
-
-      // get data
-      // e.g. :{_id: "53c29ffd5d87316b1612e42e", oauthID: "255824227949878", name: "Mplus  Lai", email: "azole_pi@pchome.com.tw"}
-     
-      // 取得墓碑
-      $.get('vts?user='+data._id, function(data){
-        console.log(data);
-        for(var i=0;i<data.length;i++) {
-          $('<li><a href=virtual_tombstone.html?'+data[i]._id+'><img src="'+data[i].vtPhoto+'" alt="'+data[i].vtName+'"><p>'+data[i].vtName+'<i class="fa fa-arrow-circle-right"></i></p></a></li>').insertBefore('#fbLogout');
-        }
-      });
-
-      // 頭像：利用ajax的方式取得
-      // http://graph.facebook.com/[oauthID]/picture?redirect=0&height=200&type=normal&width=200
-      // 例如： http://graph.facebook.com/255824227949878/picture?redirect=0&height=200&type=normal&width=200
-      $.get('http://graph.facebook.com/'+user.oauthID+'/picture?redirect=0&height=200&type=normal&width=200', function(data){
-        console.log(data.data.url);
-        $("#fbPicture").attr("src",data.data.url);
-      });
-
-      // 朋友清單
-      $.get('https://graph.facebook.com/'+user.oauthID+'/friends?access_token='+user.token, function(data){
-        console.log(data);
-      });
-
-      // 朋友清單
-      $.get('https://graph.facebook.com/'+user.oauthID+'/taggable_friends?access_token='+user.token, function(data){
-        console.log(data);
-      });
-
-      $("#afterLogin").show();
-      $("#beforeLogin").hide();
-    }
-  });
-  */
+  // 登入 HTML 的結構
+  function useReactLogin() {
+    document.getElementById('login').classList.add('after-login');
+    var userTombstonesNumber = Number($.cookie('userTombstonesNumber')),
+      userTombstones = [];
+    for (var i = 0; i < userTombstonesNumber; i++) {
+      userTombstones[i] = {};
+      userTombstones[i]._id = $.cookie('vbID' + i)
+      userTombstones[i].vtName = $.cookie('vbName' + i)
+      userTombstones[i].vtPhoto = $.cookie('vbPhoto' + i)
+    };
+    React.renderComponent(
+      <reactLogin data={{'userID': $.cookie('userID'), 'userName': $.cookie('userName'), 'userPic': $.cookie('userPicture'), 'tombstones': userTombstones}} />,
+      document.getElementById('login')
+    );
+  };
 });

@@ -16,8 +16,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,400,300">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,400,300">
     <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
   </head>
   <body>
@@ -42,10 +42,12 @@
             </li>
           </ul>
         </div>
-        <div class="main_tombstone"><img src="img/face/jobs.png" alt="jobs">
-          <h2>STEVE JOBS</h2>
-          <p>Stewart and his team put out several issues of The Whole Earth Catalog, and then when it had run its course, they put out a final issue. It was the mid-1970s, and I was your age. On the back cover of their final issue was a photograph of an early morning country road, the kind you might find yourself hitchhiking on if you were so adventurous. Beneath it were the words: "Stay Hungry. Stay Foolish." It was their farewell message as they signed off. Stay Hungry. Stay Foolish. And I have always wished that for myself. And now, as you graduate to begin anew, I wish that for you.<br><br>Stay Hungry. Stay Foolish.<br>Thank you all very much.</p><span class="date">-2005.06.12</span>
-          <div class="shadow"></div><a href="#go_write" target="_self" class="btn_message btn_login">留言前請先登入<i class="fa fa-sign-in"></i></a>
+        <div id="tombstone">
+          <div class="main_tombstone"><img src="img/face/jobs.png" alt="jobs">
+            <h2>STEVE JOBS</h2>
+            <p>Stewart and his team put out several issues of The Whole Earth Catalog, and then when it had run its course, they put out a final issue. It was the mid-1970s, and I was your age. On the back cover of their final issue was a photograph of an early morning country road, the kind you might find yourself hitchhiking on if you were so adventurous. Beneath it were the words: "Stay Hungry. Stay Foolish." It was their farewell message as they signed off. Stay Hungry. Stay Foolish. And I have always wished that for myself. And now, as you graduate to begin anew, I wish that for you.<br><br>Stay Hungry. Stay Foolish.<br>Thank you all very much.</p><span class="date">-2005.06.12</span>
+            <div class="shadow"></div><a href="#go_write" target="_self" class="btn_message btn_login">留言前請先登入<i class="fa fa-sign-in"></i></a>
+          </div>
         </div>
         <div class="land hide"><a href="#tombstone" target="_self">Back<i class="fa fa-arrow-up"></i></a>
           <div class="write"><a href="#" target="_self" name="go_write"></a>
@@ -67,6 +69,8 @@
     <script type="text/javascript" src="javascripts/library/url-1.8.6.min.js"></script>
     <script type="text/javascript" src="javascripts/library/react-0.11.0.min.js"></script>
     <script type="text/javascript" src="javascripts/library/JSXTransformer-0.11.0.js"></script>
+    <script type="text/jsx" src="javascripts/components.js"></script>
     <script type="text/jsx" src="javascripts/main.js"></script>
+    <script type="text/jsx" src="javascripts/tombstone.js"></script>
   </body>
 </html>
