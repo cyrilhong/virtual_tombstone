@@ -10,22 +10,59 @@ $(function() {
     // 取得此墓碑的資訊
     $.when($.get(vtDataUrl)).then(function(res, status, e) {
       // succes
-      React.renderComponent(
-        <reactTombstone data={res} />,
-        document.getElementById('tombstone')
-      );
-    }, function(res, status, e) {
+      if (!!$.cookie('status') === false) {
+        $.when($.get('/user')).then(function(user, status, e) {
+          if (user.code && user.code === 99) {
+            logoutStatus(res);
+          } else {
+            loginStatus(res);
+          };
+        }, function(fail, status, e) {
+          logoutStatus(res);
+        });
+      } else {
+        if ($.cookie('status') === 'login') {
+          loginStatus(res);
+        } else {
+          logoutStatus(res);
+        };
+      };
+    }, function(fail, status, e) {
       // failure
     });
 
     // 取得此墓碑的所有留言
     $.when($.get(msgsDataUrl)).then(function(res, status, e) {
       // succes
-      console.dir(res);
+      // console.dir(res);
       if (res.length > 0) {
       };
     }, function(res, status, e) {
       // failure
     });
+
+    // login status
+    function loginStatus(res) {
+      var msgRequiredInfo = {};
+      React.renderComponent(
+        <reactTombstone data={{vtInfo: res, status: 'login'}} />,
+        document.getElementById('tombstone')
+      );
+      msgRequiredInfo.userID = $.cookie('userID');
+      msgRequiredInfo.userName = $.cookie('userName');
+      msgRequiredInfo.vtID = res._id;
+      React.renderComponent(
+        <reactMessage data={msgRequiredInfo} />,
+        document.getElementById('balloon')
+      );
+    };
+
+    // logout status
+    function logoutStatus(res) {
+      React.renderComponent(
+        <reactTombstone data={{vtInfo: res, status: 'logout'}} />,
+        document.getElementById('balloon')
+      );
+    };
   };
 });

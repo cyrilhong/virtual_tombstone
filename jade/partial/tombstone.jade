@@ -15,33 +15,8 @@ block content
       ul
         li.bloom1
           p Rest in Peace Steve Jobs
-    div#tombstone
-      .main_tombstone
-        img(src="img/face/jobs.png", alt="jobs")
-        h2 STEVE JOBS
-        p
-          | Stewart and his team put out several issues of The Whole Earth Catalog, and then when it had run its course, they put out a final issue. It was the mid-1970s, and I was your age. On the back cover of their final issue was a photograph of an early morning country road, the kind you might find yourself hitchhiking on if you were so adventurous. Beneath it were the words: "Stay Hungry. Stay Foolish." It was their farewell message as they signed off. Stay Hungry. Stay Foolish. And I have always wished that for myself. And now, as you graduate to begin anew, I wish that for you.
-          br
-          br
-          | Stay Hungry. Stay Foolish.
-          br
-          | Thank you all very much.
-        span.date -2005.06.12
-        .shadow
-        a.btn_message.btn_login(href="#go_write", target="_self")
-          | 留言前請先登入
-          i.fa.fa-sign-in
-    .land.hide
-      a(href="#tombstone", target="_self")
-        | Back
-        i.fa.fa-arrow-up
-      .write
-        a(href="#", target="_self", name="go_write")
-        input(type="text", placeholder="TOPIC")
-        textarea(placeholder="Write Something", id="write_content")
-        .restrict **/144
-        .author by Anonymous
-        .wire(style="cursor: url(../img/scissors.ico),cut")
+    #tombstone
+    #balloon
 
 block javascript
   script(type="text/jsx", src="javascripts/tombstone.js")

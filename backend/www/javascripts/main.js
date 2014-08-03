@@ -2,8 +2,10 @@
 $(function() {
   // 由 Facebook 導回登入成功後，回到登入前的頁面
   if (location.hash === '#_=_') {
+    console.log($.cookie('beforeLoginURL'));
     if ($.cookie('beforeLoginURL') && $.cookie('beforeLoginURL') !== '/' && $.cookie('beforeLoginURL') !== '/index.html') {
       location.href = $.cookie('beforeLoginURL');
+      return false;
     };
   };
 
