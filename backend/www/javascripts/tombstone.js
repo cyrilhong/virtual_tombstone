@@ -34,7 +34,7 @@ $(function() {
     // 取得此墓碑的所有留言
     $.when($.get(msgsDataUrl)).then(function(res, status, e) {
       // succes
-      // console.dir(res);
+      console.dir(res);
       if (res.length > 0) {
       };
     }, function(res, status, e) {
@@ -43,16 +43,16 @@ $(function() {
 
     // login status
     function loginStatus(res) {
-      var msgRequiredInfo = {};
+      var msgInfo = {};
       React.renderComponent(
         <reactTombstone data={{vtInfo: res, status: 'login'}} />,
         document.getElementById('tombstone')
       );
-      msgRequiredInfo.userID = $.cookie('userID');
-      msgRequiredInfo.userName = $.cookie('userName');
-      msgRequiredInfo.vtID = res._id;
+      msgInfo.userID = $.cookie('userID');
+      msgInfo.userName = $.cookie('userName');
+      msgInfo.vtID = res._id;
       React.renderComponent(
-        <reactMessage data={msgRequiredInfo} />,
+        <reactMessage data={{msgInfo: msgInfo, maxLength: 144}} />,
         document.getElementById('balloon')
       );
     };

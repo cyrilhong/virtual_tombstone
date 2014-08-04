@@ -166,22 +166,39 @@ var reactTombstone = React.createClass({
 
 // 對墓碑留言
 var reactMessage = React.createClass({
+  getInitialState: function() {
+    return {count: 0};
+  },
+  countLetters: function(e) {
+    this.setState({count: this.refs.message.getDOMNode().value.length});
+  },
   submitHandle: function() {
-    console.dir(this.props.data);
+    var data = {};
+    data.vts_id = this.props.data.msgInfo.vtID;
+    data.owner_id = this.props.data.msgInfo.userID;
+    data.topic = this.refs.topic.getDOMNode().value.trim();
+    data.message = this.refs.message.getDOMNode().value.trim();
+    console.log('/vts/' + this.props.data.msgInfo.vtID + '/msgs');
+    console.dir(data);
+    $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs'), data).then(function(res, status, e) {
+      // success
+      this.refs.topic.getDOMNode().value = '';
+      this.refs.message.getDOMNode().value = '';
+      this.setState({count: 0});
+    }.bind(this), function() {
+      // fail
+    });
   },
   render: function(){
-    // this.props.data
-    var inlineStyles = {
-      cursor: 'url(../img/scissors.ico),cut'
-    };
-    console.dir(this.props.data);
+    var inlineStyles = {cursor: 'url(../img/scissors.ico),cut'},
+      letters = this.state.count;
     return (
       <div className="land">
         <div className="write">
-          <input placeholder="TOPIC" type="text" />
-          <textarea id="write_content" placeholder="Write Something" maxLength="144"></textarea>
-          <div className="restrict"><span className="letter">0</span>/144</div>
-          <div className="author">by {this.props.data.userName}</div>
+          <input placeholder="TOPIC" type="text" ref="topic" />
+          <textarea id="write_content" placeholder="Write Something" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
+          <div className="restrict">{letters}/144</div>
+          <div className="author">by {this.props.data.msgInfo.userName}</div>
           <div className="wire" style={inlineStyles} onClick={this.submitHandle}></div>
         </div>
       </div>

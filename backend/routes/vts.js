@@ -114,6 +114,8 @@ exports.getAllMessages = function(req, res) {
 };
 
 exports.addMessage = function(req, res) {
+  console.log(req);
+  console.log(res);
   var vts_id = req.params.id;
   var msg = req.body;
   msg.vts_id = vts_id;
