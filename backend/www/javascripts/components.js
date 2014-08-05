@@ -180,7 +180,7 @@ var reactMessage = React.createClass({
     data.message = this.refs.message.getDOMNode().value.trim();
     console.log('/vts/' + this.props.data.msgInfo.vtID + '/msgs');
     console.dir(data);
-    $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs'), data).then(function(res, status, e) {
+    $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
       // success
       this.refs.topic.getDOMNode().value = '';
       this.refs.message.getDOMNode().value = '';
