@@ -178,13 +178,20 @@ var reactMessage = React.createClass({
     data.owner_id = this.props.data.msgInfo.userID;
     data.topic = this.refs.topic.getDOMNode().value.trim();
     data.message = this.refs.message.getDOMNode().value.trim();
-    console.log('/vts/' + this.props.data.msgInfo.vtID + '/msgs');
-    console.dir(data);
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
       // success
       this.refs.topic.getDOMNode().value = '';
       this.refs.message.getDOMNode().value = '';
       this.setState({count: 0});
+      $(this.refs.wire.getDOMNode()).addClass('wire_off');
+      $(this.refs.write.getDOMNode()).addClass('fly_away');
+      var $bloom = $('.bloom'),
+        length = $bloom.length;
+      if (length > 0) {
+        TweenMax.to(window, 3.2, {scrollTo: {y: $bloom.eq(length - 1)[0].offsetTop}});
+      } else {
+        TweenMax.to(window, 3.2, {scrollTo: {y: $('.sky')[0].offsetTop}});
+      };
     }.bind(this), function() {
       // fail
     });
@@ -194,12 +201,12 @@ var reactMessage = React.createClass({
       letters = this.state.count;
     return (
       <div className="land">
-        <div className="write">
+        <div className="write" ref="write">
           <input placeholder="TOPIC" type="text" ref="topic" />
           <textarea id="write_content" placeholder="Write Something" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
           <div className="restrict">{letters}/144</div>
           <div className="author">by {this.props.data.msgInfo.userName}</div>
-          <div className="wire" style={inlineStyles} onClick={this.submitHandle}></div>
+          <div className="wire" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
         </div>
       </div>
     );
