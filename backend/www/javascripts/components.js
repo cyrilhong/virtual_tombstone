@@ -5,25 +5,11 @@ reactParam.tombstoneUrl = 'tombstone.html', // 墓碑資訊路徑
 reactParam.buildUrl = 'build.html', // 建立墓碑路徑
 reactParam.exploreUrl = 'explore.html', // 瀏覽墓碑路徑
 reactParam.loginFbUrl = '/auth/facebook'; // FB 登入路徑
-var removeReactCookie = function() {
-  var userTombstonesNumber = Number($.cookie('userTombstonesNumber'));
-  $.removeCookie('status');
-  $.removeCookie('userID');
-  $.removeCookie('userName');
-  $.removeCookie('userPicture');
-  $.removeCookie('userTombstonesNumber');
-  for (var i = 0; i < userTombstonesNumber; i++) {
-    $.removeCookie('vbID' + i);
-    $.removeCookie('vbName' + i);
-    $.removeCookie('vbPhoto' + i);
-  };
-};
 
 // 未登入的顯示元件
 var reactLogout = React.createClass({
   clickHandler: function () {
     $.cookie('beforeLoginURL', location.href.replace(location.origin, ''));
-    removeReactCookie();
   },
   render: function(){
     return (
@@ -34,9 +20,6 @@ var reactLogout = React.createClass({
 
 // 已登入的顯示元件
 var reactLogin = React.createClass({
-  clickHandler: function () {
-    removeReactCookie();
-  },
   render: function(){
     return (
       <div className="reactLogin">
@@ -46,7 +29,7 @@ var reactLogin = React.createClass({
         </a>
         <div className="profile">
           <reactUserTombstones data={this.props.data.tombstones} />
-          <a href="/logout" target="_self" className="logout" onClick={this.clickHandler}>log out <i className="fa fa-sign-out"></i></a>
+          <a href="/logout" target="_self" className="logout">log out <i className="fa fa-sign-out"></i></a>
         </div>
       </div>
     );
@@ -60,15 +43,14 @@ var reactUserTombstones = React.createClass({
       extraLink = null,
       tempTombstone = {},
       length = this.props.data.length;
-
     // 組墓碑列表
     for (var i = 0; i < length; i++) {
       tempTombstone = this.props.data[i];
       tombstoneList.push(
         <li>
-          <a href={reactParam.tombstoneUrl + '?vtid=' + tempTombstone._id}>
+          <a href={reactParam.tombstoneUrl + '?vtid=' + tempTombstone.vtID}>
             <img src={tempTombstone.vtPhoto} alt={tempTombstone.vtName} />
-            <p>{tempTombstone.vtName}<i class="fa fa-arrow-circle-right"></i></p>
+            <p>{tempTombstone.vtName}<i className="fa fa-arrow-circle-right"></i></p>
           </a>
         </li>
       );
@@ -128,7 +110,6 @@ var reactTombstones = React.createClass({
 var reactTombstone = React.createClass({
   clickLoginHandler: function(){
     $.cookie('beforeLoginURL', location.href.replace(location.origin, ''));
-    removeReactCookie();
   },
   clickRtMsgHandler: function(){
     TweenMax.to(window, 1, {scrollTo: {y: $('.write')[0].offsetTop}});
@@ -188,9 +169,14 @@ var reactMessage = React.createClass({
       var $bloom = $('.bloom'),
         length = $bloom.length;
       if (length > 0) {
-        TweenMax.to(window, 3.2, {scrollTo: {y: $bloom.eq(length - 1)[0].offsetTop}});
+        TweenMax.to(window, 3.2, {scrollTo: {y: $bloom.eq(length - 1)[0].offsetTop}, onComplete: onTweenComplete, onCompleteParams: [this]});
       } else {
-        TweenMax.to(window, 3.2, {scrollTo: {y: $('.sky')[0].offsetTop}});
+        TweenMax.to(window, 3.2, {scrollTo: {y: $('.sky')[0].offsetTop}, onComplete: onTweenComplete, onCompleteParams: [this]});
+      };
+
+      function onTweenComplete(reactObj) {
+        $(reactObj.refs.wire.getDOMNode()).removeClass('wire_off');
+        $(reactObj.refs.write.getDOMNode()).removeClass('fly_away');
       };
     }.bind(this), function() {
       // fail
@@ -208,6 +194,29 @@ var reactMessage = React.createClass({
           <div className="author">by {this.props.data.msgInfo.userName}</div>
           <div className="wire" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
         </div>
+      </div>
+    );
+  }
+});
+
+// 留言氣球
+var reactBlooms = React.createClass({
+  render: function(){
+    var blooms = this.props.blooms.map(function(item, index, items) {
+      return (
+        <li className="bloom">
+          <div className="front">
+            <p>{item.topic}</p>
+          </div>
+          <div className="back">
+            <p>{item.message}</p>
+          </div>
+        </li>
+      );
+    });
+    return (
+      <div className="sky">
+        {blooms}
       </div>
     );
   }
