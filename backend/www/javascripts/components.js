@@ -205,18 +205,18 @@ var reactBlooms = React.createClass({
     var blooms = this.props.blooms.map(function(item, index, items) {
       return (
         <li className="bloom">
-          <div className="front">
-            <p>{item.topic}</p>
-          </div>
-          <div className="back">
-            <p>{item.message}</p>
+          <div className="info">
+            <p className="front">{item.topic}</p>
+            <p className="back">{item.message}</p>
           </div>
         </li>
       );
     });
     return (
       <div className="sky">
-        {blooms}
+        <ul>
+          {blooms}
+        </ul>
       </div>
     );
   }

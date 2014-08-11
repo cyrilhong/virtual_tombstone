@@ -19,6 +19,58 @@
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,400,300">
     <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
+    <style>
+      .bloom {
+        width: 133px;
+        height: 133px;
+        padding: 50px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        background-color: #fff;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s
+      }
+      .bloom:hover {
+        background-color: #f3f3f3;
+      }
+      .bloom .info {
+        position: relative;
+      }
+      .bloom .front, .bloom .back {
+        text-align: inherit;
+      }
+      .bloom .front {
+        opacity: 1;
+      }
+      .bloom:hover .front {
+        opacity: 0;
+      }
+      .bloom .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+      .bloom:hover .back {
+        opacity: 1;
+      }
+      .bloom p {
+        width: auto;
+        color: #afafaf;
+        font-size: 18pt;
+        font-weight: 300;
+        line-height: 22pt;
+        float: inherit;
+        margin: 0;
+      }
+      
+    </style>
   </head>
   <body>
     <div class="page">
