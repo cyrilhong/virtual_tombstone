@@ -11,7 +11,7 @@ var reactLogout = React.createClass({
   clickHandler: function () {
     $.cookie('beforeLoginURL', location.href.replace(location.origin, ''));
   },
-  render: function(){
+  render: function() {
     return (
       <a className="reactLogout" href={reactParam.loginFbUrl} target="_self" onClick={this.clickHandler}>Facebook Login</a>
     );
@@ -20,7 +20,7 @@ var reactLogout = React.createClass({
 
 // 已登入的顯示元件
 var reactLogin = React.createClass({
-  render: function(){
+  render: function() {
     return (
       <div className="reactLogin">
         <a href={reactParam.exploreUrl + '?uid=' + this.props.data.userID} target="_self">
@@ -38,7 +38,7 @@ var reactLogin = React.createClass({
 
 // 使用者的墓碑列表
 var reactUserTombstones = React.createClass({
-  render: function(){
+  render: function() {
     var tombstoneList = [],
       extraLink = null,
       tempTombstone = {},
@@ -79,8 +79,8 @@ var reactUserTombstones = React.createClass({
 
 // 墓碑列表
 var reactTombstones = React.createClass({
-  render: function(){
-    var tombstoneNodes = this.props.data.map(function(item, index, data){
+  render: function() {
+    var tombstoneNodes = this.props.data.map(function(item, index, data) {
       return (
         <div className="tombstone">
           <div className="face">
@@ -108,13 +108,13 @@ var reactTombstones = React.createClass({
 
 // 單一墓碑
 var reactTombstone = React.createClass({
-  clickLoginHandler: function(){
+  clickLoginHandler: function() {
     $.cookie('beforeLoginURL', location.href.replace(location.origin, ''));
   },
-  clickRtMsgHandler: function(){
+  clickRtMsgHandler: function() {
     TweenMax.to(window, 1, {scrollTo: {y: $('.write')[0].offsetTop}});
   },
-  render: function(){
+  render: function() {
     // 依照登入情況, 切換留言按鈕資訊
     var btnMsg = null;
     if (this.props.data.status === 'login') {
@@ -145,7 +145,7 @@ var reactTombstone = React.createClass({
   }
 });
 
-// 對墓碑留言
+// 新增墓碑留言
 var reactMessage = React.createClass({
   getInitialState: function() {
     return {count: 0};
@@ -161,8 +161,6 @@ var reactMessage = React.createClass({
     data.message = this.refs.message.getDOMNode().value.trim();
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
       // success
-      this.refs.topic.getDOMNode().value = '';
-      this.refs.message.getDOMNode().value = '';
       this.setState({count: 0});
       $(this.refs.wire.getDOMNode()).addClass('wire_off');
       $(this.refs.write.getDOMNode()).addClass('fly_away');
@@ -177,12 +175,38 @@ var reactMessage = React.createClass({
       function onTweenComplete(reactObj) {
         $(reactObj.refs.wire.getDOMNode()).removeClass('wire_off');
         $(reactObj.refs.write.getDOMNode()).removeClass('fly_away');
+        var html = ''+
+          '<li class="bloom">'+
+            '<div class="info">'+
+              '<p class="front">'+ reactObj.refs.topic.getDOMNode().value.trim() +'</p>'+
+              '<p class="back">'+
+                '<span>'+ reactObj.refs.message.getDOMNode().value.trim() +'</span>'+
+                '<span class="username">'+ reactObj.props.data.msgInfo.userName +'</span>'+
+              '</p>'+
+            '</div>'+
+          '</li>',
+          $html = $(html);
+        $('.sky ul').packery('destroy').packery().append($html);
+        var $pFront = $html.find('.front'),
+          $pBack = $html.find('.back'),
+          frontMax = Math.max($pFront.width(), $pFront.height()),
+          backMax = Math.max($pBack.width(), $pBack.height()),
+          max = Math.max(frontMax, backMax);
+        $html.width(max);
+        $html.height(max);
+        $pFront.css({width: $pFront.width(), height: $pFront.height()});
+        $pBack.css({width: $pBack.width(), height: $pBack.height()});
+        $pFront.addClass('center');
+        $pBack.addClass('center');
+        $('.sky ul').packery('appended', $html);
+        reactObj.refs.topic.getDOMNode().value = '';
+        reactObj.refs.message.getDOMNode().value = '';
       };
     }.bind(this), function() {
       // fail
     });
   },
-  render: function(){
+  render: function() {
     var inlineStyles = {cursor: 'url(../img/scissors.ico),cut'},
       letters = this.state.count;
     return (
@@ -199,25 +223,59 @@ var reactMessage = React.createClass({
   }
 });
 
-// 留言氣球
+// 顯示所有氣球
 var reactBlooms = React.createClass({
-  render: function(){
+  componentDidMount: function() {
+    var bloomsData = this.props,
+      bloomsWrapper = this.refs.bloomsWrapper.getDOMNode(),
+      bloom = bloomsWrapper.children;
+    $.map(bloom, function(item, index) {
+      var $item = $(item),
+        $pFront = $item.find('.front'),
+        $pBack = $item.find('.back'),
+        frontMax = Math.max($pFront.width(), $pFront.height()),
+        backMax = Math.max($pBack.width(), $pBack.height()),
+        max = Math.max(frontMax, backMax);
+      $item.width(max);
+      $item.height(max);
+      $pFront.css({width: $pFront.width(), height: $pFront.height()});
+      $pBack.css({width: $pBack.width(), height: $pBack.height()});
+      $pFront.addClass('center');
+      $pBack.addClass('center');
+    });
+
+    $(bloomsWrapper).packery();
+  },
+  render: function() {
     var blooms = this.props.blooms.map(function(item, index, items) {
+      console.dir(item);
       return (
-        <li className="bloom">
-          <div className="info">
-            <p className="front">{item.topic}</p>
-            <p className="back">{item.message}</p>
-          </div>
-        </li>
+        <reactBloom data={{topic: item.topic, message: item.message, userName: item.owner.name}} />
       );
     });
     return (
       <div className="sky">
-        <ul>
+        <ul ref="bloomsWrapper">
           {blooms}
         </ul>
       </div>
+    );
+  }
+});
+
+// 顯示單一氣球
+var reactBloom = React.createClass({
+  render: function() {
+    return (
+      <li className="bloom">
+        <div className="info">
+          <p className="front">{this.props.data.topic}</p>
+          <p className="back">
+            <span>{this.props.data.message}</span>
+            <span className="username">{this.props.data.userName}</span>
+          </p>
+        </div>
+      </li>
     );
   }
 });
