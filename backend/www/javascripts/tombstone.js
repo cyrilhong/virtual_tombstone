@@ -26,12 +26,10 @@ $(function() {
     // 取得此墓碑的所有留言
     $.when($.get(msgsDataUrl)).then(function(res, status, e) {
       // succes
-      if (res.length > 0) {
-        React.renderComponent(
-          <reactBlooms blooms={res} />,
-          document.getElementById('sky')
-        );
-      };
+      React.renderComponent(
+        <reactBlooms blooms={res} />,
+        document.getElementById('sky')
+      );
     }, function(res, status, e) {
       // failure
     });

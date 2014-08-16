@@ -171,21 +171,27 @@ var reactMessage = React.createClass({
       var $bloom = $('.bloom'),
         length = $bloom.length;
       if (length > 0) {
-        TweenMax.to(window, 3.2, {scrollTo: {y: $bloom.eq(length - 1)[0].offsetTop}, onComplete: onTweenComplete, onCompleteParams: [this]});
+        TweenMax.to(window, 3.2, {scrollTo: {y: $bloom.eq(length - 1)[0].offsetTop}});
       } else {
-        TweenMax.to(window, 3.2, {scrollTo: {y: $('.sky')[0].offsetTop}, onComplete: onTweenComplete, onCompleteParams: [this]});
+        TweenMax.to(window, 3.2, {scrollTo: {y: $('.sky')[0].offsetTop}});
       };
-
-      function onTweenComplete(reactObj) {
-        $(reactObj.refs.wire.getDOMNode()).removeClass('wire_off');
-        $(reactObj.refs.write.getDOMNode()).removeClass('fly_away');
+      setTimeout(function() {
+        var $bloom = $('.bloom'),
+          length = $bloom.length;
+        if (length > 0) {
+          TweenMax.set(window, {scrollTo: {y: $bloom.eq(length - 1)[0].offsetTop}});
+        } else {
+          TweenMax.set(window, {scrollTo: {y: $('.sky')[0].offsetTop}});
+        };
+        $(this.refs.wire.getDOMNode()).removeClass('wire_off');
+        $(this.refs.write.getDOMNode()).removeClass('fly_away');
         var html = ''+
           '<li class="bloom">'+
             '<div class="info">'+
-              '<p class="front">'+ reactObj.refs.topic.getDOMNode().value.trim() +'</p>'+
+              '<p class="front">'+ this.refs.topic.getDOMNode().value.trim() +'</p>'+
               '<p class="back">'+
-                '<span>'+ reactObj.refs.message.getDOMNode().value.trim() +'</span>'+
-                '<span class="username">'+ reactObj.props.data.msgInfo.userName +'</span>'+
+                '<span>'+ this.refs.message.getDOMNode().value.trim() +'</span>'+
+                '<span class="username">'+ this.props.data.msgInfo.userName +'</span>'+
               '</p>'+
             '</div>'+
           '</li>',
@@ -203,9 +209,9 @@ var reactMessage = React.createClass({
         $pFront.addClass('center');
         $pBack.addClass('center');
         $('.sky ul').packery('appended', $html);
-        reactObj.refs.topic.getDOMNode().value = '';
-        reactObj.refs.message.getDOMNode().value = '';
-      };
+        this.refs.topic.getDOMNode().value = '';
+        this.refs.message.getDOMNode().value = '';
+      }.bind(this), 3200);
     }.bind(this), function() {
       // fail
     });
