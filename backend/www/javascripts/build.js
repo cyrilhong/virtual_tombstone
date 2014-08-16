@@ -34,13 +34,15 @@ $(function() {
           cache: false,
           processData:false,
           success: function(data, textStatus, jqXHR) {
-            var $picture = $('#build_picture'),
-              $topic = $('#build_topic'),
-              $content = $('#build_content');
-              $picture.val('');
-              $topic.val('');
-              $content.val('');
-              posting = false;
+            // var $picture = $('#build_picture'),
+            //   $topic = $('#build_topic'),
+            //   $content = $('#build_content');
+            //   $picture.val('');
+            //   $topic.val('');
+            //   $content.val('');
+            //   posting = false;
+            // 直接轉址
+            location.href = reactParam.tombstoneUrl + '?vtid=' + $.parseJSON(data)._id;
           },
           error: function(jqXHR, textStatus, errorThrown) {
             posting = false
