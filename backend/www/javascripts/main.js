@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 $(function() {
   // 由 Facebook 導回登入成功後，回到登入前的頁面
-  if (location.hash === '#_=_') {
+  if (location.pathname !== '/login-failed.html' && location.hash === '#_=_') {
     if ($.cookie('beforeLoginURL') && $.cookie('beforeLoginURL') !== '/' && $.cookie('beforeLoginURL') !== '/index.html') {
       location.href = $.cookie('beforeLoginURL');
       return false;
@@ -26,9 +26,6 @@ $(function() {
           vt[count].vtName = res1[0][i].vtName;
           vt[count].vtPhoto = res1[0][i].vtPhoto;
           count++;
-          if (count === reactParam.tombstoneListMax) {
-            break;
-          };
         };
         useReactLogin(res._id, res.name, res2[0].data.url, vt);
       }, function(res, status, e) {

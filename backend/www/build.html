@@ -18,8 +18,37 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,400,300">
+    <style>
+      .header {
+        position: relative;
+      }
+    </style>
     <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/build.css">
+    <style>
+      .upload_img {
+        position: relative;
+      }
+      .upload_img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+      }
+      #build_picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+      }
+      .submmit {
+        border: none;
+      }
+      
+    </style>
   </head>
   <body>
     <div class="page">
@@ -36,15 +65,16 @@
       </div>
       <div class="index memory_page">
         <div class="sky"></div>
-        <div class="main_tombstone build">
+        <form id="build" class="main_tombstone build">
           <div class="upload_img">
-            <p>Upload an image<br>（284*213px recomended）</p>
+            <p>Upload an image<br>（284*213px recomended）</p><img src="" alt="">
+            <input type="file" accept="image/gif, image/jpeg, image/png" id="build_picture" name="picture">
           </div>
-          <input type="text" placeholder="TOPIC">
-          <textarea placeholder="Write Something" id="build_content"></textarea>
-          <div class="submmit">Submmit</div>
+          <input type="text" placeholder="TOPIC" id="build_topic" name="topic">
+          <textarea placeholder="Write Something" id="build_content" name="content"></textarea>
+          <button type="submit" class="submmit">Submit</button>
           <div class="shadow"></div>
-        </div>
+        </form>
       </div>
       <div id="footer">
         <p>Copyright © 2014 VIRTUAL TOMBSTONE</p>
@@ -61,17 +91,6 @@
     <script type="text/javascript" src="javascripts/library/packery.pkgd-1.2.2.min.js"></script>
     <script type="text/jsx" src="javascripts/components.js"></script>
     <script type="text/jsx" src="javascripts/main.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('.wire').click(function(){
-          $('.wire').addClass('wire_off');
-          $('.write').addClass('fly_away');
-        });
-        $('.btn_login').click(function(){
-          $(this).replaceWith("<a class=\'btn_message\' href=\"#go_write\">Leave Something<i class=\"fa fa-arrow-down\"></i></a>");
-          $('.land').toggleClass('hide');
-        })
-      });
-    </script>
+    <script type="text/javascript" src="javascripts/build.js"></script>
   </body>
 </html>

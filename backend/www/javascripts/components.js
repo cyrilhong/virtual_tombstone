@@ -45,6 +45,10 @@ var reactUserTombstones = React.createClass({
       length = this.props.data.length;
     // 組墓碑列表
     for (var i = 0; i < length; i++) {
+      if (i === reactParam.tombstoneListMax) {
+        break;
+      };
+
       tempTombstone = this.props.data[i];
       tombstoneList.push(
         <li>
@@ -248,7 +252,6 @@ var reactBlooms = React.createClass({
   },
   render: function() {
     var blooms = this.props.blooms.map(function(item, index, items) {
-      console.dir(item);
       return (
         <reactBloom data={{topic: item.topic, message: item.message, userName: item.owner.name}} />
       );
