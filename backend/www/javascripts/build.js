@@ -13,13 +13,14 @@ $(function() {
   function init(user) {
     $('#build').on('submit', user, postForm);
     $('#build_picture').on('change', changePic);
+    $('#build_date').datepicker();
   };
 
   function postForm(e) {
       var postData = new FormData(this),
         postUrl = '/user/' + e.data._id + '/vts';
-      if ($('#build_picture').val() === '' || $('#build_topic').val().length === 0 || $('#build_content').val().length === 0) {
-        alert('請上傳照片、輸入標題與內文');
+      if ($('#build_picture').val() === '' || $('#build_topic').val().length === 0 || $('#build_content').val().length === 0 || $('#build_date').val().length === 0) {
+        alert('請上傳照片、輸入標題、內文與日期');
         return false;
       };
 

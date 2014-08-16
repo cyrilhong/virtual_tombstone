@@ -11,8 +11,16 @@ $(function() {
   };
   $.when($.get(dataUrl)).then(function(res, status, e) {
     // succes
+    var length = res.length,
+      vt = [],
+      index = 0;
+    for (var i = length - 1; i >= 0; i--) {
+      vt[index] = res[i];
+      index++;
+    };
+
     React.renderComponent(
-      <reactTombstones data={res} />,
+      <reactTombstones data={vt} />,
       document.getElementById('main')
     );
   }, function(res, status, e) {
