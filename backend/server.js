@@ -10,7 +10,7 @@ var passport = require('passport'),
 
 var FACEBOOK_APP_ID = "781476481883407";
 var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
-var FACEBOOK_CALLBACK_URI = "http://106.185.27.134:3000/auth/facebook/callback";
+var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
 
 // config 
 passport.use(new FacebookStrategy({
