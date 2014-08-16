@@ -2,6 +2,7 @@
 'use strict';
 
 var mongo = require('mongodb');
+var async = require('async');
 
 var Server = mongo.Server,
   Db = mongo.Db,
@@ -44,8 +45,9 @@ exports.findById = function(req, res) {
   db.collection('vts', function(err, collection) {
     //collection.findOne({'_id':new BSON.ObjectID(id)}, function(err, item) {
     collection.findOne({
-      '_id': id
+      '_id': new BSON.ObjectID(id)
     }, function(err, item) {
+      console.log(item);
       res.send(item);
     });
   });
@@ -62,7 +64,7 @@ exports.updateVt = function(req, res) {
   vt.vtMsg = vt.vtMsg ? parseInt(vt.vtMsg, 10) : 0;
   db.collection('vts', function(err, collection) {
     collection.update({
-      '_id': id
+      '_id': new BSON.ObjectID(id)
     }, vt, {
       safe: true
     }, function(err, result) {
@@ -84,7 +86,7 @@ exports.deleteVt = function(req, res) {
   console.log('Deleting vt: ' + id);
   db.collection('vts', function(err, collection) {
     collection.remove({
-      '_id': id
+      '_id': new BSON.ObjectID(id)
     }, {
       safe: true
     }, function(err, result) {
@@ -103,15 +105,26 @@ exports.deleteVt = function(req, res) {
 exports.getAllMessages = function(req, res) {
   var vts_id = req.params.id;
   console.log('Retrieving msgs by vts_id: ' + vts_id);
+  _getAllMessageByVtsId(vts_id, function(err, items) {
+    if (!err) {
+      res.send(items);
+    } else {
+      res.send({
+        'error': 'Login first'
+      });
+    }
+  });
+};
+
+function _getAllMessageByVtsId(vts_id, callback) {
   db.collection('msgs', function(err, collection) {
     collection.find({
       'vts_id': vts_id
     }).toArray(function(err, items) {
-      res.send(items);
+      callback(err, items);
     });
-
   });
-};
+}
 
 exports.addMessage = function(req, res) {
   console.log(req.body);
@@ -123,8 +136,10 @@ exports.addMessage = function(req, res) {
 
   var user_id = req.session.passport.user;
   db.collection('users', function(err, collection) {
-    collection.findOne({'_id': new BSON.ObjectID(user_id)}, function(err, user) {
-      if(!err && user) {
+    collection.findOne({
+      '_id': new BSON.ObjectID(user_id)
+    }, function(err, user) {
+      if (!err && user) {
         msg.owner = {
           id: new BSON.ObjectID(user_id),
           name: user.name
@@ -139,10 +154,26 @@ exports.addMessage = function(req, res) {
               });
             } else {
               console.log('Success: ' + JSON.stringify(result[0]));
-              res.send(result[0]);
+              // update msg num
+              db.collection('vts', function(err, collection) {
+                collection.update({
+                  '_id': new BSON.ObjectID(vts_id)
+                }, {$inc: {vtMsg:1}}, {
+                  safe: true
+                }, function(err, result) {
+                  if (err) {
+                    console.log('Error updating vt: ' + err);
+                    res.send({
+                      'error': 'An error has occurred'
+                    });
+                  } else {
+                    res.send(result[0]);
+                  }
+                });
+              });
             }
           });
-        });        
+        });
       } else {
         res.send({
           'error': 'Login first'

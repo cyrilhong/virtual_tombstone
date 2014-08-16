@@ -3,6 +3,8 @@
 
 var mongo = require('mongodb');
 
+var fs = require('fs');
+
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
@@ -27,12 +29,24 @@ db.open(function(err, db) {
 exports.addVt = function(req, res) {
   // res.header('Access-Control-Allow-Origin', "*");
   var user_id = req.params.id;
-  var vt = req.body;
-  console.log('Adding vt: ' + JSON.stringify(vt));
+  var req_data = req.body;
+  console.log('Adding vt: ' + JSON.stringify(req_data));
+  var now = new Date();
+  var subName = req.files.picture.path.split('.');
+  var pictureName = '/img/face/' + user_id + '_' + now.getTime() + "." + subName[subName.length-1];
+  fs.createReadStream(req.files.picture.path).pipe(fs.createWriteStream('www' + pictureName));
+
+  var vt = {};
   vt.owner_id = user_id;
+  vt.vtPhoto = pictureName;
+  vt.vtName = req_data.topic;
+  vt.vtDes = req_data.content;
+  vt.vtDate = "";
   vt.vtLike = vt.vtLike ? parseInt(vt.vtLike, 10) : 0;
   vt.vtStar = vt.vtStar ? parseInt(vt.vtStar, 10) : 0;
   vt.vtMsg = vt.vtMsg ? parseInt(vt.vtMsg, 10) : 0;
+  
+  vt.vtCreateDate = now.getTime();
   db.collection('vts', function(err, collection) {
     collection.insert(vt, {safe:true}, function(err, result) {
       if (err) {

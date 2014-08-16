@@ -28,14 +28,15 @@ passport.use(new FacebookStrategy({
 var app = express();
  
 app.configure(function () {
-    app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
-    app.use(express.cookieParser());  // for fb login
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
-    app.use(express.session({ secret: 'virtual_tombstone' }));
-    app.use(passport.initialize());
-    app.use(passport.session());
-    app.use(app.router);
+  app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
+  app.use(express.cookieParser());  // for fb login
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(express.session({ secret: 'virtual_tombstone' }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+  //app.use(express.bodyParser({ uploadDir: __dirname + '/../www/img/face' }));
+  app.use(app.router);
 });
 
 passport.serializeUser(function(user, done) {
