@@ -1,6 +1,6 @@
 $(function(){
   $.get('/user', function(data){
-    console.log(data);
+    console.log("user", data);
     if(data.code == 99) {
       $("#afterLogin").hide();
       $("#beforeLogin").show();
@@ -15,7 +15,7 @@ $(function(){
      
       // 取得墓碑
       $.get('vts?user='+data._id, function(data){
-        console.log(data);
+        console.log("vts?user", data);
         for(var i=0;i<data.length;i++) {
           $('<li><a href=virtual_tombstone.html?'+data[i]._id+'><img src="'+data[i].vtPhoto+'" alt="'+data[i].vtName+'"><p>'+data[i].vtName+'<i class="fa fa-arrow-circle-right"></i></p></a></li>').insertBefore('#fbLogout');
         }
@@ -25,18 +25,18 @@ $(function(){
       // http://graph.facebook.com/[oauthID]/picture?redirect=0&height=200&type=normal&width=200
       // 例如： http://graph.facebook.com/255824227949878/picture?redirect=0&height=200&type=normal&width=200
       $.get('http://graph.facebook.com/'+user.oauthID+'/picture?redirect=0&height=200&type=normal&width=200', function(data){
-        console.log(data.data.url);
+        console.log("picture", data.data.url);
         $("#fbPicture").attr("src",data.data.url);
       });
 
       // 朋友清單
       $.get('https://graph.facebook.com/'+user.oauthID+'/friends?access_token='+user.token, function(data){
-        console.log(data);
+        console.log("friends", data);
       });
 
       // 朋友清單
       $.get('https://graph.facebook.com/'+user.oauthID+'/taggable_friends?access_token='+user.token, function(data){
-        console.log(data);
+        console.log("taggable_friends", data);
       });
 
       $("#afterLogin").show();

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TUTORIAL</title>
-    <meta name="keywords" content="">
+    <title>EXPLORE</title>
+    <meta name="keywords" content="virtual tombstone">
     <meta name="description" content="">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +24,66 @@
         position: relative;
       }
     </style>
-    <link rel="stylesheet" type="text/css" href="stylesheets/jquery.bxslider.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/tutorial.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
+    <style>
+      .bloom {
+        width: 133px;
+        height: 133px;
+        padding: 50px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        background-color: #fff;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+      }
+      .bloom:hover {
+        background-color: #f3f3f3;
+      }
+      .bloom .info {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .bloom .front, .bloom .back {
+        text-align: inherit;
+        width: auto;
+        color: #afafaf;
+        font-weight: 300;
+        float: inherit;
+        margin: 0;
+      }
+      .bloom .front {
+        font-size: 18pt;
+        line-height: 22pt;
+        display: inline-block;
+      }
+      .bloom:hover .front {
+        display: none;
+      }
+      .bloom .back {
+        font-size: 12pt;
+        line-height: 16pt;
+        display: none;
+      }
+      .bloom .username {
+        display: block;
+        line-height: 22pt;
+      }
+      .bloom:hover .back {
+        display: inline-block;
+      }
+      .bloom .center {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+      }
+      
+    </style>
   </head>
   <body>
     <div class="page">
@@ -40,25 +98,10 @@
           <li id="login" class="login"></li>
         </ul>
       </div>
-      <div class="main">
-        <ul class="bxslider">
-          <li>
-            <h1>什麼是VIRTUAL TOMBSTONE?</h1>
-            <p>VIRTUAL TOMBSTONE是一個網路互動創作計劃，使用者創立死去身分的墓碑，借由鬼魂一般的體驗來與其他人建立連結關聯。由於網路的發展，身分的創造以及死去比過去來得多與快，而此創作正視身分死去的這個議題，來觀察人與人之間的互動關係。數位墓碑會藉著互動的資料搜集、共創結論，來產生出視覺回饋。<br><br>VIRTUAL TOMBSTONE不單單是讓逝者身後下了註腳的儀式，而是讓所有人都能參與其中，不管你們關係是否熟識，或根本素昧逢生，網路的立即性與回饋性可以快速地讓兩者產生交流。也許身分的死亡的定義不單是生命的終結，也可能是身分的轉換、人生的階段、時刻的紀念。<br><br>使用者可以借由註冊登入，創立一個獨一無二的墓碑，它可以是你對於自我身分的認同，也可以是已不存在的人物角色。在眾多的數位墓碑中，你可以探索你感興趣的墓碑，借由象徵性的氣球訊息、預示性的使用介面，剪斷與我們繫結在地表的線，飛到墓碑主人的所在處，不管是在佛教的西方世界或是基督教的天堂，在數位空間中，那是一個新的起點與終點。<br><br>VIRTUAL TOMBSTONE創作論文開放源代碼: <a href="https://github.com/cyrilhong/virtualtombstone" target="_self">https://github.com/cyrilhong/virtualtombstone</a></p>
-          </li>
-          <li>
-            <h1>該如何使用VIRTUAL TOMBSTONE?</h1>
-            <p>一.EXPLORE-探索感興趣的墓碑</p><img src="img/slide02.jpg" alt="slide02">
-          </li>
-          <li>
-            <h1>該如何使用VIRTUAL TOMBSTONE?</h1>
-            <p>二.BUILD TOMBSTONE-創立墓碑</p><img src="img/slide03.jpg" alt="slide03">
-          </li>
-          <li>
-            <h1>該如何使用VIRTUAL TOMBSTONE?</h1>
-            <p>三.LEAVE SOMETHING-在墓碑頁面留下評論</p><img src="img/slide04.jpg" alt="slide04">
-          </li>
-        </ul>
+      <div class="index memory_page">
+        <div id="sky"></div>
+        <div id="tombstone"></div>
+        <div id="balloon"></div>
       </div>
       <div id="footer">
         <p>Copyright © 2014 VIRTUAL TOMBSTONE</p>
@@ -76,11 +119,6 @@
     <script type="text/javascript" src="javascripts/library/packery.pkgd-1.2.2.min.js"></script>
     <script type="text/jsx" src="javascripts/components.js"></script>
     <script type="text/jsx" src="javascripts/main.js"></script>
-    <script type="text/javascript" src="javascripts/library/jquery.bxslider-4.1.2.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('.bxslider').bxSlider();
-      });
-    </script>
+    <script type="text/jsx" src="javascripts/tombstone.js"></script>
   </body>
 </html>

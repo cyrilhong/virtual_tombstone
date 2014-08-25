@@ -15,11 +15,41 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+    <link rel="stylesheet" type="text/css" href="stylesheets/library/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,400,300">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,400,300">
+    <style>
+      .header {
+        position: relative;
+      }
+    </style>
     <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/build.css">
+    <style>
+      .upload_img {
+        position: relative;
+      }
+      .upload_img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+      }
+      #build_picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+      }
+      .submmit {
+        border: none;
+      }
+      
+    </style>
   </head>
   <body>
     <div class="page">
@@ -31,39 +61,39 @@
           <li><a href="build.html" target="_self">BUILD TOMBSTONE</a></li>
           <li><a href="explore.html" target="_self">EXPLORE</a></li>
           <li><a href="tutorial.html" target="_self">TUTORIAL</a></li>
-          <li id="beforeLogin" class="login"><a href="/auth/facebook" target="_self">Facebook Login</a></li>
+          <li id="login" class="login"></li>
         </ul>
       </div>
       <div class="index memory_page">
         <div class="sky"></div>
-        <div class="main_tombstone build">
+        <form id="build" class="main_tombstone build">
           <div class="upload_img">
-            <p>Upload an image<br>（284*213px recomended）</p>
+            <p>Upload an image<br>（284*213px recomended）</p><img src="" alt="">
+            <input type="file" accept="image/gif, image/jpeg, image/png" id="build_picture" name="picture">
           </div>
-          <input type="text" placeholder="TOPIC">
-          <textarea placeholder="Write Something" id="build_content"></textarea>
-          <div class="submmit">Submmit</div>
+          <input type="text" placeholder="TOPIC" id="build_topic" name="topic">
+          <textarea placeholder="Write Something" id="build_content" name="content"></textarea>
+          <input type="text" placeholder="date of death" id="build_date" name="vtDate">
+          <button type="submit" class="submmit">Submit</button>
           <div class="shadow"></div>
-        </div>
+        </form>
       </div>
       <div id="footer">
         <p>Copyright © 2014 VIRTUAL TOMBSTONE</p>
       </div>
     </div>
     <div id="fb-root"></div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="javascripts/main.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('.wire').click(function(){
-          $('.wire').addClass('wire_off');
-          $('.write').addClass('fly_away');
-        });
-        $('.btn_login').click(function(){
-          $(this).replaceWith("<a class=\'btn_message\' href=\"#go_write\">Leave Something<i class=\"fa fa-arrow-down\"></i></a>");
-          $('.land').toggleClass('hide');
-        })
-      });
-    </script>
+    <script type="text/javascript" src="javascripts/library/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/jquery-ui-1.11.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/url-1.8.6.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/jquery.cookie-1.4.1.js"></script>
+    <script type="text/javascript" src="javascripts/library/react-0.11.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/JSXTransformer-0.11.0.js"></script>
+    <script type="text/javascript" src="javascripts/library/TweenMax-1.13.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/ScrollToPlugin-1.7.4.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/packery.pkgd-1.2.2.min.js"></script>
+    <script type="text/jsx" src="javascripts/components.js"></script>
+    <script type="text/jsx" src="javascripts/main.js"></script>
+    <script type="text/javascript" src="javascripts/build.js"></script>
   </body>
 </html>

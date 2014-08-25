@@ -1,14 +1,18 @@
 extends ../layout
 
 block head
-  title EXPLORE
+  title LOGIN FAILED
   meta(name="keywords", content="virtual tombstone")
   meta(name="description", content="")
 
 block css
 
 block content
-  #main.main
+  .main
+    .login_fail
+      p
+        | 登入失敗，
+        a(href="/auth/facebook", target="_self") 點此 
+        | 再試一次。
 
 block javascript
-  script(type="text/jsx", src="javascripts/explore.js")

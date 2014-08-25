@@ -1,48 +1,55 @@
+/** @jsx React.DOM */
 $(function() {
-/*
-  $.get('/user', function(data){
-    console.log(data);
-    if(data.code == 99) {
-      $("#afterLogin").hide();
-      $("#beforeLogin").show();
-      // not login
+  // 由 Facebook 導回登入成功後，回到登入前的頁面
+  if (location.pathname !== '/login-failed.html' && location.hash === '#_=_') {
+    if ($.cookie('beforeLoginURL') && $.cookie('beforeLoginURL') !== '/' && $.cookie('beforeLoginURL') !== '/index.html') {
+      location.href = $.cookie('beforeLoginURL');
+      return false;
+    };
+  };
+
+  // 從 server 取得使用者登入狀況, 並顯示對應使用者的墓碑列表
+  $.when($.get('/user')).then(function(res, status, e) {
+    // succes
+    if (res.code && res.code === 99) {
+      useReactLogout();
     } else {
-
-      var user = data;
-      $("#fbDisplayname").html(user.name);
-
-      // get data
-      // e.g. :{_id: "53c29ffd5d87316b1612e42e", oauthID: "255824227949878", name: "Mplus  Lai", email: "azole_pi@pchome.com.tw"}
-     
-      // 取得墓碑
-      $.get('vts?user='+data._id, function(data){
-        console.log(data);
-        for(var i=0;i<data.length;i++) {
-          $('<li><a href=virtual_tombstone.html?'+data[i]._id+'><img src="'+data[i].vtPhoto+'" alt="'+data[i].vtName+'"><p>'+data[i].vtName+'<i class="fa fa-arrow-circle-right"></i></p></a></li>').insertBefore('#fbLogout');
-        }
+      $.when($.get('/user/' + res._id + '/vts'), $.get('http://graph.facebook.com/'+res.oauthID+'/picture?redirect=0&height=200&type=normal&width=200')).then(function(res1, res2) {
+        // succes
+        var length = res1[0].length,
+          i = length - 1,
+          count = 0,
+          vt = [];
+        for (i; i >= 0; i--) {
+          vt[count] = {};
+          vt[count].vtID = res1[0][i]._id;
+          vt[count].vtName = res1[0][i].vtName;
+          vt[count].vtPhoto = res1[0][i].vtPhoto;
+          count++;
+        };
+        useReactLogin(res._id, res.name, res2[0].data.url, vt);
+      }, function(res, status, e) {
+        // failure
       });
-
-      // 頭像：利用ajax的方式取得
-      // http://graph.facebook.com/[oauthID]/picture?redirect=0&height=200&type=normal&width=200
-      // 例如： http://graph.facebook.com/255824227949878/picture?redirect=0&height=200&type=normal&width=200
-      $.get('http://graph.facebook.com/'+user.oauthID+'/picture?redirect=0&height=200&type=normal&width=200', function(data){
-        console.log(data.data.url);
-        $("#fbPicture").attr("src",data.data.url);
-      });
-
-      // 朋友清單
-      $.get('https://graph.facebook.com/'+user.oauthID+'/friends?access_token='+user.token, function(data){
-        console.log(data);
-      });
-
-      // 朋友清單
-      $.get('https://graph.facebook.com/'+user.oauthID+'/taggable_friends?access_token='+user.token, function(data){
-        console.log(data);
-      });
-
-      $("#afterLogin").show();
-      $("#beforeLogin").hide();
-    }
+    };
+  }, function(res, status, e) {
+    // failure
   });
-*/
+
+  // 未登入 HTML 的結構
+  function useReactLogout() {
+    React.renderComponent(
+      <reactLogout />,
+      document.getElementById('login')
+    );
+  };
+
+  // 登入 HTML 的結構
+  function useReactLogin(userID, userName, userPictureURL, vt) {
+    document.getElementById('login').classList.add('after-login');
+    React.renderComponent(
+      <reactLogin data={{'userID': userID, 'userName': userName, 'userPic': userPictureURL, 'tombstones': vt}} />,
+      document.getElementById('login')
+    );
+  };
 });

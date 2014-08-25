@@ -17,9 +17,14 @@ html
     link(rel="apple-touch-icon-precomposed", sizes="72x72", href="apple-touch-icon-72x72-precomposed.png")
     link(rel="apple-touch-icon-precomposed", href="apple-touch-icon-57x57-precomposed.png")
     
+    link(rel="stylesheet", type="text/css", href="stylesheets/library/jquery-ui.min.css")
     link(rel="stylesheet", type="text/css", href="stylesheets/main.css")
-    link(rel="stylesheet", type="text/css", href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
-    link(rel="stylesheet", type="text/css", href='http://fonts.googleapis.com/css?family=Roboto:100,400,300')
+    link(rel="stylesheet", type="text/css", href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
+    link(rel="stylesheet", type="text/css", href='//fonts.googleapis.com/css?family=Roboto:100,400,300')
+    style.
+      .header {
+        position: relative;
+      }
     block css
 
   body
@@ -28,6 +33,15 @@ html
       block content
       include include/footer
     #fb-root
-    script(type="text/javascript", src="http://code.jquery.com/jquery-1.9.1.min.js")
-    script(type="text/javascript", src="javascripts/main.js")
+    script(type="text/javascript", src="javascripts/library/jquery-1.9.1.min.js")
+    script(type="text/javascript", src="javascripts/library/jquery-ui-1.11.1.min.js")
+    script(type="text/javascript", src="javascripts/library/url-1.8.6.min.js")
+    script(type="text/javascript", src="javascripts/library/jquery.cookie-1.4.1.js")
+    script(type="text/javascript", src="javascripts/library/react-0.11.0.min.js")
+    script(type="text/javascript", src="javascripts/library/JSXTransformer-0.11.0.js")
+    script(type="text/javascript", src="javascripts/library/TweenMax-1.13.1.min.js")
+    script(type="text/javascript", src="javascripts/library/ScrollToPlugin-1.7.4.min.js")
+    script(type="text/javascript", src="javascripts/library/packery.pkgd-1.2.2.min.js")
+    script(type="text/jsx", src="javascripts/components.js")
+    script(type="text/jsx", src="javascripts/main.js")
     block javascript

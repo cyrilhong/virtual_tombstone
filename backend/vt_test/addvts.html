@@ -49,6 +49,7 @@
           $("#btnAdd").click(function(e){
             e.preventDefault();
             var data = $('#addForm').serializeObject();
+            console.dir(data);
             $.ajax({
               url: "http://localhost:3000/vts", 
               type: "post",
