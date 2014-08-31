@@ -14,6 +14,9 @@ $(function() {
     $('#build').on('submit', user, postForm);
     $('#build_picture').on('change', changePic);
     $('#build_date').datepicker();
+
+    // 時間不讓使用者自己輸入, 一定要靠 datepicker
+    $('#build_date').on('keydown', function(e) {return false;});
   };
 
   function postForm(e) {
