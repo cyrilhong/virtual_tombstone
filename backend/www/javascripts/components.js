@@ -116,6 +116,7 @@ var reactTombstone = React.createClass({
     $.cookie('beforeLoginURL', location.href.replace(location.origin, ''));
   },
   clickRtMsgHandler: function() {
+    $('.wire').addClass('animation');
     TweenMax.to(window, 1, {scrollTo: {y: $('.write')[0].offsetTop}});
   },
   render: function() {
@@ -215,6 +216,8 @@ var reactMessage = React.createClass({
         $('.sky ul').packery('appended', $html);
         this.refs.topic.getDOMNode().value = '';
         this.refs.message.getDOMNode().value = '';
+
+        $('.wire').removeClass('animation');
       }.bind(this), 3200);
     }.bind(this), function() {
       // fail
@@ -226,11 +229,11 @@ var reactMessage = React.createClass({
     return (
       <div className="land">
         <div className="write" ref="write">
-          <input placeholder="TOPIC" type="text" ref="topic" />
-          <textarea id="write_content" placeholder="Write Something" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
+          <input placeholder="標題" type="text" ref="topic" />
+          <textarea id="write_content" placeholder="留下對墓碑的留言" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
           <div className="restrict">{letters}/144</div>
           <div className="author">by {this.props.data.msgInfo.userName}</div>
-          <div className="wire" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
+          <div className="wire" data-wire="剪斷氣球的線讓留言送出" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
         </div>
       </div>
     );

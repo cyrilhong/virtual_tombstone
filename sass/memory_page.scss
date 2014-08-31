@@ -1,3 +1,5 @@
+@import"compass/css3";
+@import"compass/css3/animation";
 @import"color";
 
 .memory_page{
@@ -198,7 +200,8 @@
 			height: 250px;
 			resize: none;
 			text-align: center;
-			// text-decoration: underline;
+			@include background-image(linear-gradient(bottom, $gray 2%, white 2%));	
+			@include background-size(100% 32px);
 		}
 		.restrict{
 			float: left;
@@ -228,12 +231,25 @@
 
 .wire{
 	width: 7px;
-	height: 440px;
+	height: 320px;
 	background-color: #fff;
 	position: absolute;
-	margin-top: 110px;
+	margin-top: 150px;
 	margin-left: 248px;
 	z-index: 0;
+	&::after{
+		content: attr(data-wire);
+		display: block;
+		margin-left: 14px;
+		margin-top: 10px;
+		line-height: 20px;
+		font-family: "Roboto";
+	}
+	&.animation{
+		@include animation-name(wire_flash);
+		@include animation-duration(1s);
+		@include animation-iteration-count(5);
+	}
 }
 .wire_off{
 	height: 0px;
@@ -254,4 +270,12 @@
 }
 .hide{
 	display: none;
+}
+@include keyframes(wire_flash){
+	0%, 100%{
+		background-color: $gray;
+	}
+	50%{
+		background-color: white;
+	}
 }
