@@ -163,6 +163,10 @@ var reactMessage = React.createClass({
     data.owner_id = this.props.data.msgInfo.userID;
     data.topic = this.refs.topic.getDOMNode().value.trim();
     data.message = this.refs.message.getDOMNode().value.trim();
+    if (data.topic.length === 0 || data.message.length === 0) {
+      alert('請輸入標題與內文');
+      return false;
+    };
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
       // success
       this.setState({count: 0});

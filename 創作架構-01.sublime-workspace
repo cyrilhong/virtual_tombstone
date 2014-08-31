@@ -1,0 +1,281 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fix",
+				"fixed"
+			],
+			[
+				"e",
+				"entires"
+			],
+			[
+				"a",
+				"arg3"
+			],
+			[
+				"ar",
+				"arg3"
+			],
+			[
+				"arg",
+				"arg2"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"selected_items":
+		[
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML5"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/CyrilMBP/Dropbox/thesis/website_02/index.html.haml",
+		"/Users/CyrilMBP/Dropbox/thesis/website/sass/_navbar.scss",
+		"/Users/CyrilMBP/Desktop/e_contact_pro2.html",
+		"/Users/CyrilMBP/Desktop/contact_pro2.html",
+		"/Users/CyrilMBP/Desktop/j_contact_pro2.html",
+		"/Users/CyrilMBP/Downloads/254444.The_Wolf__of__Wall__Street_2013_1080p_BluRay_X264_AMIABLE__DBfansub/笢荎邧逄.The.Wolf.of.Wall.Street.2013.1080p.BluRay.X264-AMIABLE.萇疏趼躉郪.ass",
+		"/Users/CyrilMBP/Downloads/254730.____________SCG____________________________The_Wolf_of_Wall_Street_2013_720p_BluRay_X264_AMIABLE/圣城家园SCG字幕组￡华尔街之狼.The.Wolf.of.Wall.Street.2013.720p.BluRay.X264-AMIABLE/华尔街之狼.The.Wolf.of.Wall.Street.2013.720p.BluRay.X264-AMIABLE.chs&eng.srt",
+		"/Users/CyrilMBP/Desktop/project_irreversible/js/javascript-video-scrubber.js",
+		"/Users/CyrilMBP/Desktop/project_irreversible/index.html",
+		"/Users/CyrilMBP/Downloads/javascript-video-scrubber/js/javascript-video-scrubber.js",
+		"/Users/CyrilMBP/Downloads/javascript-video-scrubber/index.html",
+		"/Users/CyrilMBP/Dropbox/scroll2play-master/test/index.html",
+		"/Users/CyrilMBP/Downloads/scroll2play-master/test/index.html",
+		"/Users/CyrilMBP/Downloads/jQuery.vidScroll-master/example/index.html",
+		"/Users/CyrilMBP/Downloads/scrollsequence-master/example/js/scrollsequence.js",
+		"/Users/CyrilMBP/Downloads/scrollsequence-master/example/index.html",
+		"/Users/CyrilMBP/Downloads/scroll2play-master/s2p.js",
+		"/Users/CyrilMBP/Downloads/scroll2play-master/bower.json",
+		"/Users/CyrilMBP/Downloads/javascript-video-scrubber/styles.css",
+		"/Users/CyrilMBP/EffectivJavaScript/20/call_function.js",
+		"/Users/CyrilMBP/website/app_src/plugin/item/directive.js",
+		"/Users/CyrilMBP/website/app_src/plugin/rating/directive.js",
+		"/Users/CyrilMBP/website/app_src/sass/item.scss",
+		"/Users/CyrilMBP/website/app_src/partials/home.template",
+		"/Users/CyrilMBP/website/package.json",
+		"/Users/CyrilMBP/Desktop/main.css",
+		"/Users/CyrilMBP/Desktop/index.html",
+		"/Volumes/UNTITLED/MacDrive.Pro.9.0.3.35/Cracked/ReadMeFirst.txt",
+		"/Users/CyrilMBP/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"navbar",
+			"header",
+			"allen",
+			"林威憲",
+			"fork",
+			"imgsNumFormat",
+			"imgsCount",
+			"imgPrefix",
+			"var",
+			"pad",
+			"20px",
+			"search",
+			"member",
+			"menu",
+			"list",
+			"item",
+			"slide",
+			"logo",
+			"filter",
+			"body",
+			"head",
+			"member",
+			"value",
+			"NT$",
+			"原價",
+			"br",
+			"15px",
+			"50px",
+			"attact",
+			"ability",
+			"border:",
+			"icon-dmg",
+			"h1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "創作架構-01.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 280.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
