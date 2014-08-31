@@ -1,0 +1,56 @@
+@import"color";
+.build{
+	margin-top: -700px!important;
+	.shadow{
+		margin-top: 17px;
+	}
+	input{
+		width: 284px;
+		display: inline-block;
+		margin: 0px 0 0 27px;
+		height: 20px;
+		font-size: 14pt;
+	}
+}
+.upload_img{
+	width: 284px;
+	height: 213px;
+	background-color: #FFF;
+	-webkit-border-radius: 10px;
+	        border-radius: 10px;
+	display: inline-block;
+	margin: 0px 30px 10px 30px;
+	p{
+		color: $gray;
+		text-align: center;
+		width: 284px;
+		padding: 0;
+		margin-top: 75px;
+	}
+}
+#build_content{
+	width: 284px;
+	color: $darkgray;
+	border: 1px solid;
+	position: relative;
+	display: inline-block;
+	font-size: 10pt;
+	margin: 10px 0 0 28px;
+	float: none;
+	line-height: 24pt;
+	font-weight: 100;
+	font-family: "Roboto";
+	border: none;
+	height: 250px;
+	resize: none;
+	// text-decoration: underline;
+}
+.submmit{
+	width: 150px;
+	background-color: $green;
+	color: #FFF;
+	float: right;
+	margin: 10px 28px 0 0;
+	padding: 10px;
+	text-align: center;
+}
