@@ -1,13 +1,16 @@
 /* color */
+/* line 5, ../../../sass/memory_page.scss */
 .memory_page {
   background-image: none;
 }
 
+/* line 8, ../../../sass/memory_page.scss */
 .sky {
   min-height: 750px;
-  background-color: #F2EDE4;
+  background-color: #f2ede4;
 }
 
+/* line 12, ../../../sass/memory_page.scss */
 .bloom1 {
   width: 133px;
   height: 133px;
@@ -24,17 +27,19 @@
   -o-transition: 0.2s;
   transition: 0.2s;
 }
+/* line 27, ../../../sass/memory_page.scss */
 .bloom1 p {
   width: 200px;
   position: absolute;
   margin-left: -100px;
-  color: #AFAFAF;
+  color: #afafaf;
   font-size: 18pt;
   font-weight: 300;
   line-height: 22pt;
   margin-top: 35px;
 }
 
+/* line 39, ../../../sass/memory_page.scss */
 .bloom1:hover {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
@@ -45,6 +50,7 @@
   cursor: pointer;
 }
 
+/* line 48, ../../../sass/memory_page.scss */
 .bloom_wall {
   float: left;
   margin: 0 auto;
@@ -55,12 +61,14 @@
   z-index: -1;
   background-repeat: no-repeat;
 }
+/* line 57, ../../../sass/memory_page.scss */
 .bloom_wall ul {
   padding: 0;
   margin: 0;
   display: inline-block;
 }
 
+/* line 63, ../../../sass/memory_page.scss */
 .main_tombstone {
   width: 344px;
   height: 550px;
@@ -74,6 +82,7 @@
   position: absolute;
   z-index: 0;
 }
+/* line 75, ../../../sass/memory_page.scss */
 .main_tombstone img {
   width: 284px;
   height: 213px;
@@ -82,31 +91,35 @@
   display: inline-block;
   margin: 0px 30px 10px 30px;
 }
+/* line 83, ../../../sass/memory_page.scss */
 .main_tombstone h2 {
   font-size: 24pt;
   font-weight: 400;
   text-align: center;
-  color: #6D6D6D;
+  color: #6d6d6d;
   padding-bottom: 10px;
 }
+/* line 90, ../../../sass/memory_page.scss */
 .main_tombstone p {
   font-size: 10pt;
   margin: 0 auto;
   padding: 0 30px;
   width: 284px;
   line-height: 13pt;
-  color: #6D6D6D;
+  color: #6d6d6d;
   text-align: left;
 }
+/* line 99, ../../../sass/memory_page.scss */
 .main_tombstone .date {
   display: inline-block;
   text-align: center;
-  color: #6D6D6D;
+  color: #6d6d6d;
   font-weight: 400;
   margin: 0 auto;
   padding: 10px 30px 0px 0;
   float: right;
 }
+/* line 108, ../../../sass/memory_page.scss */
 .main_tombstone .shadow {
   width: 778px;
   height: 109px;
@@ -116,6 +129,7 @@
   background-image: url("../img/shadow.png");
 }
 
+/* line 117, ../../../sass/memory_page.scss */
 .btn_message {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -127,12 +141,13 @@
   margin-right: auto;
   margin-top: -80px;
   border: none;
-  background-color: #9DBF21;
-  color: #FFF !important;
+  background-color: #9dbf21;
+  color: #FFF!important;
   padding: 10px 15px;
   font-size: 14pt;
   text-align: center;
 }
+/* line 133, ../../../sass/memory_page.scss */
 .btn_message i {
   font-size: 16pt;
   display: inline-block;
@@ -141,12 +156,14 @@
   margin: 0 0 0 4px !important;
 }
 
+/* line 141, ../../../sass/memory_page.scss */
 .land {
   height: 1230px;
   width: 100%;
   background-color: #E9F7B0;
   margin: 0 auto;
 }
+/* line 146, ../../../sass/memory_page.scss */
 .land .btn_message {
   width: 220px;
   margin-top: 280px;
@@ -155,6 +172,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+/* line 154, ../../../sass/memory_page.scss */
 .land .write {
   width: 500px;
   height: 500px;
@@ -168,9 +186,10 @@
   margin-top: 400px;
   background-color: #fff;
   display: inline-block;
-  color: #AFAFAF;
+  color: #afafaf;
   opacity: 1;
 }
+/* line 169, ../../../sass/memory_page.scss */
 .land .write input {
   width: 250px;
   margin-left: 120px;
@@ -178,19 +197,21 @@
   text-align: center;
   font-size: 24pt;
   padding-bottom: 5px;
-  color: #AFAFAF;
+  color: #afafaf;
   font-weight: 300;
   border: none;
-  border-bottom: 1px solid #CCCCCC;
+  border-bottom: 1px solid #cccccc;
   display: inline-block;
   font-weight: 300;
   font-family: "Roboto";
 }
+/* line 184, ../../../sass/memory_page.scss */
 .land .write ::-webkit-input-placeholder {
   color: lightgray;
 }
+/* line 187, ../../../sass/memory_page.scss */
 .land .write #write_content {
-  color: #AFAFAF;
+  color: #afafaf;
   border: 1px solid;
   width: 350px;
   position: relative;
@@ -205,29 +226,31 @@
   height: 250px;
   resize: none;
   text-align: center;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjEuMCIgeDI9IjAuNSIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIyJSIgc3RvcC1jb2xvcj0iI2NjY2NjYyIvPjxzdG9wIG9mZnNldD0iMiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-  background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(2%, #cccccc), color-stop(2%, #ffffff));
-  background-image: -moz-linear-gradient(bottom, #cccccc 2%, #ffffff 2%);
   background-image: -webkit-linear-gradient(bottom, #cccccc 2%, #ffffff 2%);
-  background-image: linear-gradient(to top, #cccccc 2%, #ffffff 2%);
+  background-image: -moz-linear-gradient(bottom, #cccccc 2%, #ffffff 2%);
+  background-image: -o-linear-gradient(bottom, #cccccc 2%, #ffffff 2%);
+  background-image: linear-gradient(bottom, #cccccc 2%, #ffffff 2%);
+  -webkit-background-size: 100% 32px;
   -moz-background-size: 100% 32px;
   -o-background-size: 100% 32px;
-  -webkit-background-size: 100% 32px;
   background-size: 100% 32px;
 }
+/* line 206, ../../../sass/memory_page.scss */
 .land .write .restrict {
   float: left;
   margin-left: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
+/* line 212, ../../../sass/memory_page.scss */
 .land .write .author {
   float: right;
   margin-right: 75px;
   margin-top: 10px;
   font-size: 10pt;
 }
+/* line 219, ../../../sass/memory_page.scss */
 .land .write::after {
   content: "";
   -webkit-border-radius: 13px;
@@ -240,6 +263,7 @@
   position: absolute;
 }
 
+/* line 232, ../../../sass/memory_page.scss */
 .wire {
   width: 7px;
   height: 320px;
@@ -249,6 +273,7 @@
   margin-left: 248px;
   z-index: 0;
 }
+/* line 240, ../../../sass/memory_page.scss */
 .wire::after {
   content: attr(data-wire);
   display: block;
@@ -257,18 +282,49 @@
   line-height: 20px;
   font-family: "Roboto";
 }
+/* line 248, ../../../sass/memory_page.scss */
 .wire.animation {
-  -moz-animation-name: wire_flash;
-  -webkit-animation-name: wire_flash;
-  animation-name: wire_flash;
-  -moz-animation-duration: 1s;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -moz-animation-iteration-count: 5;
-  -webkit-animation-iteration-count: 5;
-  animation-iteration-count: 5;
+  -webkit-animation: wire_flash 3s infinite;
+  -moz-animation: wire_flash 3s infinite;
+  -o-animation: wire_flash 3s infinite;
+  animation: wire_flash 3s infinite;
 }
 
+@-webkit-keyframes wire_flash {
+  /* line 258, ../../../sass/memory_page.scss */
+  0% {
+    background: gray;
+  }
+
+  /* line 259, ../../../sass/memory_page.scss */
+  50% {
+    background: white;
+  }
+
+  /* line 260, ../../../sass/memory_page.scss */
+  100% {
+    background: gray;
+  }
+}
+
+@keyframes wire_flash {
+  /* line 263, ../../../sass/memory_page.scss */
+  0% {
+    background: red;
+  }
+
+  /* line 264, ../../../sass/memory_page.scss */
+  50% {
+    background: blue;
+  }
+
+  /* line 265, ../../../sass/memory_page.scss */
+  100% {
+    background: green;
+  }
+}
+
+/* line 268, ../../../sass/memory_page.scss */
 .wire_off {
   height: 0px;
   -webkit-transition: 0.5s;
@@ -278,41 +334,18 @@
   transition: 0.5s;
 }
 
+/* line 276, ../../../sass/memory_page.scss */
 .fly_away {
   -webkit-transition: 3s ease-in;
   -moz-transition: 3s ease-in;
   -ms-transition: 3s ease-in;
   -o-transition: 3s ease-in;
   transition: 3s ease-in;
-  margin-top: -1000px !important;
-  opacity: 0 !important;
+  margin-top: -1000px!important;
+  opacity: 0!important;
 }
 
+/* line 285, ../../../sass/memory_page.scss */
 .hide {
   display: none;
-}
-
-@-moz-keyframes wire_flash {
-  0%, 100% {
-    background-color: #CCCCCC;
-  }
-  50% {
-    background-color: white;
-  }
-}
-@-webkit-keyframes wire_flash {
-  0%, 100% {
-    background-color: #CCCCCC;
-  }
-  50% {
-    background-color: white;
-  }
-}
-@keyframes wire_flash {
-  0%, 100% {
-    background-color: #CCCCCC;
-  }
-  50% {
-    background-color: white;
-  }
 }
