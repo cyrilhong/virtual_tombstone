@@ -101,26 +101,30 @@
 .header .profile li {
   width: 200px;
   height: 50px;
-  margin-top: 5px;
   border-bottom: 1px solid;
-  padding-bottom: 5px;
+  padding: 9px 0 14px 0;
 }
-/* line 98, ../../../sass/_head.scss */
+/* line 97, ../../../sass/_head.scss */
 .header .profile img {
   height: 50px;
   width: auto!important;
   display: inline-block;
   margin-top: 0!important;
+  margin-left: 11px;
 }
 /* line 104, ../../../sass/_head.scss */
 .header .profile p {
   color: #7f7f7f;
   display: block;
   margin-top: -38px;
-  margin-left: 75px;
+  margin-left: 85px;
   position: relative;
 }
-/* line 111, ../../../sass/_head.scss */
+/* line 110, ../../../sass/_head.scss */
+.header .profile p i {
+  margin-left: 5px;
+}
+/* line 114, ../../../sass/_head.scss */
 .header .profile .logout {
   width: 200px;
   color: #7f7f7f;

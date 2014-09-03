@@ -1,13 +1,14 @@
 @import"color";
 .build{
+	height: 585px;
 	margin-top: -700px!important;
 	.shadow{
-		margin-top: 17px;
+		margin-top: 21px;
 	}
 	input{
 		width: 284px;
 		display: inline-block;
-		margin: 0px 0 0 27px;
+		margin: 10px 0 0 27px;
 		height: 20px;
 		font-size: 14pt;
 	}
@@ -19,7 +20,7 @@
 	-webkit-border-radius: 10px;
 	        border-radius: 10px;
 	display: inline-block;
-	margin: 0px 30px 10px 30px;
+	margin: 0px 30px 0px 30px;
 	p{
 		color: $gray;
 		text-align: center;

@@ -1,9 +1,10 @@
 @import"compass/css3";
-@import"compass/css3/animation";
+// @import"compass/css3/animation";
 @import"color";
 
 .memory_page{
 	background-image: none;
+	// margin-bottom: 70px;
 }
 .sky{
 	min-height: 750px;
@@ -110,7 +111,7 @@
 		height: 109px;
 		display: inline-block;
 		margin-left: -217px;
-		margin-top: 32px;
+		margin-top: 271px;
 		background-image: url('../img/shadow.png');
 	}
 }
@@ -246,11 +247,25 @@
 		font-family: "Roboto";
 	}
 	&.animation{
-		@include animation-name(wire_flash);
-		@include animation-duration(1s);
-		@include animation-iteration-count(5);
+		-webkit-animation: wire_flash 3s infinite;
+		-moz-animation:    wire_flash 3s infinite;
+		-o-animation:      wire_flash 3s infinite;
+		animation:         wire_flash 3s infinite;
 	}
+		
 }
+
+@-webkit-keyframes wire_flash {
+    0%   {background: gray;}
+    50%  {background: white;}
+    100% {background: gray;}
+	}
+@keyframes wire_flash {
+    0%   {background: red;}
+    50%  {background: blue;}
+    100% {background: green;}
+}
+
 .wire_off{
 	height: 0px;
 	-webkit-transition: 0.5s;
@@ -270,12 +285,4 @@
 }
 .hide{
 	display: none;
-}
-@include keyframes(wire_flash){
-	0%, 100%{
-		background-color: $gray;
-	}
-	50%{
-		background-color: white;
-	}
 }
