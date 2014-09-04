@@ -1,14 +1,11 @@
 /* color */
-/* line 2, ../../../sass/build.scss */
 .build {
   height: 585px;
-  margin-top: -700px!important;
+  margin-top: -700px !important;
 }
-/* line 5, ../../../sass/build.scss */
 .build .shadow {
   margin-top: 21px;
 }
-/* line 8, ../../../sass/build.scss */
 .build input {
   width: 284px;
   display: inline-block;
@@ -17,7 +14,6 @@
   font-size: 14pt;
 }
 
-/* line 16, ../../../sass/build.scss */
 .upload_img {
   width: 284px;
   height: 213px;
@@ -27,19 +23,17 @@
   display: inline-block;
   margin: 0px 30px 0px 30px;
 }
-/* line 24, ../../../sass/build.scss */
 .upload_img p {
-  color: #cccccc;
+  color: #CCCCCC;
   text-align: center;
   width: 284px;
   padding: 0;
   margin-top: 75px;
 }
 
-/* line 32, ../../../sass/build.scss */
 #build_content {
   width: 284px;
-  color: #afafaf;
+  color: #AFAFAF;
   border: 1px solid;
   position: relative;
   display: inline-block;
@@ -54,10 +48,9 @@
   resize: none;
 }
 
-/* line 49, ../../../sass/build.scss */
 .submmit {
   width: 150px;
-  background-color: #9dbf21;
+  background-color: #9DBF21;
   color: #FFF;
   float: right;
   margin: 10px 28px 0 0;

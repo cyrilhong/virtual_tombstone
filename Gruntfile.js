@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           outputStyle: 'expanded',
           require: 'susy',
           sassDir: 'sass',
-          cssDir: 'backend/www/stylesheets',
+          cssDir: './backend/www/stylesheets',
           environment: 'production'
         }
       }
