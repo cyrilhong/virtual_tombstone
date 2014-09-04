@@ -1,0 +1,483 @@
+/* color */
+/* Media Layout */
+.header {
+  width: 100%;
+  margin: 0 auto;
+  height: 82px;
+  background-color: #AFAFAF;
+  z-index: 11;
+  -webkit-transform: translateZ(0);
+}
+.header .logo {
+  width: 28.57143%;
+  float: left;
+  margin-right: 7.14286%;
+  display: inline;
+  margin-left: 20px;
+  margin-top: 25px;
+  margin-right: 87px;
+  font-size: 24pt;
+}
+.header .logo img {
+  margin-right: 10px;
+  margin-bottom: -4px;
+}
+.header .logo p {
+  font-size: 18px;
+  color: #FFF;
+  display: inline-block;
+}
+.header .logo a {
+  color: #FFF;
+}
+.header ul li {
+  width: 10.25641%;
+  float: left;
+  margin-right: 2.5641%;
+  display: inline;
+  height: 32px;
+  padding: 35px 0 15px 0;
+  color: white;
+}
+.header ul li a {
+  color: #FFF;
+}
+.header ul .signup {
+  float: right;
+}
+.header ul .login {
+  float: right;
+  border-left: 1px solid #fff;
+  padding-left: 15px;
+}
+.header ul .after-login img {
+  margin-top: -20px;
+  width: 50px;
+}
+.header ul .search {
+  width: 220px;
+  border-left: 1px solid #fff;
+}
+.header ul .search i {
+  margin: 0 10px 0 10px;
+}
+.header ul .ID {
+  color: #FFF;
+  margin-top: -38px;
+  margin-left: 60px;
+}
+.header .profile {
+  width: 200px;
+  height: auto;
+  display: inline-block;
+  position: absolute;
+  margin-left: -15px;
+  margin-top: 32px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.header .profile ul, .header .profile li {
+  margin: 0;
+  display: inline-block;
+  padding: 0;
+  position: relative;
+}
+.header .profile li {
+  width: 200px;
+  height: 50px;
+  border-bottom: 1px solid;
+  padding: 9px 0 14px 0;
+}
+.header .profile img {
+  height: 50px;
+  width: auto !important;
+  display: inline-block;
+  margin-top: 0 !important;
+  margin-left: 11px;
+}
+.header .profile p {
+  color: #7f7f7f;
+  display: block;
+  margin-top: -38px;
+  margin-left: 85px;
+  position: relative;
+}
+.header .profile p i {
+  margin-left: 5px;
+}
+.header .profile .logout {
+  width: 200px;
+  color: #7f7f7f;
+  padding: 12px 0 0 0;
+  display: inline-block;
+  font-size: 14pt;
+  text-align: center;
+}
+
+/* color */
+#footer {
+  width: 100%;
+  margin: 0 auto;
+  height: 12px;
+  padding: 6px 0 14px 0;
+  text-align: center;
+  display: inline-block;
+  background-color: #E6FC8B;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+#footer p {
+  font-size: 10pt;
+}
+
+/* color */
+.tombstone {
+  width: 16.66667%;
+  float: left;
+  margin-right: 4.16667%;
+  display: inline;
+  width: 200px;
+  padding: 20px 0;
+  margin-left: 20px;
+}
+
+.face {
+  width: 142px;
+  height: 420px;
+  display: inline-block;
+  margin: 0 36px -1px 36px;
+  font-size: 10pt;
+  padding: 10px;
+  background-color: #CCCCCC;
+}
+.face h2 {
+  padding: 5px 0;
+  text-align: center;
+  font-weight: 400;
+}
+.face img {
+  width: 142px;
+  height: 108px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.face p {
+  font-size: 10pt;
+  line-height: 12pt;
+  text-align: center;
+}
+.face .date {
+  width: 142px;
+  padding: 10px 0;
+  display: inline-block;
+  text-align: center;
+  font-weight: 300;
+}
+
+.count {
+  width: 162px;
+  display: inline-block;
+  padding: 6px 36px;
+  border-top: 1px solid #CCCCCC;
+}
+.count img {
+  position: absolute;
+  margin: -116px 0 0 165px;
+}
+.count p {
+  position: absolute;
+  margin: -99px 0 0 167px;
+  text-align: center;
+  font-size: 10pt;
+  width: 47px;
+}
+
+/* color */
+.signup_cell {
+  width: 430px;
+  height: auto;
+  background-color: #FFF;
+  margin: 80px auto;
+  text-align: center;
+  float: none;
+  font-size: 14pt;
+}
+.signup_cell a, .signup_cell div, .signup_cell h1, .signup_cell p, .signup_cell input {
+  display: block;
+  padding: 10px;
+  margin: 0 auto;
+}
+.signup_cell h1 {
+  padding: 20px;
+  font-weight: 300;
+}
+.signup_cell .fbconnect {
+  color: #fff;
+  width: 350px;
+  background-color: #3A5898;
+}
+.signup_cell i {
+  margin: 0 10px;
+}
+.signup_cell p {
+  font-size: 10pt;
+  color: #CCCCCC;
+}
+.signup_cell .horizen {
+  width: 20px;
+  height: 20px;
+  background-color: #FFF;
+  position: relative;
+  z-index: 12;
+  display: inline-block;
+}
+.signup_cell .horizen p {
+  font-size: 12pt;
+  display: inline-block;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  position: relative;
+}
+.signup_cell .horizen hr {
+  width: 300px;
+  position: relative;
+  float: left;
+  margin: -19px 0 0 -139px;
+  height: 0px;
+  border: 1px solid #CCCCCC;
+  z-index: 0;
+}
+.signup_cell input {
+  width: 350px;
+  background-color: #CCCCCC;
+  color: #FFF;
+  border: 0px;
+  margin-bottom: 20px;
+}
+.signup_cell ::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 10pt;
+  font-family: "Roboto";
+  font-weight: 100;
+}
+.signup_cell .confirm {
+  width: 150px;
+  background-color: #9DBF21;
+  color: #FFF;
+  float: left;
+  margin-left: 30px;
+}
+.signup_cell .termsofuse {
+  padding: 0;
+  font-size: 10pt;
+  padding-top: 2px;
+  line-height: 13pt;
+  width: 180px;
+  float: left;
+  text-align: left;
+  margin-left: 20px;
+}
+.signup_cell .termsofuse a {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  color: #9DBF21;
+}
+.signup_cell .login {
+  width: 350px;
+  margin: 20px 0;
+  display: inline-block;
+  font-size: 14pt;
+}
+.signup_cell .login a {
+  padding: 0;
+  margin: 0;
+  color: #9DBF21;
+  display: inline-block;
+  margin-left: 10px;
+}
+.signup_cell .rememberme input {
+  display: inline-block;
+  width: 10px;
+  margin: 0 5px;
+}
+
+/* color */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+/* Media Layout */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  background-color: #FFF;
+  color: #6D6D6D;
+}
+
+a {
+  color: #FFF;
+}
+
+a:link {
+  text-decoration: none;
+  color: #AFAFAF;
+}
+
+p {
+  font-size: 12pt;
+  line-height: 16pt;
+  color: #6D6D6D;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 12pt;
+}
+
+.page {
+  *zoom: 1;
+  padding-left: 0px;
+  padding-left: 0rem;
+  padding-right: 0px;
+  padding-right: 0rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F2EDE4;
+}
+.page:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.index {
+  min-height: 800px;
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  max-width: 100%;
+  width: 100%;
+  background-size: cover;
+  color: #FFF;
+}
+.index p {
+  width: 49.09091%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -20px;
+  display: inline;
+  margin: 200px 300px 0 0;
+  font-size: 36pt;
+  width: 340px;
+  font-weight: 300;
+  color: #FFF;
+  line-height: 40pt;
+  text-align: right;
+}
+.index i {
+  font-size: 64pt;
+  position: absolute;
+  margin: -70px 0 0 10px;
+}
+
+.main {
+  float: none !important;
+  width: 100%;
+  float: left;
+  margin-right: 1.20482%;
+  display: inline;
+  min-height: 700px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.login_fail {
+  height: 600px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.login_fail p {
+  display: inline-block;
+  vertical-align: middle;
+}
+.login_fail a {
+  color: #9DBF21;
+}
+
+.login_fail:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
