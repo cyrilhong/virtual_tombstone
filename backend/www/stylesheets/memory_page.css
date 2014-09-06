@@ -7,58 +7,66 @@
   min-height: 750px;
   background-color: #F2EDE4;
 }
-
-.bloom1 {
+.sky .bloom {
   width: 133px;
   height: 133px;
   padding: 50px;
   text-align: center;
-  -webkit-border-radius: 116px;
-  border-radius: 116px;
+  cursor: default;
+  display: inline-block;
+  overflow: hidden;
   background-color: #fff;
-  z-index: 1;
-  position: absolute;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -ms-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 }
-.bloom1 p {
-  width: 200px;
-  position: absolute;
-  margin-left: -100px;
-  color: #AFAFAF;
-  font-size: 18pt;
+.sky .bloom:hover {
+  z-index: 10;
+  background-color: #f3f3f3;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+.sky .bloom:hover .front {
+  display: none;
+}
+.sky .bloom:hover .back {
+  display: inline-block;
+}
+.sky .bloom .info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.sky .bloom .front,
+.sky .bloom .back {
+  text-align: inherit;
+  width: auto;
+  color: #afafaf;
   font-weight: 300;
-  line-height: 22pt;
-  margin-top: 35px;
-}
-
-.bloom1:hover {
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -ms-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.bloom_wall {
-  float: left;
-  margin: 0 auto;
-  display: inline-block;
-  width: 1280px;
-  height: 874px;
-  background-image: url("../img/bloom_wall.png");
-  z-index: -1;
-  background-repeat: no-repeat;
-}
-.bloom_wall ul {
-  padding: 0;
+  float: inherit;
   margin: 0;
+}
+.sky .bloom .front {
+  font-size: 18pt;
+  line-height: 22pt;
   display: inline-block;
+}
+.sky .bloom .back {
+  font-size: 12pt;
+  line-height: 16pt;
+  display: none;
+}
+.sky .bloom .username {
+  display: block;
+  line-height: 22pt;
+}
+.sky .bloom .center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }
 
 .main_tombstone {
