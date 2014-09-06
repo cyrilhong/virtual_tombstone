@@ -23,8 +23,8 @@
 .sky .bloom:hover {
   z-index: 10;
   background-color: #f3f3f3;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
 }
 .sky .bloom:hover .front {
   display: none;

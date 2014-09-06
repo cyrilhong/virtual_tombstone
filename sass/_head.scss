@@ -54,6 +54,7 @@ $small: 320px 4;
 			float: right;
 			border-left: 1px solid #fff;
 			padding-left: 15px;
+			position: relative;
 		}.after-login{
 			img{
 				margin-top: -20px;
@@ -74,11 +75,11 @@ $small: 320px 4;
 		}
 	}
 	.profile{
-		width: 200px;
+		width: 178px;
 		height: auto;
 		display: inline-block;
 		position: absolute;
-		margin-left: -15px;
+		left: 0;
 		margin-top: 32px;
 		padding: 5px;
 		background-color: rgba(255,255,255,0.7);
@@ -89,8 +90,7 @@ $small: 320px 4;
 			position: relative;
 		}
 		li{
-			width: 200px;
-			height: 50px;
+			width: 100%;
 			border-bottom: 1px solid;
 			padding: 9px 0 14px 0;
 		}
@@ -112,12 +112,16 @@ $small: 320px 4;
 			}
 		}
 		.logout{
-			width: 200px;
 			color: rgb(127, 127, 127);
 			padding: 12px 0 0 0;
-			display: inline-block;
+			display: block;
 			font-size: 14pt;
 			text-align: center;
+		}
+		.more{
+			color: #AFAFAF;
+			text-align: center;
+			display: block;
 		}
 	}
 }

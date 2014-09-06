@@ -22,7 +22,7 @@
 		&:hover{
 			z-index: 10;
 			background-color: #f3f3f3;
-			@include opacity(0.8);
+			@include opacity(0.9);
 			.front{
       	display: none;
     	}
