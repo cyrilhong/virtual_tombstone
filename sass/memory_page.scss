@@ -9,56 +9,63 @@
 .sky{
 	min-height: 750px;
 	background-color: $bg;
-}
-.bloom1{
-	width: 133px;
-	height: 133px;
-	padding: 50px;
-	text-align: center;
-	-webkit-border-radius: 116px;
-	        border-radius: 116px;
-	background-color: #fff;
-	z-index: 1;
-	position: absolute;
-	-webkit-transition: 0.2s;
-	   -moz-transition: 0.2s;
-	    -ms-transition: 0.2s;
-	     -o-transition: 0.2s;
-	        transition: 0.2s;
-	p{
-		width: 200px;
-		position: absolute;
-		// float: left;
-		margin-left: -100px;
-		color: $darkgray;
-		font-size: 18pt;
-		font-weight: 300;
-		line-height: 22pt;
-		margin-top: 35px;
-	}
-}
-.bloom1:hover{
-	-webkit-transition: 0.2s;
-	   -moz-transition: 0.2s;
-	    -ms-transition: 0.2s;
-	     -o-transition: 0.2s;
-	        transition: 0.2s;
-	opacity: 0;
-	cursor: pointer;
-}
-.bloom_wall{
-	float: left;
-	margin: 0 auto;
-	display: inline-block;
-	width: 1280px;
-	height: 874px;
-	background-image: url('../img/bloom_wall.png');
-	z-index: -1;
-	background-repeat: no-repeat;
-	ul{
-		padding: 0;
-		margin: 0;
+	.bloom{
+		width: 133px;
+		height: 133px;
+		padding: 50px;
+		text-align: center;
+		cursor: default;
 		display: inline-block;
+		overflow: hidden;
+		background-color: #fff;
+		@include border-radius(50%);
+		&:hover{
+			z-index: 10;
+			background-color: #f3f3f3;
+			@include opacity(0.8);
+			.front{
+      	display: none;
+    	}
+    	.back{
+      	display: inline-block;
+    	}
+		}
+		.info{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .front,
+    .back{
+      text-align: inherit;
+      width: auto;
+      color: #afafaf;
+      font-weight: 300;
+      float: inherit;
+      margin: 0;
+    }
+    .front{
+      font-size: 18pt;
+      line-height: 22pt;
+      display: inline-block;
+    }
+    .back{
+      font-size: 12pt;
+      line-height: 16pt;
+      display: none;
+    }
+    .username{
+      display: block;
+      line-height: 22pt;
+    }
+    .center{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
 	}
 }
 .main_tombstone{
