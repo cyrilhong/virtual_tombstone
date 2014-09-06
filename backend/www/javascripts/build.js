@@ -12,7 +12,7 @@ $(function() {
 
   function init(user) {
     $('#build').on('submit', user, postForm);
-    $('#build_picture').on('change', changePic);
+    $('#image-cropper').cropit();
     $('#build_date').datepicker();
 
     // 時間不讓使用者自己輸入, 一定要靠 datepicker
@@ -21,11 +21,18 @@ $(function() {
 
   function postForm(e) {
       var postData = new FormData(this),
-        postUrl = '/user/' + e.data._id + '/vts';
-      if ($('#build_picture').val() === '' || $('#build_topic').val().length === 0 || $('#build_content').val().length === 0 || $('#build_date').val().length === 0) {
+        postUrl = '/user/' + e.data._id + '/vts',
+        cropitExport = $('#image-cropper').cropit('export'),
+        blob = null;
+
+      if (!!cropitExport === false || $('#build_topic').val().length === 0 || $('#build_content').val().length === 0 || $('#build_date').val().length === 0) {
         alert('請上傳照片、輸入標題、內文與日期');
         return false;
       };
+
+      blob = dataURItoBlob(cropitExport);
+      console.dir(blob);
+      postData.append('picture', blob, "cropit.png");
 
       if (posting === false) {
         posting = true;
@@ -67,5 +74,25 @@ $(function() {
     } else {
       $('.upload_img img').attr('src', '');
     };
+  };
+
+  function dataURItoBlob(dataURI) {
+    // convert base64/URLEncoded data component to raw binary data held in a string
+    var byteString;
+    if (dataURI.split(',')[0].indexOf('base64') >= 0)
+        byteString = atob(dataURI.split(',')[1]);
+    else
+        byteString = unescape(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+    // write the bytes of the string to a typed array
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    };
+
+    return new Blob([ia], {type:mimeString});
   };
 });

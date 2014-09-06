@@ -13,13 +13,13 @@ block content
   .index.memory_page
     .sky
     form#build.main_tombstone.build
-      .upload_img
+      .upload_img#image-cropper
         p
           | Upload an image
           br
           | （284*213px recomended）
-        img(src="", alt="")
-        input(type="file", accept="image/gif, image/jpeg, image/png", id="build_picture", name="picture")
+        .cropit-image-preview
+        input.cropit-image-input(type="file")
       input(type="text", placeholder="TOPIC", id="build_topic", name="topic")
       textarea(placeholder="Write Something", id="build_content", name="content")
       input(type="text", placeholder="date of death", id="build_date", name="vtDate")
