@@ -9,7 +9,7 @@
   -webkit-transform: translateZ(0);
 }
 .header a {
-  color: #FFF;
+  color: #FFF !important;
   display: block;
 }
 .header ul li {
