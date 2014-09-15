@@ -28,7 +28,7 @@ var reactLogin = React.createClass({
           <p className="ID">{this.props.data.userName}</p>
         </a>
         <div className="profile">
-          <reactUserTombstones data={this.props.data.tombstones} />
+          <reactUserTombstones data={{tombstones: this.props.data.tombstones, userID: this.props.data.userID}} />
           <a href="/logout" target="_self" className="logout">log out <i className="fa fa-sign-out"></i></a>
         </div>
       </div>
@@ -42,14 +42,14 @@ var reactUserTombstones = React.createClass({
     var tombstoneList = [],
       extraLink = null,
       tempTombstone = {},
-      length = this.props.data.length;
+      length = this.props.data.tombstones.length;
     // 組墓碑列表
     for (var i = 0; i < length; i++) {
       if (i === reactParam.tombstoneListMax) {
         break;
       };
 
-      tempTombstone = this.props.data[i];
+      tempTombstone = this.props.data.tombstones[i];
       tombstoneList.push(
         <li>
           <a href={reactParam.tombstoneUrl + '?vtid=' + tempTombstone.vtID}>
@@ -61,13 +61,13 @@ var reactUserTombstones = React.createClass({
     };
 
     // 當完全沒有墓碑時, 新增墓碑
-    if (this.props.data.length === 0) {
+    if (this.props.data.tombstones.length === 0) {
       extraLink = (
         <a href={reactParam.buildUrl} target="_self" className="build">BUILD TOMBSTONE</a>
       );
-    } else if (this.props.data.length > reactParam.tombstoneListMax) {
+    } else if (this.props.data.tombstones.length > reactParam.tombstoneListMax) {
       extraLink = (
-        <a href={reactParam.exploreUrl + '?uid=' + tempTombstone.owner_id} target="_self" className="more">MORE TOMBSTONE</a>
+        <a href={reactParam.exploreUrl + '?uid=' + this.props.data.userID} target="_self" className="more">MORE TOMBSTONE</a>
       );
     };
     return (

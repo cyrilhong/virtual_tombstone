@@ -8,6 +8,17 @@
   z-index: 11;
   -webkit-transform: translateZ(0);
 }
+.header a {
+  color: #FFF !important;
+  display: block;
+}
+.header ul li {
+  width: 10.25641%;
+  float: left;
+  margin-right: 2.5641%;
+  display: inline;
+  padding-top: 35px;
+}
 .header .logo {
   width: 28.57143%;
   float: left;
@@ -20,98 +31,91 @@
 }
 .header .logo img {
   margin-right: 10px;
-  margin-bottom: -4px;
+  vertical-align: bottom;
 }
-.header .logo p {
-  font-size: 18px;
-  color: #FFF;
-  display: inline-block;
-}
-.header .logo a {
-  color: #FFF;
-}
-.header ul li {
-  width: 10.25641%;
-  float: left;
-  margin-right: 2.5641%;
-  display: inline;
-  height: 32px;
-  padding: 35px 0 15px 0;
-  color: white;
-}
-.header ul li a {
-  color: #FFF;
-}
-.header ul .signup {
-  float: right;
-}
-.header ul .login {
+.header .login {
   float: right;
   border-left: 1px solid #fff;
   padding-left: 15px;
+  height: 47px;
+  position: relative;
+  width: 138px;
 }
-.header ul .after-login img {
-  margin-top: -20px;
+.header .after-login {
+  padding-top: 17px;
+  height: 65px;
+}
+.header .after-login a {
+  position: relative;
+}
+.header .after-login img {
   width: 50px;
+  height: 50px;
 }
-.header ul .search {
+.header .after-login p {
+  position: absolute;
+  top: 14px;
+  left: 56px;
+  color: white;
+}
+.header .after-login .profile {
+  margin-top: 13px;
+  padding: 5px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 178px;
+  position: absolute;
+  left: 0;
+}
+.header .after-login .profile a {
+  color: #AFAFAF;
+}
+.header .after-login .profile img {
+  width: 67px;
+  height: 50px;
+}
+.header .after-login .profile ul {
+  overflow: auto;
+}
+.header .after-login .profile li {
+  width: 100%;
+  margin-right: 0;
+  padding-top: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid white;
+}
+.header .after-login .profile p {
+  left: 70px;
+  color: #AFAFAF;
+}
+.header .after-login .profile span {
+  display: inline-block;
+  width: 88px;
+  overflow: hidden;
+}
+.header .after-login .profile .fa {
+  margin-left: 5px;
+}
+.header .after-login .profile .more {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.header .after-login .profile .logout {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.header .after-login .profile .logout span {
+  width: 158px;
+}
+
+.search {
   width: 220px;
   border-left: 1px solid #fff;
 }
-.header ul .search i {
+.search i {
   margin: 0 10px 0 10px;
-}
-.header ul .ID {
-  color: #FFF;
-  margin-top: -38px;
-  margin-left: 60px;
-}
-.header .profile {
-  width: 200px;
-  height: auto;
-  display: inline-block;
-  position: absolute;
-  margin-left: -15px;
-  margin-top: 32px;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-.header .profile ul, .header .profile li {
-  margin: 0;
-  display: inline-block;
-  padding: 0;
-  position: relative;
-}
-.header .profile li {
-  width: 200px;
-  height: 50px;
-  border-bottom: 1px solid;
-  padding: 9px 0 14px 0;
-}
-.header .profile img {
-  height: 50px;
-  width: auto !important;
-  display: inline-block;
-  margin-top: 0 !important;
-  margin-left: 11px;
-}
-.header .profile p {
-  color: #7f7f7f;
-  display: block;
-  margin-top: -38px;
-  margin-left: 85px;
-  position: relative;
-}
-.header .profile p i {
-  margin-left: 5px;
-}
-.header .profile .logout {
-  width: 200px;
-  color: #7f7f7f;
-  padding: 12px 0 0 0;
-  display: inline-block;
-  font-size: 14pt;
-  text-align: center;
 }
 
 /* color */

@@ -26,37 +26,11 @@
     </style>
     <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/build.css">
-    <style>
-      .upload_img {
-        position: relative;
-      }
-      .upload_img img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
-      }
-      #build_picture {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        opacity: 0;
-      }
-      .submmit {
-        border: none;
-      }
-      
-    </style>
   </head>
   <body>
     <div class="page">
       <div class="header">
-        <div class="logo"><a href="index.html" target="_self"><img src="img/logo.png" alt="logo">VIRTUAL TOMBSTONE</a>
-          <p></p>
-        </div>
+        <div class="logo"><a href="index.html" target="_self"><img src="img/logo.png" alt="logo">VIRTUAL TOMBSTONE</a></div>
         <ul>
           <li><a href="build.html" target="_self">BUILD TOMBSTONE</a></li>
           <li><a href="explore.html" target="_self">EXPLORE</a></li>
@@ -67,9 +41,10 @@
       <div class="index memory_page">
         <div class="sky"></div>
         <form id="build" class="main_tombstone build">
-          <div class="upload_img">
-            <p>Upload an image<br>（284*213px recomended）</p><img src="" alt="">
-            <input type="file" accept="image/gif, image/jpeg, image/png" id="build_picture" name="picture">
+          <div id="image-cropper" class="upload_img">
+            <p>Upload an image<br>（284*213px recomended）</p>
+            <div class="cropit-image-preview"></div>
+            <input type="file" class="cropit-image-input">
           </div>
           <input type="text" placeholder="TOPIC" id="build_topic" name="topic">
           <textarea placeholder="Write Something" id="build_content" name="content"></textarea>
@@ -92,6 +67,8 @@
     <script type="text/javascript" src="javascripts/library/TweenMax-1.13.1.min.js"></script>
     <script type="text/javascript" src="javascripts/library/ScrollToPlugin-1.7.4.min.js"></script>
     <script type="text/javascript" src="javascripts/library/packery.pkgd-1.2.2.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/jquery.cropit-0.1.7.min.js"></script>
+    <script type="text/javascript" src="javascripts/library/jquery-image-blob.min.js"></script>
     <script type="text/jsx" src="javascripts/components.js"></script>
     <script type="text/jsx" src="javascripts/main.js"></script>
     <script type="text/javascript" src="javascripts/build.js"></script>
