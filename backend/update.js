@@ -15,7 +15,6 @@ db.open(function(err, db) {
   db.collection('vts', function(err, collection) {
     var id = '5415a59e309407a359360fce';
     var vt = {
-      "_id": "5415a59e309407a359360fce",
       "owner_id": "54159495694ab8d24e4d4d5b",
       "vtPhoto": "/img/face/54159495694ab8d24e4d4d5b_1410704798274.png",
       "vtName": "柑中閃電戰神酷霸",
