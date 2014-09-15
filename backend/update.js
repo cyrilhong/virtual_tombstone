@@ -18,7 +18,7 @@ db.collection('vts', function(err, collection) {
     "owner_id": "54159495694ab8d24e4d4d5b",
     "vtPhoto": "/img/face/54159495694ab8d24e4d4d5b_1410704798274.png",
     "vtName": "柑中閃電戰神酷霸",
-    "vtDes": "年少輕狂、敢愛敢恨，中二時期做一堆蠢事，向王煦棻告白跟自殺沒兩樣。該追的不追，一起在西畫社的劉怡君其實人不錯，很後悔。至於屍停陳，我不太懂啊。",
+    "vtDes": "年少輕狂、敢愛敢恨，中二時期做一堆蠢事，記憶猶新，但是青春小鳥已不再。",
     "vtDate": "06/30/2002",
     "vtLike": 0,
     "vtStar": 0,
