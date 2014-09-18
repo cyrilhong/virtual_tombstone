@@ -15,15 +15,15 @@ block content
     form#build.main_tombstone.build
       .upload_img#image-cropper
         p
-          | Upload an image
+          | 上傳照片
           br
-          | （284*213px recomended）
+          | （建議尺寸284*213px）
         .cropit-image-preview
         input.cropit-image-input(type="file")
-      input(type="text", placeholder="TOPIC", id="build_topic", name="topic")
-      textarea(placeholder="Write Something", id="build_content", name="content")
-      input(type="text", placeholder="date of death", id="build_date", name="vtDate")
-      button.submmit(type="submit") Submit
+      input(type="text", placeholder="標題", id="build_topic", name="topic")
+      textarea(placeholder="墓碑內容", id="build_content", name="content")
+      input(type="text", placeholder="逝去日期", id="build_date", name="vtDate")
+      button.submmit(type="submit") 送出
       .shadow
 
 block javascript
