@@ -8,9 +8,12 @@ var express = require('express'),
 var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy;
 
-var FACEBOOK_APP_ID = "781476481883407";
-var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
-var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
+// var FACEBOOK_APP_ID = "781476481883407";
+// var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
+// var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
+var FACEBOOK_APP_ID = "754983211225886";
+var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
+var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
 
 // config 
 passport.use(new FacebookStrategy({
@@ -86,5 +89,5 @@ app.use('/test/',express.static(__dirname+'/vt_test'));
 // app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/www')); // Eden 開發用資料夾
 
-app.listen(80);
+app.listen(3000);
 console.log('Listening on port 80...');

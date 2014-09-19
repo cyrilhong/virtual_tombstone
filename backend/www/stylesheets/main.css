@@ -9,7 +9,7 @@
   -webkit-transform: translateZ(0);
 }
 .header a {
-  color: #FFF !important;
+  color: #FFF;
   display: block;
 }
 .header ul li {
@@ -28,6 +28,9 @@
   margin-top: 25px;
   margin-right: 87px;
   font-size: 24pt;
+}
+.header .logo a {
+  display: inline-flex;
 }
 .header .logo img {
   margin-right: 10px;
@@ -63,7 +66,7 @@
   padding: 5px;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.8);
-  width: 178px;
+  width: 186px;
   position: absolute;
   left: 0;
 }
@@ -105,6 +108,8 @@
 .header .after-login .profile .logout {
   padding-top: 10px;
   padding-bottom: 10px;
+  content: #AFAFAF;
+  text-align: center;
 }
 .header .after-login .profile .logout span {
   width: 158px;
@@ -118,6 +123,16 @@
   margin: 0 10px 0 10px;
 }
 
+@media screen and (min-width: 760px) and (max-width: 1244px) {
+  .logo {
+    font-size: 18pt !important;
+  }
+}
+@media screen and (max-width: 759px) {
+  .logo {
+    font-size: 14pt !important;
+  }
+}
 /* color */
 #footer {
   width: 100%;

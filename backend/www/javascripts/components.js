@@ -29,7 +29,7 @@ var reactLogin = React.createClass({
         </a>
         <div className="profile">
           <reactUserTombstones data={{tombstones: this.props.data.tombstones, userID: this.props.data.userID}} />
-          <a href="/logout" target="_self" className="logout">log out <i className="fa fa-sign-out"></i></a>
+          <a href="/logout" target="_self" className="logout">登出 <i className="fa fa-sign-out"></i></a>
         </div>
       </div>
     );
