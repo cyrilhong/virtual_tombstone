@@ -172,7 +172,7 @@ var reactMessage = React.createClass({
       
       // 貼文到 FB 上去
       $.post('https://graph.facebook.com/me/feed?message=我留言給 ' + this.props.data.vtInfo.name 
-        + ' - ' data.topic + '  ' + data.message 
+        + ' - ' + data.topic + '  ' + data.message 
         + '&picture=http://virtualtombstone.co/' + this.props.data.vtInfo.photo
         + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + this.props.data.msgInfo.vtID
         + '&access_token=' + this.props.data.msgInfo.token);
