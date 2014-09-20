@@ -169,9 +169,12 @@ var reactMessage = React.createClass({
       return false;
     };
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
-
+      console.log(this.props.data.vtPhoto);
       // 貼文到 FB 上去
-      $.post('https://graph.facebook.com/me/feed?message='+data.topic+ ':' + data.message+'&access_token=' + this.props.data.msgInfo.token);
+      $.post('https://graph.facebook.com/me/feed?message=' + data.topic + ': ' + data.message 
+        + '&picture=http://virtualtombstone.co/' + this.props.data.vtPhoto
+        + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + this.props.data.msgInfo.vtID
+        + '&access_token=' + this.props.data.msgInfo.token);
 
       // success
       this.setState({count: 0});
