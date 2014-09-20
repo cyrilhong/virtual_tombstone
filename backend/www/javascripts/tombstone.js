@@ -45,8 +45,12 @@ $(function() {
       msgInfo.userName = user.name;
       msgInfo.vtID = res._id;
       msgInfo.token = user.token;
+      vtInfo = {
+        name: res.vtName,
+        photo: res.vtPhoto
+      };
       React.renderComponent(
-        <reactMessage data={{msgInfo: msgInfo, vtPhoto:res.vtPhoto, maxLength: 144}} />,
+        <reactMessage data={{msgInfo: msgInfo, vtInfo:vtInfo, maxLength: 144}} />,
         document.getElementById('balloon')
       );
     };

@@ -171,8 +171,9 @@ var reactMessage = React.createClass({
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
       
       // 貼文到 FB 上去
-      $.post('https://graph.facebook.com/me/feed?message=' + data.topic + ': ' + data.message 
-        + '&picture=http://virtualtombstone.co/' + this.props.data.vtPhoto
+      $.post('https://graph.facebook.com/me/feed?message=我留言給 ' + this.props.data.vtInfo.name 
+        + ' - ' data.topic + '  ' + data.message 
+        + '&picture=http://virtualtombstone.co/' + this.props.data.vtInfo.photo
         + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + this.props.data.msgInfo.vtID
         + '&access_token=' + this.props.data.msgInfo.token);
 
