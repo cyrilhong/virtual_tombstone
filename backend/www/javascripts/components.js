@@ -171,7 +171,7 @@ var reactMessage = React.createClass({
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
 
       // 貼文到 FB 上去
-      $.post('https://graph.facebook.com/me/feed?message=test&access_token=' + this.props.data.msgInfo.token);
+      $.post('https://graph.facebook.com/me/feed?message='+data.topic+ ':' + data.message+'&access_token=' + this.props.data.msgInfo.token);
 
       // success
       this.setState({count: 0});
