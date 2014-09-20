@@ -169,7 +169,7 @@ var reactMessage = React.createClass({
       return false;
     };
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
-      console.log(this.props.data.vtPhoto);
+      
       // 貼文到 FB 上去
       $.post('https://graph.facebook.com/me/feed?message=' + data.topic + ': ' + data.message 
         + '&picture=http://virtualtombstone.co/' + this.props.data.vtPhoto
