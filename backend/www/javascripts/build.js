@@ -20,6 +20,7 @@ $(function() {
   };
 
   function postForm(e) {
+    e.preventDefault();
       var postData = new FormData(this),
         postUrl = '/user/' + e.data._id + '/vts',
         cropitExport = $('#image-cropper').cropit('export'),
@@ -45,6 +46,7 @@ $(function() {
           cache: false,
           processData:false,
           success: function(data, textStatus, jqXHR) {
+            var vt = JSON.parse(data);
             // var $picture = $('#build_picture'),
             //   $topic = $('#build_topic'),
             //   $content = $('#build_content');
@@ -53,7 +55,13 @@ $(function() {
             //   $content.val('');
             //   posting = false;
             // 直接轉址
-            location.href = reactParam.tombstoneUrl + '?vtid=' + $.parseJSON(data)._id;
+            // 貼文到 FB 上去
+            $.post('https://graph.facebook.com/me/feed?message=我建立了一個虛擬墓碑 -  ' + vt.vtName +', ' + vt.vtDes
+              + '&picture=http://virtualtombstone.co/' + vt.vtPhoto
+              + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + vt._id
+              + '&access_token=' + e.data.token, function(){
+                location.href = reactParam.tombstoneUrl + '?vtid=' + $.parseJSON(data)._id;  
+              });
           },
           error: function(jqXHR, textStatus, errorThrown) {
             posting = false
