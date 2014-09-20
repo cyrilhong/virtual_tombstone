@@ -11,6 +11,10 @@ var passport = require('passport'),
 var FACEBOOK_APP_ID = "781476481883407";
 var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
 var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
+// var FACEBOOK_APP_ID = "720220748043210";
+// var FACEBOOK_APP_SECRET = "5f126a750c9e5d9a53972d394af4aec0";
+// var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+
 
 // config 
 passport.use(new FacebookStrategy({
@@ -62,7 +66,7 @@ app.get('/user', users.getUser);
 app.get('/user/:id/vts', users.findVtsByUser);
 app.post('/user/:id/vts', ensureAuthenticated, users.addVt);  // add vts for user
 
-app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists']}));
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists', 'publish_actions']}));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/',
   failureRedirect: '/login-failed.html'

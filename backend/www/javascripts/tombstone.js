@@ -44,6 +44,7 @@ $(function() {
       msgInfo.userID = user._id;
       msgInfo.userName = user.name;
       msgInfo.vtID = res._id;
+      msgInfo.token = user.token;
       React.renderComponent(
         <reactMessage data={{msgInfo: msgInfo, maxLength: 144}} />,
         document.getElementById('balloon')
