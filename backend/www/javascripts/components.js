@@ -123,13 +123,21 @@ var reactTombstone = React.createClass({
     // 依照登入情況, 切換留言按鈕資訊
     var btnMsg = null;
     if (this.props.data.status === 'login') {
-      btnMsg = (
-        <a href='javascript:void(0)' target="_self" className="btn_message" onClick={this.clickRtMsgHandler}>
-          <span>Leave Something</span>
-          <i className="fa fa-arrow-down"></i>
-        </a>
-      );
+      // 登入中
+      if (this.props.data.user_id === this.props.data.vtInfo.owner_id) {
+        // 使用者瀏覽自己建立的墓碑, 不顯示留言按鈕
+        btnMsg = (<span></span>);
+      } else {
+        // 使用者瀏覽別人的墓碑, 顯示留言按鈕
+        btnMsg = (
+          <a href='javascript:void(0)' target="_self" className="btn_message" onClick={this.clickRtMsgHandler}>
+            <span>Leave Something</span>
+            <i className="fa fa-arrow-down"></i>
+          </a>
+        );
+      };
     } else {
+      // 未登入
       btnMsg = (
         <a href={reactParam.loginFbUrl} target="_self" className="btn_message btn_login" onClick={this.clickLoginHandler}>
           <span>留言前請先登入</span>
@@ -234,17 +242,23 @@ var reactMessage = React.createClass({
   render: function() {
     var inlineStyles = {cursor: 'url(../img/scissors.ico),cut'},
       letters = this.state.count;
-    return (
-      <div className="land">
-        <div className="write" ref="write">
-          <input placeholder="標題" type="text" ref="topic" />
-          <textarea id="write_content" placeholder="留下對墓碑的留言" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
-          <div className="restrict">{letters}/144</div>
-          <div className="author">by {this.props.data.msgInfo.userName}</div>
-          <div className="wire" data-wire="剪斷氣球的線讓留言送出" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
+    if (this.props.data.msgInfo.userID === this.props.data.vtInfo.owner_id) {
+      // 使用者瀏覽自己建立的墓碑, 不顯示留言區塊
+      return (<span></span>);
+    } else {
+      // 使用者瀏覽別人的墓碑, 顯示留言區塊
+      return (
+        <div className="land">
+          <div className="write" ref="write">
+            <input placeholder="標題" type="text" ref="topic" />
+            <textarea id="write_content" placeholder="留下對墓碑的留言" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
+            <div className="restrict">{letters}/144</div>
+            <div className="author">by {this.props.data.msgInfo.userName}</div>
+            <div className="wire" data-wire="剪斷氣球的線讓留言送出" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   }
 });
 
