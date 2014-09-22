@@ -14,6 +14,9 @@ var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
 // var FACEBOOK_APP_ID = "754983211225886";
 // var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
 // var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+// var FACEBOOK_APP_ID = "1451628085120058";
+// var FACEBOOK_APP_SECRET = "3ed332ed5bab913f68dc891a0277d62e";
+// var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
 
 
 // config 
@@ -92,3 +95,5 @@ app.use(express.static(__dirname + '/www')); // Eden 開發用資料夾
 
 app.listen(80);
 console.log('Listening on port 80...');
+// app.listen(3000);
+// console.log('Listening on port 3000...');

@@ -32,7 +32,6 @@ $(function() {
       };
 
       blob = dataURItoBlob(cropitExport);
-      console.dir(blob);
       postData.append('picture', blob, "cropit.png");
 
       if (posting === false) {
