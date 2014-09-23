@@ -36,6 +36,9 @@
   margin-right: 10px;
   vertical-align: bottom;
 }
+.header .logo .vt {
+  display: inline-block;
+}
 .header .login {
   float: right;
   border-left: 1px solid #fff;
