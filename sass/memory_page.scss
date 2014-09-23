@@ -236,6 +236,18 @@
 		background-color: #fff;
 		position: absolute;
 	}
+	.share-fb{
+		float: left;
+		clear: both;
+		padding-left: 100px;
+		padding-top: 16px;
+		input{
+			width: auto;
+			margin: 0;
+			vertical-align: initial;
+			margin-right: 2px;
+		}
+	}
 }
 
 .wire{

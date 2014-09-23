@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
+          sourcemap: true,
           outputStyle: 'expanded',
           require: 'susy',
           sassDir: 'sass',
@@ -50,7 +51,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          base: 'backend/www',
+          base: 'backend',
           livereload: true
         }
       }

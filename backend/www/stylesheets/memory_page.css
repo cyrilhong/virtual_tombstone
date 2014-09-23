@@ -248,6 +248,18 @@
   background-color: #fff;
   position: absolute;
 }
+.land .share-fb {
+  float: left;
+  clear: both;
+  padding-left: 100px;
+  padding-top: 16px;
+}
+.land .share-fb input {
+  width: auto;
+  margin: 0;
+  vertical-align: initial;
+  margin-right: 2px;
+}
 
 .wire {
   width: 7px;
@@ -317,3 +329,5 @@
 .hide {
   display: none;
 }
+
+/*# sourceMappingURL=memory_page.css.map */

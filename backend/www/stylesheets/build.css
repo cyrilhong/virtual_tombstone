@@ -1,6 +1,6 @@
 /* color */
 .build {
-  height: 585px;
+  height: 615px;
   margin-top: -700px !important;
 }
 .build .shadow {
@@ -12,6 +12,10 @@
   margin: 10px 0 0 27px;
   height: 20px;
   font-size: 14pt;
+}
+.build .share-fb input {
+  width: auto;
+  vertical-align: sub;
 }
 
 .upload_img {
@@ -96,3 +100,5 @@
   text-align: center;
   border: none;
 }
+
+/*# sourceMappingURL=build.css.map */
