@@ -8,9 +8,24 @@ var express = require('express'),
 var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy;
 
+<<<<<<< HEAD
 var FACEBOOK_APP_ID = "754983211225886";
 var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
 var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co:3000/auth/facebook/callback";
+=======
+var FACEBOOK_APP_ID = "781476481883407";
+var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
+var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
+// Cyril app ID //
+// var FACEBOOK_APP_ID = "754983211225886";
+// var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
+// var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+// who? //
+// var FACEBOOK_APP_ID = "1451628085120058";
+// var FACEBOOK_APP_SECRET = "3ed332ed5bab913f68dc891a0277d62e";
+// var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+
+>>>>>>> 59f4306038e27af8647e974f0fdc3dbe188b67f3
 
 // config 
 passport.use(new FacebookStrategy({
@@ -62,7 +77,7 @@ app.get('/user', users.getUser);
 app.get('/user/:id/vts', users.findVtsByUser);
 app.post('/user/:id/vts', ensureAuthenticated, users.addVt);  // add vts for user
 
-app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists']}));
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile','user_friends', 'read_friendlists', 'publish_actions']}));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/',
   failureRedirect: '/login-failed.html'
@@ -86,5 +101,7 @@ app.use('/test/',express.static(__dirname+'/vt_test'));
 // app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/www')); // Eden 開發用資料夾
 
-app.listen(3000);
-console.log('Listening on port 3000...');
+app.listen(80);
+console.log('Listening on port 80...');
+// app.listen(3000);
+// console.log('Listening on port 3000...');

@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------
 // Imports
-@import"susy";
+@import"susyone";
 @import"base";
 @import"head";
 @import"footer";
@@ -39,7 +39,6 @@ a{
 }
 a:link {
 	text-decoration:none;
-	color: $darkgray;
 	}
 
 p{
@@ -74,17 +73,18 @@ h2{
 	color: #FFF;
 	p{
 		@include span-columns(4 omega, 8);
-		margin: 200px 150px 0 0;
+		margin: 200px 300px 0 0;
 		font-size: 36pt;
 		width: 340px;
 		font-weight: 300;
 		color: #FFF;
 		line-height: 40pt;
+		text-align: right;
 	}
 	i{
 		font-size: 64pt;
 		position: absolute;
-		margin: -130px 0 0 140px;
+		margin: -70px 0 0 10px;
 	}
 }
 .main{
@@ -95,4 +95,25 @@ h2{
 	margin: 0 auto;
 	padding: 20px;
 	// border: 1px solid;
+}
+.login_fail{
+	height: 600px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+      p{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      a{
+      	color: $green ;
+      }
+}
+.login_fail:before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	width: 0;
+	height: 100%;
 }

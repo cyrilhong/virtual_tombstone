@@ -4,7 +4,6 @@ node_modules/*
 .DS_Store
 **/db/**
 **/.DS_Store
-.sass-cache/*
-Gruntfile.js
-package.json
+**/.sass-cache/*
 backend/www/img/*
+*.log

@@ -1,15 +1,24 @@
 /* color */
 /* Media Layout */
-/* line 14, ../../../sass/_head.scss */
 .header {
   width: 100%;
   margin: 0 auto;
   height: 82px;
-  background-color: #afafaf;
+  background-color: #AFAFAF;
   z-index: 11;
   -webkit-transform: translateZ(0);
 }
-/* line 21, ../../../sass/_head.scss */
+.header a {
+  color: #FFF;
+  display: block;
+}
+.header ul li {
+  width: 10.25641%;
+  float: left;
+  margin-right: 2.5641%;
+  display: inline;
+  padding-top: 35px;
+}
 .header .logo {
   width: 28.57143%;
   float: left;
@@ -20,118 +29,111 @@
   margin-right: 87px;
   font-size: 24pt;
 }
-/* line 27, ../../../sass/_head.scss */
+.header .logo a {
+  display: inline-flex;
+}
 .header .logo img {
   margin-right: 10px;
-  margin-bottom: -4px;
+  vertical-align: bottom;
 }
-/* line 31, ../../../sass/_head.scss */
-.header .logo p {
-  font-size: 18px;
-  color: #FFF;
-  display: inline-block;
-}
-/* line 36, ../../../sass/_head.scss */
-.header .logo a {
-  color: #FFF;
-}
-/* line 41, ../../../sass/_head.scss */
-.header ul li {
-  width: 10.25641%;
-  float: left;
-  margin-right: 2.5641%;
-  display: inline;
-  height: 32px;
-  padding: 35px 0 15px 0;
-  color: white;
-}
-/* line 46, ../../../sass/_head.scss */
-.header ul li a {
-  color: #FFF;
-}
-/* line 50, ../../../sass/_head.scss */
-.header ul .signup {
-  float: right;
-}
-/* line 53, ../../../sass/_head.scss */
-.header ul .login {
+.header .login {
   float: right;
   border-left: 1px solid #fff;
   padding-left: 15px;
+  height: 47px;
+  position: relative;
+  width: 138px;
 }
-/* line 58, ../../../sass/_head.scss */
-.header ul .after-login img {
-  margin-top: -20px;
+.header .after-login {
+  padding-top: 17px;
+  height: 65px;
+}
+.header .after-login a {
+  position: relative;
+}
+.header .after-login img {
   width: 50px;
+  height: 50px;
 }
-/* line 63, ../../../sass/_head.scss */
-.header ul .search {
+.header .after-login p {
+  position: absolute;
+  top: 14px;
+  left: 56px;
+  color: white;
+}
+.header .after-login .profile {
+  margin-top: 13px;
+  padding: 5px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 186px;
+  position: absolute;
+  left: 0;
+}
+.header .after-login .profile a {
+  color: #AFAFAF;
+}
+.header .after-login .profile img {
+  width: 67px;
+  height: 50px;
+}
+.header .after-login .profile ul {
+  overflow: auto;
+}
+.header .after-login .profile li {
+  width: 100%;
+  margin-right: 0;
+  padding-top: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid white;
+}
+.header .after-login .profile p {
+  left: 70px;
+  color: #AFAFAF;
+}
+.header .after-login .profile span {
+  display: inline-block;
+  width: 88px;
+  overflow: hidden;
+}
+.header .after-login .profile .fa {
+  margin-left: 5px;
+}
+.header .after-login .profile .more {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.header .after-login .profile .logout {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  content: #AFAFAF;
+  text-align: center;
+}
+.header .after-login .profile .logout span {
+  width: 158px;
+}
+
+.search {
   width: 220px;
   border-left: 1px solid #fff;
 }
-/* line 66, ../../../sass/_head.scss */
-.header ul .search i {
+.search i {
   margin: 0 10px 0 10px;
 }
-/* line 70, ../../../sass/_head.scss */
-.header ul .ID {
-  color: #FFF;
-  margin-top: -38px;
-  margin-left: 60px;
-}
-/* line 76, ../../../sass/_head.scss */
-.header .profile {
-  width: 200px;
-  height: auto;
-  display: inline-block;
-  position: absolute;
-  margin-left: -15px;
-  margin-top: 32px;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-/* line 85, ../../../sass/_head.scss */
-.header .profile ul, .header .profile li {
-  margin: 0;
-  display: inline-block;
-  padding: 0;
-  position: relative;
-}
-/* line 91, ../../../sass/_head.scss */
-.header .profile li {
-  width: 200px;
-  height: 50px;
-  margin-top: 5px;
-  border-bottom: 1px solid;
-  padding-bottom: 5px;
-}
-/* line 98, ../../../sass/_head.scss */
-.header .profile img {
-  height: 50px;
-  width: auto !important;
-  display: inline-block;
-  margin-top: 0 !important;
-}
-/* line 104, ../../../sass/_head.scss */
-.header .profile p {
-  color: #FFF;
-  display: block;
-  margin-top: -38px;
-  margin-left: 75px;
-  position: relative;
-}
-/* line 111, ../../../sass/_head.scss */
-.header .profile .logout {
-  width: 200px;
-  color: #FFF;
-  padding: 12px 0 0 0;
-  display: inline-block;
-  font-size: 14pt;
-  text-align: center;
-}
 
+@media screen and (min-width: 760px) and (max-width: 1244px) {
+  .logo {
+    font-size: 18pt !important;
+  }
+}
+@media screen and (max-width: 759px) {
+  .logo {
+    font-size: 14pt !important;
+  }
+}
 /* color */
-/* line 3, ../../../sass/_footer.scss */
 #footer {
   width: 100%;
   margin: 0 auto;
@@ -139,18 +141,16 @@
   padding: 6px 0 14px 0;
   text-align: center;
   display: inline-block;
-  background-color: #e6fc8b;
+  background-color: #E6FC8B;
   font-weight: 300;
   position: relative;
   z-index: 1;
 }
-/* line 14, ../../../sass/_footer.scss */
 #footer p {
   font-size: 10pt;
 }
 
 /* color */
-/* line 3, ../../../sass/_explore.scss */
 .tombstone {
   width: 16.66667%;
   float: left;
@@ -161,7 +161,6 @@
   margin-left: 20px;
 }
 
-/* line 9, ../../../sass/_explore.scss */
 .face {
   width: 142px;
   height: 420px;
@@ -169,28 +168,24 @@
   margin: 0 36px -1px 36px;
   font-size: 10pt;
   padding: 10px;
-  background-color: #cccccc;
+  background-color: #CCCCCC;
 }
-/* line 17, ../../../sass/_explore.scss */
 .face h2 {
   padding: 5px 0;
   text-align: center;
   font-weight: 400;
 }
-/* line 22, ../../../sass/_explore.scss */
 .face img {
   width: 142px;
   height: 108px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-/* line 28, ../../../sass/_explore.scss */
 .face p {
   font-size: 10pt;
   line-height: 12pt;
   text-align: center;
 }
-/* line 33, ../../../sass/_explore.scss */
 .face .date {
   width: 142px;
   padding: 10px 0;
@@ -199,19 +194,16 @@
   font-weight: 300;
 }
 
-/* line 41, ../../../sass/_explore.scss */
 .count {
   width: 162px;
   display: inline-block;
   padding: 6px 36px;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #CCCCCC;
 }
-/* line 46, ../../../sass/_explore.scss */
 .count img {
   position: absolute;
   margin: -116px 0 0 165px;
 }
-/* line 50, ../../../sass/_explore.scss */
 .count p {
   position: absolute;
   margin: -99px 0 0 167px;
@@ -221,7 +213,6 @@
 }
 
 /* color */
-/* line 3, ../../../sass/_signup.scss */
 .signup_cell {
   width: 430px;
   height: auto;
@@ -231,33 +222,27 @@
   float: none;
   font-size: 14pt;
 }
-/* line 11, ../../../sass/_signup.scss */
 .signup_cell a, .signup_cell div, .signup_cell h1, .signup_cell p, .signup_cell input {
   display: block;
   padding: 10px;
   margin: 0 auto;
 }
-/* line 16, ../../../sass/_signup.scss */
 .signup_cell h1 {
   padding: 20px;
   font-weight: 300;
 }
-/* line 20, ../../../sass/_signup.scss */
 .signup_cell .fbconnect {
   color: #fff;
   width: 350px;
   background-color: #3A5898;
 }
-/* line 25, ../../../sass/_signup.scss */
 .signup_cell i {
   margin: 0 10px;
 }
-/* line 28, ../../../sass/_signup.scss */
 .signup_cell p {
   font-size: 10pt;
-  color: #cccccc;
+  color: #CCCCCC;
 }
-/* line 32, ../../../sass/_signup.scss */
 .signup_cell .horizen {
   width: 20px;
   height: 20px;
@@ -266,7 +251,6 @@
   z-index: 12;
   display: inline-block;
 }
-/* line 39, ../../../sass/_signup.scss */
 .signup_cell .horizen p {
   font-size: 12pt;
   display: inline-block;
@@ -278,40 +262,35 @@
   z-index: 1;
   position: relative;
 }
-/* line 50, ../../../sass/_signup.scss */
 .signup_cell .horizen hr {
   width: 300px;
   position: relative;
   float: left;
   margin: -19px 0 0 -139px;
   height: 0px;
-  border: 1px solid #cccccc;
+  border: 1px solid #CCCCCC;
   z-index: 0;
 }
-/* line 60, ../../../sass/_signup.scss */
 .signup_cell input {
   width: 350px;
-  background-color: #cccccc;
+  background-color: #CCCCCC;
   color: #FFF;
   border: 0px;
   margin-bottom: 20px;
 }
-/* line 67, ../../../sass/_signup.scss */
 .signup_cell ::-webkit-input-placeholder {
   color: #fff;
   font-size: 10pt;
   font-family: "Roboto";
   font-weight: 100;
 }
-/* line 73, ../../../sass/_signup.scss */
 .signup_cell .confirm {
   width: 150px;
-  background-color: #9dbf21;
+  background-color: #9DBF21;
   color: #FFF;
   float: left;
   margin-left: 30px;
 }
-/* line 80, ../../../sass/_signup.scss */
 .signup_cell .termsofuse {
   padding: 0;
   font-size: 10pt;
@@ -322,29 +301,25 @@
   text-align: left;
   margin-left: 20px;
 }
-/* line 89, ../../../sass/_signup.scss */
 .signup_cell .termsofuse a {
   display: inline-block;
   padding: 0;
   margin: 0;
-  color: #9dbf21;
+  color: #9DBF21;
 }
-/* line 96, ../../../sass/_signup.scss */
 .signup_cell .login {
   width: 350px;
   margin: 20px 0;
   display: inline-block;
   font-size: 14pt;
 }
-/* line 101, ../../../sass/_signup.scss */
 .signup_cell .login a {
   padding: 0;
   margin: 0;
-  color: #9dbf21;
+  color: #9DBF21;
   display: inline-block;
   margin-left: 10px;
 }
-/* line 110, ../../../sass/_signup.scss */
 .signup_cell .rememberme input {
   display: inline-block;
   width: 10px;
@@ -352,7 +327,6 @@
 }
 
 /* color */
-/* line 17, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -374,111 +348,94 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 /* -------------------------------------------------------------------------*/
 /* Layout */
 /* Media Layout */
-/* line 26, ../../../sass/main.scss */
 html {
   font-size: 100%;
 }
 
-/* line 30, ../../../sass/main.scss */
 body {
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   background-color: #FFF;
-  color: #6d6d6d;
+  color: #6D6D6D;
 }
 
-/* line 37, ../../../sass/main.scss */
 a {
   color: #FFF;
 }
 
-/* line 40, ../../../sass/main.scss */
 a:link {
   text-decoration: none;
-  color: #afafaf;
 }
 
-/* line 45, ../../../sass/main.scss */
 p {
   font-size: 12pt;
   line-height: 16pt;
-  color: #6d6d6d;
+  color: #6D6D6D;
 }
 
-/* line 51, ../../../sass/main.scss */
 h1 {
   font-size: 3em;
 }
 
-/* line 54, ../../../sass/main.scss */
 h2 {
   font-size: 12pt;
 }
 
-/* line 58, ../../../sass/main.scss */
 .page {
   *zoom: 1;
   padding-left: 0px;
+  padding-left: 0rem;
   padding-right: 0px;
+  padding-right: 0rem;
   margin-left: auto;
   margin-right: auto;
-  background-color: #f2ede4;
+  background-color: #F2EDE4;
 }
-/* line 38, ../../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .page:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 67, ../../../sass/main.scss */
 .index {
   min-height: 800px;
   background-image: url("../img/bg.png");
@@ -488,7 +445,6 @@ h2 {
   background-size: cover;
   color: #FFF;
 }
-/* line 75, ../../../sass/main.scss */
 .index p {
   width: 49.09091%;
   float: right;
@@ -503,14 +459,12 @@ h2 {
   line-height: 40pt;
   text-align: right;
 }
-/* line 85, ../../../sass/main.scss */
 .index i {
   font-size: 64pt;
   position: absolute;
   margin: -70px 0 0 10px;
 }
 
-/* line 91, ../../../sass/main.scss */
 .main {
   float: none !important;
   width: 100%;
@@ -523,7 +477,6 @@ h2 {
   padding: 20px;
 }
 
-/* line 100, ../../../sass/main.scss */
 .login_fail {
   height: 600px;
   width: 100%;
@@ -531,17 +484,14 @@ h2 {
   text-align: center;
   position: relative;
 }
-/* line 106, ../../../sass/main.scss */
 .login_fail p {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 110, ../../../sass/main.scss */
 .login_fail a {
-  color: #9dbf21;
+  color: #9DBF21;
 }
 
-/* line 114, ../../../sass/main.scss */
 .login_fail:before {
   content: "";
   display: inline-block;

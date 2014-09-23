@@ -10,7 +10,7 @@
 	width: 142px;
 	height: 420px;
 	display: inline-block;
-	margin: 0 36px;
+	margin: 0 36px -1px 36px;
 	font-size: 10pt;
 	padding: 10px;
 	background-color: $gray;
@@ -43,10 +43,15 @@
 	display: inline-block;
 	padding: 6px 36px;
 	border-top: 1px solid $gray;
-	div{
-		display: inline-block;
-		i{
-			margin: 0 2px;
-		}
+	img{
+		position: absolute;
+		margin: -116px 0 0 165px;
+	}
+	p{
+		position: absolute;
+		margin: -99px 0 0 167px;
+		text-align: center;
+		font-size: 10pt;
+		width: 47px;
 	}
 }
