@@ -179,11 +179,13 @@ var reactMessage = React.createClass({
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
       
       // 貼文到 FB 上去
-      $.post('https://graph.facebook.com/me/feed?message=我留言給 ' + this.props.data.vtInfo.name 
-        + ' - ' + data.topic + '  ' + data.message 
-        + '&picture=http://virtualtombstone.co/' + this.props.data.vtInfo.photo
-        + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + this.props.data.msgInfo.vtID
-        + '&access_token=' + this.props.data.msgInfo.token);
+      if (!!$('.share-fb input:checked').val()) {
+        $.post('https://graph.facebook.com/me/feed?message=我留言給 ' + this.props.data.vtInfo.name 
+          + ' - ' + data.topic + '  ' + data.message 
+          + '&picture=http://virtualtombstone.co/' + this.props.data.vtInfo.photo
+          + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + this.props.data.msgInfo.vtID
+          + '&access_token=' + this.props.data.msgInfo.token);
+      };
 
       // success
       this.setState({count: 0});
@@ -254,6 +256,7 @@ var reactMessage = React.createClass({
             <textarea id="write_content" placeholder="留下對墓碑的留言" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
             <div className="restrict">{letters}/144</div>
             <div className="author">by {this.props.data.msgInfo.userName}</div>
+            <label className="share-fb"><input type="checkbox" />同步分享至 Facebook</label>
             <div className="wire" data-wire="剪斷氣球的線讓留言送出" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
           </div>
         </div>
