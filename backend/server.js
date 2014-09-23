@@ -7,8 +7,17 @@ var express = require('express'),
 
 var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy;
+<<<<<<< HEAD
     
 // server //
+=======
+
+<<<<<<< HEAD
+var FACEBOOK_APP_ID = "754983211225886";
+var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
+var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co:3000/auth/facebook/callback";
+=======
+>>>>>>> 16489e29c388708391ca9e1ada22bbe156e1e81a
 var FACEBOOK_APP_ID = "781476481883407";
 var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
 var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
@@ -23,6 +32,7 @@ var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
 // var FACEBOOK_APP_SECRET = "3ed332ed5bab913f68dc891a0277d62e";
 // var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
 
+>>>>>>> 59f4306038e27af8647e974f0fdc3dbe188b67f3
 
 // config 
 passport.use(new FacebookStrategy({
