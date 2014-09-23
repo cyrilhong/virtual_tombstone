@@ -25,7 +25,9 @@ module.exports = function(grunt) {
           './backend/www/build.html': './jade/partial/build.jade',
           './backend/www/explore.html': './jade/partial/explore.jade',
           './backend/www/login-failed.html': './jade/partial/login-failed.jade',
-          './backend/www/tombstone.html': './jade/partial/tombstone.jade'
+          './backend/www/tombstone.html': './jade/partial/tombstone.jade',
+          './backend/www/privacy_policy.html': './jade/partial/privacy_policy.jade',
+          './backend/www/terms_of_services.html': './jade/partial/terms_of_services.jade'
         }
       }
     },

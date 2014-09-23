@@ -1,0 +1,23 @@
+/* color */
+.privacy {
+  width: 80%;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.privacy h1 {
+  margin-bottom: 20px;
+}
+.privacy h2 {
+  font-size: 21pt;
+}
+.privacy h3 {
+  font-size: 18pt;
+}
+.privacy a:link {
+  color: #9DBF21;
+}
+.privacy hr {
+  border-top: 1px solid #CCCCCC;
+  margin-bottom: 20px;
+}
