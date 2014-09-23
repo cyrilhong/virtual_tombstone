@@ -12,10 +12,11 @@ var server = new Server('localhost', 27017, {
 });
 var db = new Db('vtdb', server);
 db.open(function(err, db) {
-  var id = '541da337f85de03a49f783ce';
-  db.collection('msgs', function(err, collection) {
+  var id = '541db2e0f85de03a49f783e7';
+  db.collection('vts', function(err, collection) {
     collection.remove({
       '_id': new BSON.ObjectID(id)
+      //'vts_id': id
     }, {
       safe: true
     }, function(err, result) {
