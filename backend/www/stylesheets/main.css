@@ -13,16 +13,19 @@
   display: block;
 }
 .header ul li {
-  width: 10.25641%;
+  width: 8.16327%;
   float: left;
-  margin-right: 2.5641%;
+  margin-right: 2.04082%;
   display: inline;
   padding-top: 35px;
 }
+.header ul li a {
+  line-height: 14pt;
+}
 .header .logo {
-  width: 28.57143%;
+  width: 21.05263%;
   float: left;
-  margin-right: 7.14286%;
+  margin-right: 5.26316%;
   display: inline;
   margin-left: 20px;
   margin-top: 25px;
@@ -35,6 +38,11 @@
 .header .logo img {
   margin-right: 10px;
   vertical-align: bottom;
+}
+.header .logo .vt {
+  display: inline-block;
+  width: 160px;
+  font-size: 16pt;
 }
 .header .login {
   float: right;
@@ -66,7 +74,7 @@
   padding: 5px;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.8);
-  width: 186px;
+  width: 176px;
   position: absolute;
   left: 0;
 }
@@ -93,7 +101,7 @@
 }
 .header .after-login .profile span {
   display: inline-block;
-  width: 88px;
+  width: 86px;
   overflow: hidden;
 }
 .header .after-login .profile .fa {
@@ -126,11 +134,17 @@
 @media screen and (min-width: 760px) and (max-width: 1244px) {
   .logo {
     font-size: 18pt !important;
+    width: 120px !important;
   }
 }
 @media screen and (max-width: 759px) {
   .logo {
     font-size: 14pt !important;
+    width: 60px !important;
+  }
+
+  .vt {
+    display: none !important;
   }
 }
 /* color */
@@ -404,7 +418,6 @@ a {
 
 a:link {
   text-decoration: none;
-  color: #AFAFAF;
 }
 
 p {
@@ -500,3 +513,5 @@ h2 {
   width: 0;
   height: 100%;
 }
+
+/*# sourceMappingURL=main.css.map */

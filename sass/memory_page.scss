@@ -4,7 +4,7 @@
 
 .memory_page{
 	background-image: none;
-	padding-bottom: 109px;
+	// padding-bottom: 109px;
 	// margin-bottom: 70px;
 }
 .sky{
@@ -236,6 +236,19 @@
 		background-color: #fff;
 		position: absolute;
 	}
+	.share-fb{
+		float: left;
+		clear: both;
+		padding-left: 74px;
+		padding-top: 6px;
+		input{
+			width: auto;
+			margin: 0;
+			vertical-align: initial;
+			margin-right: 2px;
+			display: inline-flex;
+		}
+	}
 }
 
 .wire{
@@ -243,7 +256,7 @@
 	height: 320px;
 	background-color: #fff;
 	position: absolute;
-	margin-top: 150px;
+	margin-top: 142px;
 	margin-left: 248px;
 	z-index: 0;
 	&::after{

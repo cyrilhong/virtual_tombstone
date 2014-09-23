@@ -1,0 +1,23 @@
+@import"color";
+.privacy{
+	width: 80%;
+	margin: 80px auto;
+	padding: 40px;
+	background-color: rgba(255,255,255,0.7);
+	h1{
+		margin-bottom: 20px;
+	}
+	h2{
+		font-size: 21pt;
+	}
+	h3{
+		font-size: 18pt;
+	}
+	a:link{
+		color: #9DBF21;
+	}
+	hr{
+		border-top: 1px solid #CCCCCC;
+		margin-bottom: 20px;
+	}
+}

@@ -1,7 +1,6 @@
 /* color */
 .memory_page {
   background-image: none;
-  padding-bottom: 109px;
 }
 
 .sky {
@@ -248,13 +247,26 @@
   background-color: #fff;
   position: absolute;
 }
+.land .share-fb {
+  float: left;
+  clear: both;
+  padding-left: 74px;
+  padding-top: 6px;
+}
+.land .share-fb input {
+  width: auto;
+  margin: 0;
+  vertical-align: initial;
+  margin-right: 2px;
+  display: inline-flex;
+}
 
 .wire {
   width: 7px;
   height: 320px;
   background-color: #fff;
   position: absolute;
-  margin-top: 150px;
+  margin-top: 142px;
   margin-left: 248px;
   z-index: 0;
 }
@@ -317,3 +329,5 @@
 .hide {
   display: none;
 }
+
+/*# sourceMappingURL=memory_page.css.map */
