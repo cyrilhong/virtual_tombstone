@@ -1,10 +1,10 @@
 /* color */
 .build {
-  height: 615px;
+  height: 635px;
   margin-top: -700px !important;
 }
 .build .shadow {
-  margin-top: 47px;
+  margin-top: 19px;
 }
 .build input {
   width: 284px;
@@ -16,6 +16,11 @@
 .build .share-fb input {
   width: auto;
   vertical-align: sub;
+}
+.build span {
+  display: inline-block;
+  width: 284px;
+  padding: 10px 30px;
 }
 
 .upload_img {
@@ -48,10 +53,12 @@
   position: relative;
 }
 .upload_img .cropit-image-input {
-  position: absolute;
-  bottom: 0;
+  display: block;
+  width: 120px;
+  width: 70px;
+  margin-top: -80px;
+  margin-left: 105px;
   height: auto;
-  margin: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
