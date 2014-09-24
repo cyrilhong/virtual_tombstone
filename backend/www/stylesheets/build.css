@@ -4,7 +4,8 @@
   margin-top: -700px !important;
 }
 .build .shadow {
-  margin-top: 19px;
+  margin-top: 62px;
+  position: absolute;
 }
 .build input {
   width: 284px;
