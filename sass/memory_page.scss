@@ -118,8 +118,9 @@
 		width: 778px;
 		height: 109px;
 		display: inline-block;
+		position: absolute;
 		margin-left: -217px;
-		margin-top: 236px;
+		margin-top: 313px;
 		background-image: url('../img/shadow.png');
 	}
 }
@@ -132,7 +133,7 @@
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -90px;
+	margin-top: 350px;
 	border: none;
 	background-color: $green;
 	color: #FFF!important;
