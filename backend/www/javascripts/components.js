@@ -177,7 +177,6 @@ var reactMessage = React.createClass({
       return false;
     };
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
-      
       // 貼文到 FB 上去
       if (!!$('.share-fb input:checked').val()) {
         $.post('https://graph.facebook.com/me/feed?message=我留言給 ' + this.props.data.vtInfo.name 
