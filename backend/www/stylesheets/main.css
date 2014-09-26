@@ -37,14 +37,14 @@
 }
 .header .logo img {
   margin-right: 10px;
+  float: left;
   vertical-align: bottom;
 }
 .header .logo .vt {
   width: 160px;
   height: 40px;
-  font-size: 14pt;
+  font-size: 13pt;
   position: relative;
-  float: left;
 }
 .header .login {
   float: right;
