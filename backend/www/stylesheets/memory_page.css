@@ -3,6 +3,10 @@
   background-image: none;
 }
 
+#tombstone {
+  padding-bottom: 45px;
+}
+
 .sky {
   min-height: 750px;
   background-color: #F2EDE4;
