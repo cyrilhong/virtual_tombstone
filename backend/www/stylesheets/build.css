@@ -5,6 +5,7 @@
 }
 .build .shadow {
   margin-top: 62px;
+  margin-left: -561px;
   position: absolute;
 }
 .build input {
