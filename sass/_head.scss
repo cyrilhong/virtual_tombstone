@@ -45,9 +45,11 @@ $small: 320px 4;
 			vertical-align: bottom;
 		}
 		.vt{
-			display: inline-block;
 			width: 160px;
-			font-size: 16pt;
+			height: 40px;
+			font-size: 14pt;
+			position: relative;
+			float: left;
 		}
 	}
 	.login{
