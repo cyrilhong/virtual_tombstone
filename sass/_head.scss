@@ -37,19 +37,16 @@ $small: 320px 4;
 		margin-top: 25px;
 		margin-right: 87px;
 		font-size: 24pt;
-		a{
-			display: inline-flex;
-		}
 		img{
 			margin-right: 10px;
+			float: left;
 			vertical-align: bottom;
 		}
 		.vt{
 			width: 160px;
 			height: 40px;
-			font-size: 14pt;
+			font-size: 13pt;
 			position: relative;
-			float: left;
 		}
 	}
 	.login{
