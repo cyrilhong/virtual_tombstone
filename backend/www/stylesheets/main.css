@@ -40,9 +40,11 @@
   vertical-align: bottom;
 }
 .header .logo .vt {
-  display: inline-block;
   width: 160px;
-  font-size: 16pt;
+  height: 40px;
+  font-size: 14pt;
+  position: relative;
+  float: left;
 }
 .header .login {
   float: right;
