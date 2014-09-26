@@ -32,9 +32,6 @@
   margin-right: 87px;
   font-size: 24pt;
 }
-.header .logo a {
-  display: inline-flex;
-}
 .header .logo img {
   margin-right: 10px;
   float: left;
