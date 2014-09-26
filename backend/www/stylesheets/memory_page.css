@@ -122,6 +122,7 @@
 .main_tombstone .shadow {
   width: 778px;
   height: 109px;
+  top: 297px;
   display: inline-block;
   position: absolute;
   margin-left: -217px;
@@ -133,6 +134,7 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 220px;
+  top: 277px;
   position: absolute;
   left: 0;
   right: 0;
