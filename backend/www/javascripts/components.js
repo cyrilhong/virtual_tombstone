@@ -257,7 +257,7 @@ var reactMessage = React.createClass({
             <div className="restrict">{letters}/144</div>
             <div className="author">by {this.props.data.msgInfo.userName}</div>
             <label className="share-fb"><input type="checkbox" />同步分享至 Facebook</label>
-            <div className="wire" data-wire="剪斷氣球的線讓留言送出" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
+            <div className="wire" data-wire="剪斷氣球的線讓留言送出" onClick={this.submitHandle} ref="wire"></div>
           </div>
         </div>
       );
