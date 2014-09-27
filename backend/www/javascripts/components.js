@@ -26,6 +26,7 @@ var reactLogin = React.createClass({
         <a href={reactParam.exploreUrl + '?uid=' + this.props.data.userID} target="_self">
           <img src={this.props.data.userPic} alt="face" />
           <p className="ID">{this.props.data.userName}</p>
+          <a href="#" class="navi navi001" target="_self" className="navi"><i className="fa fa-bars"></i></a>
         </a>
         <div className="profile">
           <reactUserTombstones data={{tombstones: this.props.data.tombstones, userID: this.props.data.userID}} />

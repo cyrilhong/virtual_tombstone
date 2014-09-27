@@ -54,6 +54,7 @@
 .header .after-login {
   padding-top: 17px;
   height: 65px;
+  margin-right: 32px;
 }
 .header .after-login a {
   position: relative;
@@ -64,12 +65,18 @@
 }
 .header .after-login p {
   position: absolute;
-  top: 14px;
+  width: 82px;
+  display: inline-block;
   left: 56px;
   color: white;
 }
+.header .after-login .navi {
+  margin-left: 145px;
+  top: 34px;
+  position: absolute;
+}
 .header .after-login .profile {
-  margin-top: 13px;
+  margin-top: 12px;
   padding: 5px;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.8);
@@ -105,12 +112,16 @@
 }
 .header .after-login .profile .fa {
   margin-left: 5px;
+  top: 18px;
+  position: absolute;
+  margin-left: 86px;
 }
 .header .after-login .profile .more {
   width: 100%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-bottom: 1px solid white;
 }
 .header .after-login .profile .logout {
   padding-top: 10px;
