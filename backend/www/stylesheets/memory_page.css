@@ -276,6 +276,7 @@
   margin-top: 142px;
   margin-left: 248px;
   z-index: 0;
+  cursor: url("../img/scissors.ico"), cut;
 }
 .wire::after {
   content: attr(data-wire);
@@ -290,6 +291,11 @@
   -moz-animation: wire_flash 3s infinite;
   -o-animation: wire_flash 3s infinite;
   animation: wire_flash 3s infinite;
+}
+@media (max-device-width: 1024px) {
+  .wire {
+    cursor: pointer;
+  }
 }
 
 @-webkit-keyframes wire_flash {
