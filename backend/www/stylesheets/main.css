@@ -83,6 +83,7 @@
   width: 176px;
   position: absolute;
   left: 0;
+  display: none;
 }
 .header .after-login .profile a {
   color: #AFAFAF;
