@@ -127,7 +127,6 @@
 .header .after-login .profile .logout {
   padding-top: 10px;
   padding-bottom: 10px;
-  content: #AFAFAF;
   text-align: center;
 }
 .header .after-login .profile .logout span {
@@ -147,15 +146,89 @@
     font-size: 18pt !important;
     width: 120px !important;
   }
+
+  .header ul li {
+    width: 7%;
+    padding-top: 27px;
+  }
+  .header .login {
+    padding-top: 35px;
+  }
+  .header .after-login {
+    padding-top: 17px;
+  }
 }
 @media screen and (max-width: 759px) {
+  .header ul {
+    display: inline-block;
+    width: 100%;
+  }
+  .header ul li {
+    width: 9%;
+    font-size: 11pt;
+    margin-right: 10px;
+  }
+  .header ul li a {
+    margin-top: -20px;
+  }
+  .header .login {
+    padding-top: 36px;
+    width: 72px;
+  }
+  .header .login a {
+    margin-top: -10px;
+  }
+  .header .after-login {
+    padding-top: 29px;
+    margin-right: 58px;
+    width: 30px;
+    height: 53px;
+    float: right;
+  }
+  .header .after-login .ID {
+    display: none;
+  }
+  .header .after-login .navi {
+    margin-left: 60px;
+    top: 44px;
+  }
+  .header .after-login .profile {
+    margin-left: -83px;
+    margin-top: 9px;
+  }
+  .header .after-login .profile a {
+    margin-top: 0;
+  }
+  .header .after-login .profile .fa {
+    position: initial;
+  }
+  .header .after-login .profile ul {
+    margin-top: 0;
+    margin-left: 0;
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+  .header .after-login .profile .logout span {
+    width: auto;
+    overflow: initial;
+  }
+  .header .after-login .profile .logout .fa {
+    margin-left: 0;
+  }
+
   .logo {
     font-size: 14pt !important;
-    width: 60px !important;
+    position: absolute !important;
+    width: 20px !important;
   }
 
   .vt {
     display: none !important;
+  }
+
+  .first {
+    margin-left: 60px;
   }
 }
 /* color */

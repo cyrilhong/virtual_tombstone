@@ -131,7 +131,6 @@ $small: 320px 4;
 			.logout{
 				padding-top: 10px;
 				padding-bottom: 10px;
-				content: #AFAFAF;
 				text-align: center;
 				span{
 					width: 158px;
@@ -152,21 +151,94 @@ $small: 320px 4;
     .logo{
     	font-size: 18pt!important;
     	width: 120px!important;
-    }    
+    }
+    .header{
+    	ul{
+    		li{
+    			width: 7%;
+    			padding-top: 27px;
+    		}
+    	}
+    	.login{
+    		padding-top: 35px;
+    	}
+    	.after-login{
+    		padding-top: 17px;
+    	}
+    }
 }
 
 @media screen and (max-width: 759px) {
 	.header{
-		li{
+		ul{
+			display: inline-block;
+			width: 100%;
+			li{
+				width: 9%;
+				font-size: 11pt;
+				margin-right: 10px;
+				a{
+					margin-top: -20px;
+				}
+			}
+		}
+		.login{
+			padding-top: 36px;
+			width: 72px;
 			a{
+				margin-top: -10px;
+			}
+		}
+		.after-login{
+			padding-top: 29px;
+			margin-right: 58px;
+			width: 30px;
+			height: 53px;
+			float: right;
+			.ID{
+				display: none;
+			}
+			.navi{
+				margin-left: 60px;
+				top: 44px;
+			}
+			.profile{
+				margin-left: -83px;
+				margin-top: 9px;
+				a{
+					margin-top: 0;
+				}
+				.fa{
+					position: initial;
+				}
+				ul{
+					margin-top: 0;
+					margin-left: 0;
+					position: relative;
+					left: 0;
+					width: 100%;
+				}
+				.logout{
+					span{
+						width: auto;
+						overflow: initial;
+					}
+					.fa{
+						margin-left: 0;
+					}
+				}
 			}
 		}
 	}
     .logo{
     	font-size: 14pt!important;
-    	width: 60px!important;
+    	position: absolute!important;
+    	width: 20px!important;
     }
     .vt{
     	display: none!important;
+    }
+    .first{
+    	margin-left: 60px;
     }
 }

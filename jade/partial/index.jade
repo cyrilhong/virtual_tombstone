@@ -1,18 +1,25 @@
 extends ../layout
 
 block head
-  title VIRTUAL TOMBSTONE
-  meta(name="keywords", content="virtual tombstone")
-  meta(name="description", content="")
+  title VIRTUAL MONUMENT 
+  meta(name="keywords", content="virtual monument") 
+  meta(name="viewport", content="user-scalable=no, initial-scale = 1.0,maximum-scale = 0.8,width=device-width") 
+  meta(name="description", content="virtual monument,數位紀念碑，獻給過去的美好") 
+  meta(property="og:title", content="VIRTUAL MONUMENT") 
+  meta(property="og:url", content="http://virtualmonemnt.co") 
+  meta(property="image", content="img/og.jpg")
+  
 
 block css
 
 block content
   .index
     p
-      | 紀念過去的
+      |數位紀念碑
       br
-      | 美好一切
+      | 獻給
+      br
+      | 過去的美好
       a(href="tutorial.html", target="_self")
         i(class="start fa fa-arrow-circle-right")
 
