@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AACA,YAAY;EACX,MAAM,EAAE,IAAI;;AACZ,eAAE;EACD,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,MAAM;;AAEf,cAAC;EACA,KAAK,ECPI,OAAO;;ADSjB,cAAC;EACA,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,MACV;;;AAED,sBAAsB;EACrB,OAAO,EAAE,IAAI",
+"sources": ["../../../sass/tutorial.scss","../../../sass/_color.scss"],
+"names": [],
+"file": "tutorial.css"
+}

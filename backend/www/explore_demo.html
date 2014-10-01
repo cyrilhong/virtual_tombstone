@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BUILD TOMBSTONE</title>
+    <title>EXPLORE</title>
     <meta name="keywords" content="virtual monument">
     <meta name="description" content="">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -25,9 +25,52 @@
       .header {
         position: relative;
       }
+      .breath1{
+        -webkit-animation: breath1 10s infinite;
+        -webkit-animation-fill-mode: forwards;
+      }
+      .breath2{
+        -webkit-animation: breath2 8s infinite;
+        -webkit-animation-fill-mode: forwards;
+      }
+      .breath3{
+        -webkit-animation: breath3 6s infinite;
+        -webkit-animation-fill-mode: forwards;
+      }
+      @-webkit-keyframes breath1 {
+        0% {
+          background-color: #DDDDDD;
+        }
+        50% {
+          background-color: #CCCCCC;
+        }
+        100% {
+          background-color: #DDDDDD;
+        }
+      }
+      @-webkit-keyframes breath2 {
+        0% {
+          background-color: #EDEDED;
+        }
+        50% {
+          background-color: #CCCCCC;
+        }
+        100% {
+          background-color: #EDEDED;
+        }
+      }
+      @-webkit-keyframes breath3 {
+        0% {
+          background-color: white;
+        }
+        50% {
+          background-color: #CCCCCC;
+        }
+        100% {
+          background-color: white;
+        }
+      }
     </style>
-    <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/build.css">
   </head>
   <body>
     <div class="page">
@@ -43,20 +86,13 @@
           <li id="login" class="login"></li>
         </ul>
       </div>
-      <div class="index memory_page">
-        <div class="sky"></div>
-        <form id="build" class="main_tombstone build">
-          <div id="image-cropper" class="upload_img">
-            <p>上傳照片<br>（建議尺寸284*213px）</p>
-            <div class="cropit-image-preview"></div>
-            <input type="file" class="cropit-image-input">
-          </div>
-          <input type="text" placeholder="標題" id="build_topic" name="topic">
-          <textarea placeholder="墓碑內容" id="build_content" name="content"></textarea>
-          <input type="text" placeholder="逝去日期" id="build_date" name="vtDate"><span>提示：建立墓碑後將會同步推送墓碑內容到你的Facebook動態牆上</span>
-          <button type="submit" class="submmit">送出</button>
-          <div class="shadow"></div>
-        </form>
+      <div id="main" class="main">
+        <div class="reactTombstones" data-reactid=".0">
+          <div class="tombstone" data-reactid=".0.0"><div class="face" data-reactid=".0.0.0"><a href="tombstone.html?vtid=5424d9230682ad190ec7cbff" data-reactid=".0.0.0.0"><img src="/img/face/5406a10a26b7f2901006ec60_1411701027475.png" alt="這有0人回" data-reactid=".0.0.0.0.0"></a><h2 data-reactid=".0.0.0.1">這有0人回</h2><p data-reactid=".0.0.0.2">越多人回閃爍越快</p><span class="date" data-reactid=".0.0.0.3"><span data-reactid=".0.0.0.3.0">-</span><span data-reactid=".0.0.0.3.1">07/18/2012</span></span></div><div class="count" data-reactid=".0.0.1"></div></div>
+          <div class="tombstone" data-reactid=".0.0"><div class="face breath1" data-reactid=".0.0.0"><a href="tombstone.html?vtid=5424d9230682ad190ec7cbff" data-reactid=".0.0.0.0"><img src="/img/face/5406a10a26b7f2901006ec60_1411701027475.png" alt="這有0人回" data-reactid=".0.0.0.0.0"></a><h2 data-reactid=".0.0.0.1">這有5人回</h2><p data-reactid=".0.0.0.2">越多人回閃爍越快</p><span class="date" data-reactid=".0.0.0.3"><span data-reactid=".0.0.0.3.0">-</span><span data-reactid=".0.0.0.3.1">07/18/2012</span></span></div><div class="count" data-reactid=".0.0.1"></div></div>
+          <div class="tombstone" data-reactid=".0.0"><div class="face breath2" data-reactid=".0.0.0"><a href="tombstone.html?vtid=5424d9230682ad190ec7cbff" data-reactid=".0.0.0.0"><img src="/img/face/5406a10a26b7f2901006ec60_1411701027475.png" alt="這有0人回" data-reactid=".0.0.0.0.0"></a><h2 data-reactid=".0.0.0.1">這有10人回</h2><p data-reactid=".0.0.0.2">越多人回閃爍越快</p><span class="date" data-reactid=".0.0.0.3"><span data-reactid=".0.0.0.3.0">-</span><span data-reactid=".0.0.0.3.1">07/18/2012</span></span></div><div class="count" data-reactid=".0.0.1"></div></div>
+          <div class="tombstone" data-reactid=".0.0"><div class="face breath3" data-reactid=".0.0.0"><a href="tombstone.html?vtid=5424d9230682ad190ec7cbff" data-reactid=".0.0.0.0"><img src="/img/face/5406a10a26b7f2901006ec60_1411701027475.png" alt="這有0人回" data-reactid=".0.0.0.0.0"></a><h2 data-reactid=".0.0.0.1">這有20人回</h2><p data-reactid=".0.0.0.2">越多人回閃爍越快</p><span class="date" data-reactid=".0.0.0.3"><span data-reactid=".0.0.0.3.0">-</span><span data-reactid=".0.0.0.3.1">07/18/2012</span></span></div><div class="count" data-reactid=".0.0.1"></div></div>
+        </div>
       </div>
       <div id="footer">
         <p>Copyright © 2014 VIRTUAL TOMBSTONE</p>
@@ -77,6 +113,5 @@
     <script type="text/jsx" src="javascripts/components.js"></script>
     <script type="text/jsx" src="javascripts/main.js"></script>
     <script type="text/jsx" src="javascripts/menu_toggle.js"></script>
-    <script type="text/javascript" src="javascripts/build.js"></script>
   </body>
 </html>

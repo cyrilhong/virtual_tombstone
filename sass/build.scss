@@ -107,3 +107,14 @@
 	text-align: center;
 	border: none;
 }
+@media screen and (max-width: 759px) {
+	.sky{
+		width: 100%;
+	}
+	.shadow{
+		display: none!important
+	}
+	.main_tombstone{
+		width: 345px;
+	}
+}
