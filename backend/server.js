@@ -65,7 +65,6 @@ passport.deserializeUser(function(id, done) {
 app.get('/*', function(req, res, next) {
   var isOld = req.headers.host.match(/virtualtombstone/);
   if(isOld){
-    console.log("******redirect", url);
     var url = ['http://virtualmonument.co', req.url].join('');
     res.redirect(301, url)
   } else {

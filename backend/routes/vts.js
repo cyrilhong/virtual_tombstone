@@ -47,7 +47,7 @@ exports.findById = function(req, res) {
     collection.findOne({
       '_id': new BSON.ObjectID(id)
     }, function(err, item) {
-      console.log(item);
+      //console.log(item);
       res.send(item);
     });
   });
