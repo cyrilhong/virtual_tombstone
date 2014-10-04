@@ -63,10 +63,14 @@ passport.deserializeUser(function(id, done) {
 
 // redirect
 app.get('/*', function(req, res, next) {
-  var isOld = req.headers.host.match(/virtualtombstone/),
-    url = ['http://virtualmonument.co', req.url].join('');
-  console.log("******redirect", url);
-  isOld ? res.redirect(301, url) : next();
+  var isOld = req.headers.host.match(/virtualtombstone/);
+  if(isOld){
+    console.log("******redirect", url);
+    var url = ['http://virtualmonument.co', req.url].join('');
+    res.redirect(301, url)
+  } else {
+    next();
+  }
 });
 // routes
 app.get('/vts', vts.findAll); // retrieve all virtual tombstones
