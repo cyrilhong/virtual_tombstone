@@ -11,7 +11,7 @@ var passport = require('passport'),
 // server //
 var FACEBOOK_APP_ID = "781476481883407";
 var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
-var FACEBOOK_CALLBACK_URI = "http://virtualtombstone.co/auth/facebook/callback";
+var FACEBOOK_CALLBACK_URI = "http://virtualmonument.co/auth/facebook/callback";
 
 // Cyril app ID //
 // var FACEBOOK_APP_ID = "754983211225886";
