@@ -4,8 +4,11 @@
 
 .memory_page{
 	background-image: none;
-	padding-bottom: 109px;
+	// padding-bottom: 109px;
 	// margin-bottom: 70px;
+}
+#tombstone{
+	padding-bottom: 45px;
 }
 .sky{
 	min-height: 750px;
@@ -78,7 +81,7 @@
 	padding: 30px 0;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -590px;
+	margin-top: -680px;
 	position: absolute;
 	z-index: 0;
 	img{
@@ -117,9 +120,11 @@
 	.shadow{
 		width: 778px;
 		height: 109px;
+		top: 297px;
 		display: inline-block;
+		position: absolute;
 		margin-left: -217px;
-		margin-top: 270px;
+		margin-top: 313px;
 		background-image: url('../img/shadow.png');
 	}
 }
@@ -127,12 +132,13 @@
 	-webkit-border-radius: 5px;
 	        border-radius: 5px;
 	width: 220px;
+	top: 277px;
 	position: absolute;
 	left: 0;
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -80px;
+	margin-top: 350px;
 	border: none;
 	background-color: $green;
 	color: #FFF!important;
@@ -236,6 +242,19 @@
 		background-color: #fff;
 		position: absolute;
 	}
+	.share-fb{
+		float: left;
+		clear: both;
+		padding-left: 74px;
+		padding-top: 6px;
+		input{
+			width: auto;
+			margin: 0;
+			vertical-align: initial;
+			margin-right: 2px;
+			display: inline-flex;
+		}
+	}
 }
 
 .wire{
@@ -243,9 +262,10 @@
 	height: 320px;
 	background-color: #fff;
 	position: absolute;
-	margin-top: 150px;
+	margin-top: 142px;
 	margin-left: 248px;
 	z-index: 0;
+	cursor: url("../img/scissors.ico"), cut;
 	&::after{
 		content: attr(data-wire);
 		display: block;
@@ -260,7 +280,9 @@
 		-o-animation:      wire_flash 3s infinite;
 		animation:         wire_flash 3s infinite;
 	}
-		
+	@media (max-device-width: 1024px) {
+    	cursor: pointer;
+	}
 }
 
 @-webkit-keyframes wire_flash {

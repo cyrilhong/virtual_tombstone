@@ -38,7 +38,7 @@ $(function() {
     function loginStatus(res, user) {
       var msgInfo = {};
       React.renderComponent(
-        <reactTombstone data={{vtInfo: res, status: 'login'}} />,
+        <reactTombstone data={{vtInfo: res, status: 'login', user_id: user._id}} />,
         document.getElementById('tombstone')
       );
       msgInfo.userID = user._id;
@@ -47,7 +47,8 @@ $(function() {
       msgInfo.token = user.token;
       vtInfo = {
         name: res.vtName,
-        photo: res.vtPhoto
+        photo: res.vtPhoto,
+        owner_id: res.owner_id
       };
       React.renderComponent(
         <reactMessage data={{msgInfo: msgInfo, vtInfo:vtInfo, maxLength: 144}} />,

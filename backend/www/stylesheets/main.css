@@ -13,28 +13,35 @@
   display: block;
 }
 .header ul li {
-  width: 10.25641%;
+  width: 8.16327%;
   float: left;
-  margin-right: 2.5641%;
+  margin-right: 2.04082%;
   display: inline;
   padding-top: 35px;
 }
+.header ul li a {
+  line-height: 14pt;
+}
 .header .logo {
-  width: 28.57143%;
+  width: 21.05263%;
   float: left;
-  margin-right: 7.14286%;
+  margin-right: 5.26316%;
   display: inline;
   margin-left: 20px;
   margin-top: 25px;
   margin-right: 87px;
   font-size: 24pt;
 }
-.header .logo a {
-  display: inline-flex;
-}
 .header .logo img {
   margin-right: 10px;
+  float: left;
   vertical-align: bottom;
+}
+.header .logo .vt {
+  width: 160px;
+  height: 40px;
+  font-size: 13pt;
+  position: relative;
 }
 .header .login {
   float: right;
@@ -47,6 +54,7 @@
 .header .after-login {
   padding-top: 17px;
   height: 65px;
+  margin-right: 32px;
 }
 .header .after-login a {
   position: relative;
@@ -57,18 +65,25 @@
 }
 .header .after-login p {
   position: absolute;
-  top: 14px;
+  width: 82px;
+  display: inline-block;
   left: 56px;
   color: white;
 }
+.header .after-login .navi {
+  margin-left: 145px;
+  top: 34px;
+  position: absolute;
+}
 .header .after-login .profile {
-  margin-top: 13px;
+  margin-top: 12px;
   padding: 5px;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.8);
-  width: 186px;
+  width: 176px;
   position: absolute;
   left: 0;
+  display: none;
 }
 .header .after-login .profile a {
   color: #AFAFAF;
@@ -93,22 +108,25 @@
 }
 .header .after-login .profile span {
   display: inline-block;
-  width: 88px;
+  width: 86px;
   overflow: hidden;
 }
 .header .after-login .profile .fa {
   margin-left: 5px;
+  top: 18px;
+  position: absolute;
+  margin-left: 86px;
 }
 .header .after-login .profile .more {
   width: 100%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-bottom: 1px solid white;
 }
 .header .after-login .profile .logout {
   padding-top: 10px;
   padding-bottom: 10px;
-  content: #AFAFAF;
   text-align: center;
 }
 .header .after-login .profile .logout span {
@@ -126,11 +144,91 @@
 @media screen and (min-width: 760px) and (max-width: 1244px) {
   .logo {
     font-size: 18pt !important;
+    width: 120px !important;
+  }
+
+  .header ul li {
+    width: 7%;
+    padding-top: 27px;
+  }
+  .header .login {
+    padding-top: 35px;
+  }
+  .header .after-login {
+    padding-top: 17px;
   }
 }
 @media screen and (max-width: 759px) {
+  .header ul {
+    display: inline-block;
+    width: 100%;
+  }
+  .header ul li {
+    width: 9%;
+    font-size: 11pt;
+    margin-right: 10px;
+  }
+  .header ul li a {
+    margin-top: -20px;
+  }
+  .header .login {
+    padding-top: 36px;
+    width: 72px;
+  }
+  .header .login a {
+    margin-top: -10px;
+  }
+  .header .after-login {
+    padding-top: 29px;
+    margin-right: 58px;
+    width: 30px;
+    height: 53px;
+    float: right;
+  }
+  .header .after-login .ID {
+    display: none;
+  }
+  .header .after-login .navi {
+    margin-left: 60px;
+    top: 44px;
+  }
+  .header .after-login .profile {
+    margin-left: -83px;
+    margin-top: 9px;
+  }
+  .header .after-login .profile a {
+    margin-top: 0;
+  }
+  .header .after-login .profile .fa {
+    position: initial;
+  }
+  .header .after-login .profile ul {
+    margin-top: 0;
+    margin-left: 0;
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+  .header .after-login .profile .logout span {
+    width: auto;
+    overflow: initial;
+  }
+  .header .after-login .profile .logout .fa {
+    margin-left: 0;
+  }
+
   .logo {
     font-size: 14pt !important;
+    position: absolute !important;
+    width: 20px !important;
+  }
+
+  .vt {
+    display: none !important;
+  }
+
+  .first {
+    margin-left: 60px;
   }
 }
 /* color */
@@ -404,7 +502,6 @@ a {
 
 a:link {
   text-decoration: none;
-  color: #AFAFAF;
 }
 
 p {
@@ -500,3 +597,5 @@ h2 {
   width: 0;
   height: 100%;
 }
+
+/*# sourceMappingURL=main.css.map */

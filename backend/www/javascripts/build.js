@@ -32,7 +32,6 @@ $(function() {
       };
 
       blob = dataURItoBlob(cropitExport);
-      console.dir(blob);
       postData.append('picture', blob, "cropit.png");
 
       if (posting === false) {
@@ -56,12 +55,17 @@ $(function() {
             //   posting = false;
             // 直接轉址
             // 貼文到 FB 上去
-            $.post('https://graph.facebook.com/me/feed?message=我建立了一個虛擬墓碑 -  ' + vt.vtName +', ' + vt.vtDes
-              + '&picture=http://virtualtombstone.co/' + vt.vtPhoto
-              + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + vt._id
-              + '&access_token=' + e.data.token, function(){
-                location.href = reactParam.tombstoneUrl + '?vtid=' + $.parseJSON(data)._id;  
-              });
+            // if (!!$('.share-fb input:checked').val()) {
+              // 沒有 checkbox, 直接分享到 fb
+              $.post('https://graph.facebook.com/me/feed?message=我建立了一個虛擬墓碑 -  ' + vt.vtName +', ' + vt.vtDes
+                + '&picture=http://virtualtombstone.co/' + vt.vtPhoto
+                + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + vt._id
+                + '&access_token=' + e.data.token, function(){
+                  location.href = reactParam.tombstoneUrl + '?vtid=' + $.parseJSON(data)._id;
+                });
+            // } else {
+            //   location.href = reactParam.tombstoneUrl + '?vtid=' + $.parseJSON(data)._id;
+            // };
           },
           error: function(jqXHR, textStatus, errorThrown) {
             posting = false

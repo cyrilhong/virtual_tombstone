@@ -1,10 +1,12 @@
 @import"compass/css3/opacity";
 @import"color";
 .build{
-	height: 585px;
+	height: 635px;
 	margin-top: -700px!important;
 	.shadow{
-		margin-top: 17px;
+		margin-left: -561px;
+		top: 382px;
+		position: absolute;
 	}
 	input{
 		width: 284px;
@@ -12,6 +14,17 @@
 		margin: 10px 0 0 27px;
 		height: 20px;
 		font-size: 14pt;
+	}
+	.share-fb{
+		input{
+			width: auto;
+			vertical-align: sub;			
+		}
+	}
+	span{
+		display: inline-block;
+		width: 284px;
+		padding: 10px 30px;
 	}
 }
 .upload_img{
@@ -43,10 +56,12 @@
   	position: relative;
   }
   .cropit-image-input{
-  	position: absolute;
-  	bottom: 0;
+  	display: block;
+  	width: 120px;
+  	width: 70px;
+  	margin-top: -80px;
+  	margin-left: 105px;
   	height: auto;
-  	margin: 0;
   	@include opacity(0.8);
   	&:focus{
   		outline: none;
@@ -91,4 +106,15 @@
 	padding: 10px;
 	text-align: center;
 	border: none;
+}
+@media screen and (max-width: 759px) {
+	.sky{
+		width: 100%;
+	}
+	.shadow{
+		display: none!important
+	}
+	.main_tombstone{
+		width: 345px;
+	}
 }

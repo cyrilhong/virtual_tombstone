@@ -16,6 +16,7 @@ db.open(function(err, db) {
   db.collection('vts', function(err, collection) {
     collection.remove({
       '_id': new BSON.ObjectID(id)
+      //'vts_id': id
     }, {
       safe: true
     }, function(err, result) {
