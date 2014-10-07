@@ -1,17 +1,17 @@
 /* color */
 .memory_page {
   background-image: none;
+  margin-top: 69px;
+  position: absolute;
 }
-
-#tombstone {
-  padding-bottom: 45px;
-}
-
-.sky {
-  min-height: 750px;
+.memory_page .sky {
   background-color: #F2EDE4;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding-bottom: 110px;
 }
-.sky .bloom {
+.memory_page .sky .bloom {
   width: 133px;
   height: 133px;
   padding: 50px;
@@ -24,25 +24,25 @@
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.sky .bloom:hover {
+.memory_page .sky .bloom:hover {
   z-index: 10;
   background-color: #f3f3f3;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
   opacity: 0.9;
 }
-.sky .bloom:hover .front {
+.memory_page .sky .bloom:hover .front {
   display: none;
 }
-.sky .bloom:hover .back {
+.memory_page .sky .bloom:hover .back {
   display: inline-block;
 }
-.sky .bloom .info {
+.memory_page .sky .bloom .info {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.sky .bloom .front,
-.sky .bloom .back {
+.memory_page .sky .bloom .front,
+.memory_page .sky .bloom .back {
   text-align: inherit;
   width: auto;
   color: #afafaf;
@@ -50,27 +50,32 @@
   float: inherit;
   margin: 0;
 }
-.sky .bloom .front {
+.memory_page .sky .bloom .front {
   font-size: 18pt;
   line-height: 22pt;
   display: inline-block;
 }
-.sky .bloom .back {
+.memory_page .sky .bloom .back {
   font-size: 12pt;
   line-height: 16pt;
   display: none;
 }
-.sky .bloom .username {
+.memory_page .sky .bloom .username {
   display: block;
   line-height: 22pt;
 }
-.sky .bloom .center {
+.memory_page .sky .bloom .center {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
+}
+
+#tombstone {
+  padding-bottom: 45px;
+  margin-top: 60px;
 }
 
 .main_tombstone {
@@ -82,7 +87,6 @@
   padding: 30px 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -680px;
   position: absolute;
   z-index: 0;
 }
@@ -134,13 +138,12 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 220px;
-  top: 277px;
+  top: 735px;
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 350px;
   border: none;
   background-color: #9DBF21;
   color: #FFF !important;
@@ -157,10 +160,11 @@
 }
 
 .land {
-  height: 1230px;
+  height: 1330px;
   width: 100%;
   background-color: #E9F7B0;
   margin: 0 auto;
+  margin-top: 700px;
 }
 .land .btn_message {
   width: 220px;
@@ -180,7 +184,7 @@
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 400px;
+  margin-top: 500px;
   background-color: #fff;
   display: inline-block;
   color: #AFAFAF;

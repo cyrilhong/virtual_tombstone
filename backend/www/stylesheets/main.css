@@ -6,6 +6,8 @@
   height: 82px;
   background-color: #AFAFAF;
   z-index: 11;
+  position: fixed !important;
+  margin-top: -13px;
   -webkit-transform: translateZ(0);
 }
 .header a {
@@ -17,7 +19,7 @@
   float: left;
   margin-right: 2.04082%;
   display: inline;
-  padding-top: 35px;
+  padding-top: 42px;
 }
 .header ul li a {
   line-height: 14pt;
@@ -238,11 +240,11 @@
   height: 12px;
   padding: 6px 0 14px 0;
   text-align: center;
-  display: inline-block;
   background-color: #E6FC8B;
   font-weight: 300;
-  position: relative;
+  position: fixed;
   z-index: 1;
+  bottom: 0;
 }
 #footer p {
   font-size: 10pt;
@@ -535,13 +537,16 @@ h2 {
 }
 
 .index {
-  min-height: 800px;
+  height: 1080px;
   background-image: url("../img/bg.png");
   background-repeat: no-repeat;
   max-width: 100%;
   width: 100%;
   background-size: cover;
   color: #FFF;
+  position: absolute;
+  height: 100%;
+  margin-top: 69px;
 }
 .index p {
   width: 49.09091%;
@@ -569,10 +574,12 @@ h2 {
   float: left;
   margin-right: 1.20482%;
   display: inline;
-  min-height: 700px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 20px;
+  height: 100%;
+  padding-bottom: 60px;
+  background-color: #F2EDE4;
+  width: 100%;
+  position: absolute;
+  margin-top: 69px;
 }
 
 .login_fail {
@@ -596,6 +603,12 @@ h2 {
   vertical-align: middle;
   width: 0;
   height: 100%;
+}
+
+@media screen and (max-width: 759px) {
+  .index p {
+    margin: 200px 110px 00;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

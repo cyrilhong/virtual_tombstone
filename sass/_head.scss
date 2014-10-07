@@ -17,6 +17,8 @@ $small: 320px 4;
 	height: 82px;
 	background-color: $darkgray;
 	z-index: 11;
+	position: fixed!important;
+	margin-top: -13px;
 	-webkit-transform: translateZ(0);
 	a{
 		color: #FFF;
@@ -25,7 +27,7 @@ $small: 320px 4;
 	ul{
 		li{
 			@include span-columns(1,10);
-			padding-top: 35px;
+			padding-top: 42px;
 			a{
 				line-height: 14pt;
 			}

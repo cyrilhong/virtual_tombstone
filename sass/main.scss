@@ -64,13 +64,16 @@ h2{
   }
 
 .index{
-	min-height: 800px;
+	height: 1080px;
 	background-image: url('../img/bg.png');
 	background-repeat: no-repeat;
 	max-width: 100%;
 	width: 100%;
 	background-size: cover;
 	color: #FFF;
+	position: absolute;
+	height: 100%;
+	margin-top: 69px;
 	p{
 		@include span-columns(4 omega, 8);
 		margin: 200px 300px 0 0;
@@ -90,11 +93,12 @@ h2{
 .main{
 	float: none!important;
 	@include span-columns(12,12);
-	min-height: 700px;
-	max-width: 1080px;
-	margin: 0 auto;
-	padding: 20px;
-	// border: 1px solid;
+	height: 100%;
+	padding-bottom: 60px;
+	background-color: #F2EDE4;
+	width: 100%;
+	position: absolute;
+	margin-top: 69px;
 }
 .login_fail{
 	height: 600px;
@@ -116,4 +120,12 @@ h2{
 	vertical-align: middle;
 	width: 0;
 	height: 100%;
+}
+
+@media screen and (max-width: 759px) {
+	.index{
+		p{
+			margin: 200px 110px 00;
+		}
+	}
 }

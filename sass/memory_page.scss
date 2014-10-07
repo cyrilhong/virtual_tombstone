@@ -4,73 +4,77 @@
 
 .memory_page{
 	background-image: none;
-	// padding-bottom: 109px;
-	// margin-bottom: 70px;
+	margin-top: 69px;
+	position: absolute;
+	.sky{
+		background-color: $bg;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		padding-bottom: 110px;
+		.bloom{
+			width: 133px;
+			height: 133px;
+			padding: 50px;
+			text-align: center;
+			cursor: default;
+			display: inline-block;
+			overflow: hidden;
+			background-color: #fff;
+			@include border-radius(50%);
+			&:hover{
+				z-index: 10;
+				background-color: #f3f3f3;
+				@include opacity(0.9);
+				.front{
+	      	display: none;
+	    	}
+	    	.back{
+	      	display: inline-block;
+	    	}
+			}
+			.info{
+	      position: relative;
+	      width: 100%;
+	      height: 100%;
+	    }
+	    .front,
+	    .back{
+	      text-align: inherit;
+	      width: auto;
+	      color: #afafaf;
+	      font-weight: 300;
+	      float: inherit;
+	      margin: 0;
+	    }
+	    .front{
+	      font-size: 18pt;
+	      line-height: 22pt;
+	      display: inline-block;
+	    }
+	    .back{
+	      font-size: 12pt;
+	      line-height: 16pt;
+	      display: none;
+	    }
+	    .username{
+	      display: block;
+	      line-height: 22pt;
+	    }
+	    .center{
+	      position: absolute;
+	      top: 0;
+	      right: 0;
+	      bottom: 0;
+	      left: 0;
+	      margin: auto;
+	    }
+		}
+	}
 }
 #tombstone{
 	padding-bottom: 45px;
-}
-.sky{
-	min-height: 750px;
-	background-color: $bg;
-	.bloom{
-		width: 133px;
-		height: 133px;
-		padding: 50px;
-		text-align: center;
-		cursor: default;
-		display: inline-block;
-		overflow: hidden;
-		background-color: #fff;
-		@include border-radius(50%);
-		&:hover{
-			z-index: 10;
-			background-color: #f3f3f3;
-			@include opacity(0.9);
-			.front{
-      	display: none;
-    	}
-    	.back{
-      	display: inline-block;
-    	}
-		}
-		.info{
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    .front,
-    .back{
-      text-align: inherit;
-      width: auto;
-      color: #afafaf;
-      font-weight: 300;
-      float: inherit;
-      margin: 0;
-    }
-    .front{
-      font-size: 18pt;
-      line-height: 22pt;
-      display: inline-block;
-    }
-    .back{
-      font-size: 12pt;
-      line-height: 16pt;
-      display: none;
-    }
-    .username{
-      display: block;
-      line-height: 22pt;
-    }
-    .center{
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-    }
-	}
+	margin-top: 60px;
 }
 .main_tombstone{
 	width: 344px;
@@ -81,7 +85,7 @@
 	padding: 30px 0;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -680px;
+	// margin-top: -680px;
 	position: absolute;
 	z-index: 0;
 	img{
@@ -132,13 +136,12 @@
 	-webkit-border-radius: 5px;
 	        border-radius: 5px;
 	width: 220px;
-	top: 277px;
+	top: 735px;
 	position: absolute;
 	left: 0;
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 350px;
 	border: none;
 	background-color: $green;
 	color: #FFF!important;
@@ -154,10 +157,11 @@
 	}
 }
 .land{
-	height: 1230px;
+	height: 1330px;
 	width: 100%;
 	background-color: #E9F7B0;
 	margin: 0 auto;
+	margin-top: 700px;
 	.btn_message{
 		width: 220px;
 		margin-top: 280px;
@@ -176,7 +180,7 @@
 		right: 0;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 400px;
+		margin-top: 500px;
 		background-color: #fff;
 		display: inline-block;
 		color: $darkgray;
