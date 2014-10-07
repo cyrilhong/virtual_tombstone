@@ -1,4 +1,8 @@
 /* color */
+.tutorial {
+  height: 100%;
+}
+
 .bx-viewport {
   height: 100% !important;
 }
