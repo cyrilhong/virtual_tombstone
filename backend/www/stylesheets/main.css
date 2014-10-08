@@ -49,7 +49,7 @@
   float: right;
   border-left: 1px solid #fff;
   padding-left: 15px;
-  height: 47px;
+  height: 40px;
   position: relative;
   width: 138px;
 }
@@ -154,7 +154,7 @@
     padding-top: 27px;
   }
   .header .login {
-    padding-top: 35px;
+    padding-top: 42px;
   }
   .header .after-login {
     padding-top: 17px;
@@ -174,7 +174,7 @@
     margin-top: -20px;
   }
   .header .login {
-    padding-top: 36px;
+    padding-top: 42px;
     width: 72px;
   }
   .header .login a {
