@@ -253,7 +253,7 @@ var reactMessage = React.createClass({
         <div className="land">
           <div className="write" ref="write">
             <input placeholder="標題" type="text" ref="topic" />
-            <textarea id="write_content" placeholder="留下對墓碑的留言" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
+            <textarea id="write_content" placeholder="留下對紀念碑的留言" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
             <div className="restrict">{letters}/144</div>
             <div className="author">by {this.props.data.msgInfo.userName}</div>
             <label className="share-fb"><input type="checkbox" />同步分享至 Facebook</label>
