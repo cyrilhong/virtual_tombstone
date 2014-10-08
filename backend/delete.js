@@ -12,7 +12,7 @@ var server = new Server('localhost', 27017, {
 });
 var db = new Db('vtdb', server);
 db.open(function(err, db) {
-  var id = '541db3dbf85de03a49f783ed';
+  var id = '5424d498f85de03a49f78566';
   db.collection('vts', function(err, collection) {
     collection.remove({
       '_id': new BSON.ObjectID(id)
@@ -24,3 +24,9 @@ db.open(function(err, db) {
     });
   });
 });
+
+// ----使用方法---- //
+//1.改var id//
+//2.push到server端//
+//3.server端pull//
+//4.到backend下執行node delete.js//
