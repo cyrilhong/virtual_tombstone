@@ -12,7 +12,7 @@ var server = new Server('localhost', 27017, {
 });
 var db = new Db('vtdb', server);
 db.open(function(err, db) {
-  var id = '541db425f85de03a49f783ee';
+  var id = '541db3dbf85de03a49f783ed';
   db.collection('vts', function(err, collection) {
     collection.remove({
       '_id': new BSON.ObjectID(id)
