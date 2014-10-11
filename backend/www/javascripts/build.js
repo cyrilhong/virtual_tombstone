@@ -13,7 +13,10 @@ $(function() {
   function init(user) {
     $('#build').on('submit', user, postForm);
     $('#image-cropper').cropit();
-    $('#build_date').datepicker();
+    $('#build_date').datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
 
     // 時間不讓使用者自己輸入, 一定要靠 datepicker
     $('#build_date').on('keydown', function(e) {return false;});
