@@ -86,9 +86,33 @@ var reactUserTombstones = React.createClass({
 var reactTombstones = React.createClass({
   render: function() {
     var tombstoneNodes = this.props.data.map(function(item, index, data) {
+      var breath = '';
+      if (item.vtDes >= 20) {
+        breath = 'breath3';
+      } else if (item.vtDes >= 10) {
+        breath = 'breath2';
+      } else if (item.vtDes >= 5) {
+        breath = 'breath1';
+      };
+      // return (
+      //   <div className="tombstone">
+      //     <div className="face">
+      //       <a href={reactParam.tombstoneUrl + '?vtid=' + item._id}>
+      //         <img src={item.vtPhoto} alt={item.vtName} />
+      //       </a>
+      //       <h2>{item.vtName}</h2>
+      //       <p>{item.vtDes}</p>
+      //       <span className="date">-{item.vtDate}</span>
+      //     </div>
+      //     <div className="count">
+      //       <img src="img/comment_count.png" alt="" />
+      //       <p>{item.vtMsg}</p>
+      //     </div>
+      //   </div>
+      // );
       return (
         <div className="tombstone">
-          <div className="face">
+          <div className={'face ' + breath}>
             <a href={reactParam.tombstoneUrl + '?vtid=' + item._id}>
               <img src={item.vtPhoto} alt={item.vtName} />
             </a>
@@ -96,10 +120,7 @@ var reactTombstones = React.createClass({
             <p>{item.vtDes}</p>
             <span className="date">-{item.vtDate}</span>
           </div>
-          <div className="count">
-            <img src="img/comment_count.png" alt="" />
-            <p>{item.vtMsg}</p>
-          </div>
+          <div className="count"></div>
         </div>
       );
     });

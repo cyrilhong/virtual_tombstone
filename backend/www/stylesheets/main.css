@@ -311,6 +311,54 @@
   width: 47px;
 }
 
+.breath1 {
+  -webkit-animation: breath1 10s infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.breath2 {
+  -webkit-animation: breath2 8s infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.breath3 {
+  -webkit-animation: breath3 6s infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes breath1 {
+  0% {
+    background-color: #DDDDDD;
+  }
+  50% {
+    background-color: #CCCCCC;
+  }
+  100% {
+    background-color: #DDDDDD;
+  }
+}
+@-webkit-keyframes breath2 {
+  0% {
+    background-color: #EDEDED;
+  }
+  50% {
+    background-color: #CCCCCC;
+  }
+  100% {
+    background-color: #EDEDED;
+  }
+}
+@-webkit-keyframes breath3 {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #CCCCCC;
+  }
+  100% {
+    background-color: white;
+  }
+}
 /* color */
 .signup_cell {
   width: 430px;
