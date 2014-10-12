@@ -16,3 +16,10 @@ block content
 
 block javascript
   script(type="text/jsx", src="javascripts/tombstone.js")
+  script(type="text/javascript").
+    $('#tombstone').on('mouseenter', function(e) {
+      $(e.currentTarget).css({zIndex: 1});
+    });
+    $('#sky').on('mouseleave', '.bloom', function(e) {
+      $('#tombstone').css({zIndex: 2});
+    });

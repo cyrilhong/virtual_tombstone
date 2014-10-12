@@ -1,12 +1,8 @@
 /* color */
 .build {
-  height: 635px;
+  height: 665px;
   top: 80px;
   margin-top: 0;
-}
-.build .shadow {
-  top: 382px;
-  position: absolute;
 }
 .build input {
   width: 284px;
@@ -104,7 +100,7 @@
   background-color: #9DBF21;
   color: #FFF;
   float: right;
-  margin: 10px 28px 0 0;
+  margin: 10px 28px 17px 0;
   padding: 10px;
   text-align: center;
   border: none;

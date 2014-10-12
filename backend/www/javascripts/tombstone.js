@@ -60,7 +60,7 @@ $(function() {
     function logoutStatus(res) {
       React.renderComponent(
         <reactTombstone data={{vtInfo: res, status: 'logout'}} />,
-        document.getElementById('balloon')
+        document.getElementById('tombstone')
       );
     };
   };

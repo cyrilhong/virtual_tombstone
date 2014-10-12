@@ -21,11 +21,6 @@
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,400,300">
     <link rel="image_src" href="images/og.jpg">
-    <style>
-      .header {
-        position: relative;
-      }
-    </style>
     <link rel="stylesheet" type="text/css" href="stylesheets/memory_page.css">
   </head>
   <body>
@@ -67,5 +62,13 @@
     <script type="text/jsx" src="javascripts/main.js"></script>
     <script type="text/jsx" src="javascripts/menu_toggle.js"></script>
     <script type="text/jsx" src="javascripts/tombstone.js"></script>
+    <script type="text/javascript">
+      $('#tombstone').on('mouseenter', function(e) {
+        $(e.currentTarget).css({zIndex: 1});
+      });
+      $('#sky').on('mouseleave', '.bloom', function(e) {
+        $('#tombstone').css({zIndex: 2});
+      });
+    </script>
   </body>
 </html>

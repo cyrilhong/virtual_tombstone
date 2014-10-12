@@ -1,16 +1,22 @@
 /* color */
 .memory_page {
   background-image: none;
-  margin-top: 69px;
-  position: absolute;
+  padding-top: 82px;
   background-color: #F2EDE4;
+  min-height: 856px;
+  padding-bottom: 32px;
+}
+.memory_page #sky {
+  min-height: 783px;
+  position: relative;
+  z-index: 2;
 }
 .memory_page .sky {
-  background-color: #F2EDE4;
-  height: 557px;
   width: 100%;
   position: absolute;
-  padding-bottom: 110px;
+}
+.memory_page .sky ul {
+  position: relative;
 }
 .memory_page .sky .bloom {
   width: 133px;
@@ -73,27 +79,39 @@
   left: 0;
   margin: auto;
 }
+.memory_page .sky .stamp {
+  position: absolute;
+  width: 344px;
+  height: 755px;
+  top: 88px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 #tombstone {
-  padding-bottom: 45px;
-  margin-top: 60px;
   position: absolute;
-  width: 100%;
+  width: 344px;
   margin: 0 auto;
-  bottom: 95%;
+  top: 170px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+#tombstone .shadow {
+  position: absolute;
+  bottom: -109px;
 }
 
 .main_tombstone {
   width: 344px;
-  height: 550px;
+  height: 665px;
   background-color: rgba(204, 204, 204, 0.85);
-  left: 0;
-  right: 0;
-  top: 100px;
-  padding: 30px 0;
+  padding-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
+  position: relative;
   z-index: 0;
 }
 .main_tombstone img {
@@ -119,6 +137,7 @@
   line-height: 13pt;
   color: #6D6D6D;
   text-align: left;
+  position: static;
 }
 .main_tombstone .date {
   display: inline-block;
@@ -126,17 +145,14 @@
   color: #6D6D6D;
   font-weight: 400;
   margin: 0 auto;
-  padding: 10px 30px 0px 0;
+  padding: 10px 30px 17px 0;
   float: right;
 }
 .main_tombstone .shadow {
   width: 778px;
   height: 109px;
-  top: 297px;
   display: inline-block;
-  position: absolute;
-  left: -217px;
-  margin-top: 313px;
+  margin-left: -217px;
   background-image: url("../img/shadow.png");
 }
 
@@ -170,7 +186,6 @@
   width: 100%;
   background-color: #E9F7B0;
   margin: 0 auto;
-  margin-top: 666px;
 }
 .land .btn_message {
   width: 220px;

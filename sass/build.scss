@@ -1,13 +1,9 @@
 @import"compass/css3/opacity";
 @import"color";
 .build{
-	height: 635px;
+	height: 665px;
 	top: 80px;
 	margin-top: 0;
-	.shadow{
-		top: 382px;
-		position: absolute;
-	}
 	input{
 		width: 284px;
 		display: inline-block;
@@ -102,7 +98,7 @@
 	background-color: $green;
 	color: #FFF;
 	float: right;
-	margin: 10px 28px 0 0;
+	margin: 10px 28px 17px 0;
 	padding: 10px;
 	text-align: center;
 	border: none;
