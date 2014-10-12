@@ -87,11 +87,11 @@ var reactTombstones = React.createClass({
   render: function() {
     var tombstoneNodes = this.props.data.map(function(item, index, data) {
       var breath = '';
-      if (item.vtDes >= 20) {
+      if (item.vtMsg >= 20) {
         breath = 'breath3';
-      } else if (item.vtDes >= 10) {
+      } else if (item.vtMsg >= 10) {
         breath = 'breath2';
-      } else if (item.vtDes >= 5) {
+      } else if (item.vtMsg >= 5) {
         breath = 'breath1';
       };
       // return (
