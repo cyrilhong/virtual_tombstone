@@ -296,9 +296,10 @@ var reactBlooms = React.createClass({
       var $item = $(item),
         $pFront = $item.find('.front'),
         $pBack = $item.find('.back'),
-        frontMax = Math.max($pFront.width(), $pFront.height()),
-        backMax = Math.max($pBack.width(), $pBack.height()),
-        max = Math.max(frontMax, backMax);
+        // frontMax = Math.max($pFront.width(), $pFront.height()),
+        // backMax = Math.max($pBack.width(), $pBack.height()),
+        // max = Math.max(frontMax, backMax);
+        max = Math.max($pFront.width(), $pBack.width());      
       $item.width(max);
       $item.height(max);
       $pFront.css({width: $pFront.width(), height: $pFront.height()});
