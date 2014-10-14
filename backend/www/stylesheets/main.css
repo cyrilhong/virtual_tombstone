@@ -312,40 +312,40 @@
 }
 
 .breath1 {
-  -webkit-animation: breath1 10s infinite;
+  -webkit-animation: breath1 8s infinite;
   -webkit-animation-fill-mode: forwards;
 }
 
 .breath2 {
-  -webkit-animation: breath2 8s infinite;
+  -webkit-animation: breath2 6s infinite;
   -webkit-animation-fill-mode: forwards;
 }
 
 .breath3 {
-  -webkit-animation: breath3 6s infinite;
+  -webkit-animation: breath3 5s infinite;
   -webkit-animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes breath1 {
   0% {
-    background-color: #DDDDDD;
+    background-color: #eaeaea;
   }
   50% {
     background-color: #CCCCCC;
   }
   100% {
-    background-color: #DDDDDD;
+    background-color: #eaeaea;
   }
 }
 @-webkit-keyframes breath2 {
   0% {
-    background-color: #EDEDED;
+    background-color: #f4f4f4;
   }
   50% {
     background-color: #CCCCCC;
   }
   100% {
-    background-color: #EDEDED;
+    background-color: #f4f4f4;
   }
 }
 @-webkit-keyframes breath3 {
