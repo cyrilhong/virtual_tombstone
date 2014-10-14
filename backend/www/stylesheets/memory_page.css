@@ -9,7 +9,7 @@
 .memory_page #sky {
   min-height: 783px;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 .memory_page .sky {
   width: 100%;
