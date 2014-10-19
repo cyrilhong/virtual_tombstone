@@ -9,3 +9,6 @@ node_modules/*
 **/.sass-cache/*
 backend/www/img/*
 *.log
+mongodb.txt
+virtualtombstone.sublime-project
+virtualtombstone.sublime-workspace
