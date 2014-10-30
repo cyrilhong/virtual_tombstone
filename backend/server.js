@@ -11,7 +11,7 @@ var passport = require('passport'),
 // server //
 var FACEBOOK_APP_ID = "781476481883407";
 var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
-var FACEBOOK_CALLBACK_URI = "http://virtualmonument.co/auth/facebook/callback";
+var FACEBOOK_CALLBACK_URI = "http://virtualmemorial.co/auth/facebook/callback";
 
 // Cyril app ID //
 // var FACEBOOK_APP_ID = "754983211225886";
@@ -63,9 +63,9 @@ passport.deserializeUser(function(id, done) {
 
 // redirect
 app.get('/*', function(req, res, next) {
-  var isOld = req.headers.host.match(/virtualtombstone/);
-  if(isOld){
-    var url = ['http://virtualmonument.co', req.url].join('');
+  var isOld = req.headers.host.match(/virtualtombstone/) || req.headers.host.match(/virtualmonument/);
+  if(isOld1 || isOld2) {
+    var url = ['http://virtualmemorial.co', req.url].join('');
     res.redirect(301, url)
   } else {
     next();
