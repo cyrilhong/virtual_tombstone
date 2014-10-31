@@ -1,0 +1,47 @@
+/* color */
+.privacy {
+  width: 100%;
+  padding: 100px 0px;
+  position: inherit;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.privacy h1, .privacy h2, .privacy h3, .privacy a, .privacy p {
+  padding: 0 20px;
+  width: 50%;
+  max-width: 650px;
+  margin: 20px auto;
+}
+.privacy h2, .privacy h3 {
+  border-top: 1px solid #CCCCCC;
+  padding-top: 40px;
+}
+.privacy h1 {
+  margin-bottom: 20px;
+}
+.privacy h2 {
+  font-size: 21pt;
+}
+.privacy h3 {
+  font-size: 18pt;
+}
+.privacy a, .privacy a:link {
+  color: #9DBF21;
+  display: block;
+}
+.privacy hr {
+  border-top: 1px solid #CCCCCC;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1244px) {
+  .privacy h1, .privacy h2, .privacy h3, .privacy a, .privacy p {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 759px) {
+  .privacy h1, .privacy h2, .privacy h3, .privacy a, .privacy p {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=privacy.css.map */

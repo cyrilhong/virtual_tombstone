@@ -26,10 +26,11 @@ var reactLogin = React.createClass({
         <a href={reactParam.exploreUrl + '?uid=' + this.props.data.userID} target="_self">
           <img src={this.props.data.userPic} alt="face" />
           <p className="ID">{this.props.data.userName}</p>
+          <a href="#" class="navi navi001" target="_self" className="navi"><i className="fa fa-bars"></i></a>
         </a>
         <div className="profile">
-          <reactUserTombstones data={this.props.data.tombstones} />
-          <a href="/logout" target="_self" className="logout">log out <i className="fa fa-sign-out"></i></a>
+          <reactUserTombstones data={{tombstones: this.props.data.tombstones, userID: this.props.data.userID}} />
+          <a href="/logout" target="_self" className="logout">登出 <i className="fa fa-sign-out"></i></a>
         </div>
       </div>
     );
@@ -42,14 +43,14 @@ var reactUserTombstones = React.createClass({
     var tombstoneList = [],
       extraLink = null,
       tempTombstone = {},
-      length = this.props.data.length;
+      length = this.props.data.tombstones.length;
     // 組墓碑列表
     for (var i = 0; i < length; i++) {
       if (i === reactParam.tombstoneListMax) {
         break;
       };
 
-      tempTombstone = this.props.data[i];
+      tempTombstone = this.props.data.tombstones[i];
       tombstoneList.push(
         <li>
           <a href={reactParam.tombstoneUrl + '?vtid=' + tempTombstone.vtID}>
@@ -61,13 +62,13 @@ var reactUserTombstones = React.createClass({
     };
 
     // 當完全沒有墓碑時, 新增墓碑
-    if (this.props.data.length === 0) {
+    if (this.props.data.tombstones.length === 0) {
       extraLink = (
         <a href={reactParam.buildUrl} target="_self" className="build">BUILD TOMBSTONE</a>
       );
-    } else if (this.props.data.length > reactParam.tombstoneListMax) {
+    } else if (this.props.data.tombstones.length > reactParam.tombstoneListMax) {
       extraLink = (
-        <a href={reactParam.exploreUrl + '?uid=' + tempTombstone.owner_id} target="_self" className="more">MORE TOMBSTONE</a>
+        <a href={reactParam.exploreUrl + '?uid=' + this.props.data.userID} target="_self" className="more">MORE TOMBSTONE</a>
       );
     };
     return (
@@ -85,9 +86,33 @@ var reactUserTombstones = React.createClass({
 var reactTombstones = React.createClass({
   render: function() {
     var tombstoneNodes = this.props.data.map(function(item, index, data) {
+      var breath = '';
+      if (item.vtMsg >= 10) {
+        breath = 'breath3';
+      } else if (item.vtMsg >= 5) {
+        breath = 'breath2';
+      } else if (item.vtMsg >= 3) {
+        breath = 'breath1';
+      };
+      // return (
+      //   <div className="tombstone">
+      //     <div className="face">
+      //       <a href={reactParam.tombstoneUrl + '?vtid=' + item._id}>
+      //         <img src={item.vtPhoto} alt={item.vtName} />
+      //       </a>
+      //       <h2>{item.vtName}</h2>
+      //       <p>{item.vtDes}</p>
+      //       <span className="date">-{item.vtDate}</span>
+      //     </div>
+      //     <div className="count">
+      //       <img src="img/comment_count.png" alt="" />
+      //       <p>{item.vtMsg}</p>
+      //     </div>
+      //   </div>
+      // );
       return (
         <div className="tombstone">
-          <div className="face">
+          <div className={'face ' + breath}>
             <a href={reactParam.tombstoneUrl + '?vtid=' + item._id}>
               <img src={item.vtPhoto} alt={item.vtName} />
             </a>
@@ -95,10 +120,7 @@ var reactTombstones = React.createClass({
             <p>{item.vtDes}</p>
             <span className="date">-{item.vtDate}</span>
           </div>
-          <div className="count">
-            <img src="img/comment_count.png" alt="" />
-            <p>{item.vtMsg}</p>
-          </div>
+          <div className="count"></div>
         </div>
       );
     });
@@ -116,19 +138,28 @@ var reactTombstone = React.createClass({
     $.cookie('beforeLoginURL', location.href.replace(location.origin, ''));
   },
   clickRtMsgHandler: function() {
+    $('.wire').addClass('animation');
     TweenMax.to(window, 1, {scrollTo: {y: $('.write')[0].offsetTop}});
   },
   render: function() {
     // 依照登入情況, 切換留言按鈕資訊
     var btnMsg = null;
     if (this.props.data.status === 'login') {
-      btnMsg = (
-        <a href='javascript:void(0)' target="_self" className="btn_message" onClick={this.clickRtMsgHandler}>
-          <span>Leave Something</span>
-          <i className="fa fa-arrow-down"></i>
-        </a>
-      );
+      // 登入中
+      if (this.props.data.user_id === this.props.data.vtInfo.owner_id) {
+        // 使用者瀏覽自己建立的墓碑, 不顯示留言按鈕
+        btnMsg = (<span></span>);
+      } else {
+        // 使用者瀏覽別人的墓碑, 顯示留言按鈕
+        btnMsg = (
+          <a href='javascript:void(0)' target="_self" className="btn_message" onClick={this.clickRtMsgHandler}>
+            <span>Leave Something</span>
+            <i className="fa fa-arrow-down"></i>
+          </a>
+        );
+      };
     } else {
+      // 未登入
       btnMsg = (
         <a href={reactParam.loginFbUrl} target="_self" className="btn_message btn_login" onClick={this.clickLoginHandler}>
           <span>留言前請先登入</span>
@@ -163,7 +194,20 @@ var reactMessage = React.createClass({
     data.owner_id = this.props.data.msgInfo.userID;
     data.topic = this.refs.topic.getDOMNode().value.trim();
     data.message = this.refs.message.getDOMNode().value.trim();
+    if (data.topic.length === 0 || data.message.length === 0) {
+      alert('請輸入標題與內文');
+      return false;
+    };
     $.when($.post('/vts/' + this.props.data.msgInfo.vtID + '/msgs', data)).then(function(res, status, e) {
+      // 貼文到 FB 上去
+      if (!!$('.share-fb input:checked').val()) {
+        $.post('https://graph.facebook.com/me/feed?message=我留言給 ' + this.props.data.vtInfo.name 
+          + ' - ' + data.topic + '  ' + data.message 
+          + '&picture=http://virtualtombstone.co/' + this.props.data.vtInfo.photo
+          + '&link=http://virtualtombstone.co/tombstone.html?vtid=' + this.props.data.msgInfo.vtID
+          + '&access_token=' + this.props.data.msgInfo.token);
+      };
+
       // success
       this.setState({count: 0});
       $(this.refs.wire.getDOMNode()).addClass('wire_off');
@@ -211,6 +255,8 @@ var reactMessage = React.createClass({
         $('.sky ul').packery('appended', $html);
         this.refs.topic.getDOMNode().value = '';
         this.refs.message.getDOMNode().value = '';
+
+        $('.wire').removeClass('animation');
       }.bind(this), 3200);
     }.bind(this), function() {
       // fail
@@ -219,17 +265,24 @@ var reactMessage = React.createClass({
   render: function() {
     var inlineStyles = {cursor: 'url(../img/scissors.ico),cut'},
       letters = this.state.count;
-    return (
-      <div className="land">
-        <div className="write" ref="write">
-          <input placeholder="TOPIC" type="text" ref="topic" />
-          <textarea id="write_content" placeholder="Write Something" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
-          <div className="restrict">{letters}/144</div>
-          <div className="author">by {this.props.data.msgInfo.userName}</div>
-          <div className="wire" style={inlineStyles} onClick={this.submitHandle} ref="wire"></div>
+    if (this.props.data.msgInfo.userID === this.props.data.vtInfo.owner_id) {
+      // 使用者瀏覽自己建立的墓碑, 不顯示留言區塊
+      return (<span></span>);
+    } else {
+      // 使用者瀏覽別人的墓碑, 顯示留言區塊
+      return (
+        <div className="land">
+          <div className="write" ref="write">
+            <input placeholder="標題" type="text" ref="topic" />
+            <textarea id="write_content" placeholder="留下對紀念碑的留言" maxLength={this.props.data.maxLength} onChange={this.countLetters} ref="message"></textarea>
+            <div className="restrict">{letters}/144</div>
+            <div className="author">by {this.props.data.msgInfo.userName}</div>
+            <label className="share-fb"><input type="checkbox" />同步分享至 Facebook</label>
+            <div className="wire" data-wire="剪斷氣球的線讓留言送出" onClick={this.submitHandle} ref="wire"></div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   }
 });
 
@@ -243,9 +296,9 @@ var reactBlooms = React.createClass({
       var $item = $(item),
         $pFront = $item.find('.front'),
         $pBack = $item.find('.back'),
-        frontMax = Math.max($pFront.width(), $pFront.height()),
-        backMax = Math.max($pBack.width(), $pBack.height()),
-        max = Math.max(frontMax, backMax);
+        frontArea = $pFront.width() * $pFront.height(),
+        backArea = $pBack.width() * $pBack.height(),
+        max = Math.sqrt(Math.max(frontArea, backArea)) >> 0;
       $item.width(max);
       $item.height(max);
       $pFront.css({width: $pFront.width(), height: $pFront.height()});

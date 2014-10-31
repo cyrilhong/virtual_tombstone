@@ -1,52 +1,101 @@
 @import"color";
-
-.tombstone{
-	@include span-columns(1,5);
-	width: 200px;
-	padding: 20px 0;
-	margin-left: 20px;
+.tombstone {
+  @include span-columns(1, 5);
+  width: 200px;
+  padding: 20px 0;
+  margin-left: 20px;
 }
-.face{
-	width: 142px;
-	height: 420px;
-	display: inline-block;
-	margin: 0 36px;
-	font-size: 10pt;
-	padding: 10px;
-	background-color: $gray;
-	h2{
-		padding: 5px 0;
-		text-align: center;
-		font-weight: 400;
-	}
-	img{
-		width: 142px;
-		height: 108px;
-		-webkit-border-radius: 8px;
-		        border-radius: 8px;
-	}
-	p{
-		font-size: 10pt;
-		line-height: 12pt;
-		text-align: center;
-	}
-	.date{
-		width: 142px;
-		padding: 10px 0;
-		display: inline-block;
-		text-align: center;
-		font-weight: 300;
-	}
+.face {
+  width: 142px;
+  height: 420px;
+  display: inline-block;
+  margin: 0 36px -1px 36px;
+  font-size: 10pt;
+  padding: 10px;
+  background-color: $gray;
+  h2 {
+    padding: 5px 0;
+    text-align: center;
+    font-weight: 400;
+  }
+  img {
+    width: 142px;
+    height: 108px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+  }
+  p {
+    font-size: 10pt;
+    line-height: 12pt;
+    text-align: center;
+  }
+  .date {
+    width: 142px;
+    padding: 10px 0;
+    display: inline-block;
+    text-align: center;
+    font-weight: 300;
+  }
 }
-.count{
-	width: 162px;
-	display: inline-block;
-	padding: 6px 36px;
-	border-top: 1px solid $gray;
-	div{
-		display: inline-block;
-		i{
-			margin: 0 2px;
-		}
-	}
+.count {
+  width: 162px;
+  display: inline-block;
+  padding: 6px 36px;
+  border-top: 1px solid $gray;
+  img {
+    position: absolute;
+    margin: -116px 0 0 165px;
+  }
+  p {
+    position: absolute;
+    margin: -99px 0 0 167px;
+    text-align: center;
+    font-size: 10pt;
+    width: 47px;
+  }
+}
+.breath1 {
+  -webkit-animation: breath1 10s infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+.breath2 {
+  -webkit-animation: breath2 8s infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+.breath3 {
+  -webkit-animation: breath3 6s infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes breath1 {
+  0% {
+    background-color: #DDDDDD;
+  }
+  50% {
+    background-color: #CCCCCC;
+  }
+  100% {
+    background-color: #DDDDDD;
+  }
+}
+@-webkit-keyframes breath2 {
+  0% {
+    background-color: #EDEDED;
+  }
+  50% {
+    background-color: #CCCCCC;
+  }
+  100% {
+    background-color: #EDEDED;
+  }
+}
+@-webkit-keyframes breath3 {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #CCCCCC;
+  }
+  100% {
+    background-color: white;
+  }
 }

@@ -2,50 +2,28 @@ extends ../layout
 
 block head
   title BUILD TOMBSTONE
-  meta(name="keywords", content="virtual tombstone")
+  meta(name="keywords", content="virtual monument")
   meta(name="description", content="")
 
 block css
   link(rel="stylesheet", type="text/css", href="stylesheets/memory_page.css")
   link(rel="stylesheet", type="text/css", href="stylesheets/build.css")
-  style.
-    .upload_img {
-      position: relative;
-    }
-    .upload_img img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 0;
-    }
-    #build_picture {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      opacity: 0;
-    }
-    .submmit {
-      border: none;
-    }
 
 block content
   .index.memory_page
-    .sky
     form#build.main_tombstone.build
-      .upload_img
+      .upload_img#image-cropper
         p
-          | Upload an image
+          | 上傳照片
           br
-          | （284*213px recomended）
-        img(src="", alt="")
-        input(type="file", accept="image/gif, image/jpeg, image/png", id="build_picture", name="picture")
-      input(type="text", placeholder="TOPIC", id="build_topic", name="topic")
-      textarea(placeholder="Write Something", id="build_content", name="content")
-      input(type="text", placeholder="date of death", id="build_date", name="vtDate")
-      button.submmit(type="submit") Submit
+          | （建議尺寸284*213px）
+        .cropit-image-preview
+        input.cropit-image-input(type="file")
+      input(type="text", placeholder="標題", id="build_topic", name="topic")
+      textarea(placeholder="紀念碑內容", id="build_content", name="content")
+      input(type="text", placeholder="逝去日期", id="build_date", name="vtDate")
+      span 提示：建立紀念碑後將會同步推送紀念碑內容到你的Facebook動態牆上
+      button.submmit(type="submit") 送出
       .shadow
 
 block javascript

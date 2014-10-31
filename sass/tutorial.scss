@@ -1,0 +1,27 @@
+@import"color";
+.tutorial{
+	z-index: 1;
+}
+.bx-viewport{
+	height: 100%!important;
+	h1{
+		text-align: center;
+		margin: 20px 0;
+	}
+	a{
+		color: $darkgray;
+	}
+	p{
+		margin: 10px 0;
+		padding: 0 10px
+	}
+	.bxslider{
+		padding: 5px;
+	}
+}
+
+@media screen and (max-width: 999px) {
+	.bx-controls-direction{
+		display: none;
+	}
+}

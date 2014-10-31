@@ -17,90 +17,229 @@ $small: 320px 4;
 	height: 82px;
 	background-color: $darkgray;
 	z-index: 11;
+	position: fixed!important;
 	-webkit-transform: translateZ(0);
-	.logo{
-		@include span-columns(1,8);
-		width: 205px;
-		margin-left: 20px;
-		margin-top: 15px;
-		margin-right: 87px;
+	a{
+		color: #FFF;
+		display: block;
 	}
 	ul{
 		li{
-			@include span-columns(1,8);
-			height: 32px;
-			padding: 35px 0 15px 0;
-			color: white;
+			@include span-columns(1,10);
+			padding-top: 42px;
 			a{
-				color: #FFF;
+				line-height: 14pt;
 			}
-		}
-		.signup{
-			@include span-columns(1 ,8);
-		}
-		.login{
-			@include span-columns(1,8);
-		}.after-login{
-			img{
-				margin-top: -20px;
-				width: 50px;
-			}
-		}
-		.search{
-			width: 220px;
-			border-left: 1px solid #fff;
-			i{
-				margin: 0 10px 0 10px;
-			}
-		}
-		.ID{
-			color: #FFF;
-			margin-top: -38px;
-			margin-left: 60px;
 		}
 	}
-	.profile{
-		width: 200px;
-		height: auto;
-		display: inline-block;
-		position: absolute;
-		margin-left: -11px;
-		margin-top: 32px;
-		padding: 5px;
-		background-color: rgba(255,255,255,0.2);
-		ul ,li{
-			margin: 0;
-			display: inline-block;
-			padding: 0;
+	.logo{
+		@include span-columns(1,4);
+		margin-left: 20px;
+		margin-top: 25px;
+		margin-right: 87px;
+		font-size: 24pt;
+		img{
+			margin-right: 10px;
+			float: left;
+			vertical-align: bottom;
+		}
+		.vt{
+			width: 160px;
+			height: 40px;
+			font-size: 13pt;
 			position: relative;
 		}
-		li{
-			width: 200px;
-			height: 50px;
-			margin-top: 5px;
-			border-bottom: 1px solid;
-			padding-bottom: 5px;
+	}
+	.login{
+		float: right;
+		border-left: 1px solid #fff;
+		padding-left: 15px;
+		height: 40px;
+		position: relative;
+		width: 138px;
+	}
+	.after-login{
+		padding-top: 17px;
+		height: 65px;
+		margin-right: 32px;
+		a{
+			position: relative;
 		}
 		img{
+			width: 50px;
 			height: 50px;
-			width: auto!important;
-			display: inline-block;
-			margin-top: 0!important;
 		}
 		p{
-			color: #FFF;
-			display: block;
-			margin-top: -38px;
-			margin-left: 75px;
-			position: relative;
-		}
-		.logout{
-			width: 200px;
-			color: #FFF;
-			padding: 12px 0 0 0;
+			position: absolute;
+			width: 82px;
 			display: inline-block;
-			font-size: 14pt;
-			text-align: center;
+			left: 56px;
+			color: white;
+		}
+		.navi{
+			margin-left: 145px;
+			top: 34px;
+			position: absolute;
+		}
+		.profile{
+			margin-top: 12px;
+			padding: 5px;
+			background-color: white;
+			background-color: transparentize(white, 0.2);
+			width: 176px;
+			position: absolute;
+			left: 0;
+			display: none;
+			a{
+				color: $darkgray;
+			}
+			img{
+				width: 67px;
+				height: 50px;
+			}
+			ul{
+				overflow: auto;
+			}
+			li{
+				width: 100%;
+				margin-right: 0;
+				padding-top: 10px;
+				padding-bottom: 14px;
+				border-bottom: 1px solid white;
+			}
+			p{
+				left: 70px;
+				color: $darkgray;
+			}
+			span{
+				display: inline-block;
+				width: 86px;
+				overflow: hidden;
+			}
+			.fa{
+				margin-left: 5px;
+				top: 18px;
+				position: absolute;
+				margin-left: 86px;
+			}
+			.more{
+				width: 100%;
+				text-align: center;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid white;
+			}
+			.logout{
+				padding-top: 10px;
+				padding-bottom: 10px;
+				text-align: center;
+				span{
+					width: 158px;
+				}
+			}
 		}
 	}
+}
+.search{
+	width: 220px;
+	border-left: 1px solid #fff;
+	i{
+		margin: 0 10px 0 10px;
+	}
+}
+
+@media screen and (min-width: 760px) and (max-width: 1244px) {
+    .logo{
+    	font-size: 18pt!important;
+    	width: 120px!important;
+    }
+    .header{
+    	ul{
+    		li{
+    			width: 7%;
+    			padding-top: 27px;
+    		}
+    	}
+    	.login{
+    		padding-top: 42px;
+    	}
+    	.after-login{
+    		padding-top: 17px;
+    	}
+    }
+}
+
+@media screen and (max-width: 759px) {
+	.header{
+		ul{
+			display: inline-block;
+			width: 100%;
+			li{
+				width: 9%;
+				font-size: 11pt;
+				margin-right: 10px;
+				a{
+					margin-top: -20px;
+				}
+			}
+		}
+		.login{
+			padding-top: 42px;
+			width: 72px;
+			a{
+				margin-top: -10px;
+			}
+		}
+		.after-login{
+			padding-top: 29px;
+			margin-right: 58px;
+			width: 30px;
+			height: 53px;
+			float: right;
+			.ID{
+				display: none;
+			}
+			.navi{
+				margin-left: 60px;
+				top: 44px;
+			}
+			.profile{
+				margin-left: -83px;
+				margin-top: 9px;
+				a{
+					margin-top: 0;
+				}
+				.fa{
+					position: initial;
+				}
+				ul{
+					margin-top: 0;
+					margin-left: 0;
+					position: relative;
+					left: 0;
+					width: 100%;
+				}
+				.logout{
+					span{
+						width: auto;
+						overflow: initial;
+					}
+					.fa{
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+    .logo{
+    	font-size: 14pt!important;
+    	position: absolute!important;
+    	width: 20px!important;
+    }
+    .vt{
+    	display: none!important;
+    }
+    .first{
+    	margin-left: 60px;
+    }
 }

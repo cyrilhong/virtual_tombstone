@@ -38,14 +38,20 @@ $(function() {
     function loginStatus(res, user) {
       var msgInfo = {};
       React.renderComponent(
-        <reactTombstone data={{vtInfo: res, status: 'login'}} />,
+        <reactTombstone data={{vtInfo: res, status: 'login', user_id: user._id}} />,
         document.getElementById('tombstone')
       );
       msgInfo.userID = user._id;
       msgInfo.userName = user.name;
       msgInfo.vtID = res._id;
+      msgInfo.token = user.token;
+      vtInfo = {
+        name: res.vtName,
+        photo: res.vtPhoto,
+        owner_id: res.owner_id
+      };
       React.renderComponent(
-        <reactMessage data={{msgInfo: msgInfo, maxLength: 144}} />,
+        <reactMessage data={{msgInfo: msgInfo, vtInfo:vtInfo, maxLength: 144}} />,
         document.getElementById('balloon')
       );
     };
@@ -54,7 +60,7 @@ $(function() {
     function logoutStatus(res) {
       React.renderComponent(
         <reactTombstone data={{vtInfo: res, status: 'logout'}} />,
-        document.getElementById('balloon')
+        document.getElementById('tombstone')
       );
     };
   };
