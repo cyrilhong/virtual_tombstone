@@ -9,14 +9,14 @@ var passport = require('passport'),
   FacebookStrategy = require('passport-facebook').Strategy;
 
 // server //
-var FACEBOOK_APP_ID = "781476481883407";
-var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
-var FACEBOOK_CALLBACK_URI = "http://virtualmonument.co/auth/facebook/callback";
+// var FACEBOOK_APP_ID = "781476481883407";
+// var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
+// var FACEBOOK_CALLBACK_URI = "http://virtualmonument.co/auth/facebook/callback";
 
 // Cyril app ID //
-// var FACEBOOK_APP_ID = "754983211225886";
-// var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
-// var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+var FACEBOOK_APP_ID = "754983211225886";
+var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
+var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
 
 // Eden app ID //
 // var FACEBOOK_APP_ID = "1451628085120058";
@@ -113,7 +113,7 @@ app.use('/test/', express.static(__dirname + '/vt_test'));
 // app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/www')); // Eden 開發用資料夾
 
-app.listen(80);
-console.log('Listening on port 80...');
-// app.listen(3000);
-// console.log('Listening on port 3000...');
+// app.listen(80);
+// console.log('Listening on port 80...');
+app.listen(3000);
+console.log('Listening on port 3000...');
