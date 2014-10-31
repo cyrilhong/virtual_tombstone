@@ -8,10 +8,21 @@ var express = require('express'),
 var passport = require('passport'),
   FacebookStrategy = require('passport-facebook').Strategy;
 
+<<<<<<< HEAD
+var FACEBOOK_APP_ID = "754983211225886";
+var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
+var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+=======
 // server //
+<<<<<<< HEAD
 // var FACEBOOK_APP_ID = "781476481883407";
 // var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
 // var FACEBOOK_CALLBACK_URI = "http://virtualmonument.co/auth/facebook/callback";
+=======
+var FACEBOOK_APP_ID = "781476481883407";
+var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
+var FACEBOOK_CALLBACK_URI = "http://virtualmemorial.co/auth/facebook/callback";
+>>>>>>> 9cb5cf84f920fc85630ba46d9d6b081ed2f383d9
 
 // Cyril app ID //
 var FACEBOOK_APP_ID = "754983211225886";
@@ -22,6 +33,7 @@ var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
 // var FACEBOOK_APP_ID = "1451628085120058";
 // var FACEBOOK_APP_SECRET = "3ed332ed5bab913f68dc891a0277d62e";
 // var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+>>>>>>> 968b2f089183c3c5658239e926d87e76cdb2260e
 
 // config 
 passport.use(new FacebookStrategy({
@@ -63,9 +75,9 @@ passport.deserializeUser(function(id, done) {
 
 // redirect
 app.get('/*', function(req, res, next) {
-  var isOld = req.headers.host.match(/virtualtombstone/);
-  if(isOld){
-    var url = ['http://virtualmonument.co', req.url].join('');
+  var isOld = req.headers.host.match(/virtualtombstone/) || req.headers.host.match(/virtualmonument/);
+  if(isOld) {
+    var url = ['http://virtualmemorial.co', req.url].join('');
     res.redirect(301, url)
   } else {
     next();
@@ -113,7 +125,14 @@ app.use('/test/', express.static(__dirname + '/vt_test'));
 // app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/www')); // Eden 開發用資料夾
 
+<<<<<<< HEAD
 // app.listen(80);
 // console.log('Listening on port 80...');
 app.listen(3000);
 console.log('Listening on port 3000...');
+=======
+app.listen(80);
+console.log('Listening on port 80...');
+// app.listen(3000);
+// console.log('Listening on port 3000...');
+>>>>>>> 9cb5cf84f920fc85630ba46d9d6b081ed2f383d9

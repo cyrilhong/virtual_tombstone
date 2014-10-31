@@ -19,8 +19,6 @@
   position: relative;
 }
 .memory_page .sky .bloom {
-  width: 133px;
-  height: 133px;
   padding: 50px;
   text-align: center;
   cursor: default;
@@ -52,6 +50,13 @@
 .memory_page .sky .bloom .back {
   text-align: inherit;
   width: auto;
+  height: auto;
+  padding: 0;
+  position: relative;
+  top: inherit;
+  right: inherit;
+  bottom: inherit;
+  left: inherit;
   color: #afafaf;
   font-weight: 300;
   float: inherit;
