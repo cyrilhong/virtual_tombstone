@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "54169cef3ee3c2fb5915504b",
+    "vts_id": "54168a333ee3c2fb59155007",
+    "owner_id": "54159495694ab8d24e4d4d5b",
+    "topic": "沈默是金",
+    "message": "多說無用，就作吧。",
+    "owner": {
+      "id": "54159495694ab8d24e4d4d5b",
+      "name": "Cyril Hong"
+    }
+  },
+  {
+    "_id": "543d531053312e9b0cd91f40",
+    "vts_id": "54168a333ee3c2fb59155007",
+    "owner_id": "541dbe8bf85de03a49f78410",
+    "topic": "哥是李小龍",
+    "message": "阿達",
+    "owner": {
+      "id": "541dbe8bf85de03a49f78410",
+      "name": "Jimbo Hong"
+    }
+  }
+]

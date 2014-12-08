@@ -1,0 +1,46 @@
+var msgs=[
+  {
+    "_id": "543d506553312e9b0cd91f28",
+    "vts_id": "5435576b33cddfab26057696",
+    "owner_id": "541dbe8bf85de03a49f78410",
+    "topic": "stand camera",
+    "message": "我們一直在動，很少停下來欣賞不動的那一瞬間。",
+    "owner": {
+      "id": "541dbe8bf85de03a49f78410",
+      "name": "Jimbo Hong"
+    }
+  },
+  {
+    "_id": "543d510253312e9b0cd91f2b",
+    "vts_id": "5435576b33cddfab26057696",
+    "owner_id": "541dc406f85de03a49f78420",
+    "topic": "意義",
+    "message": "這世界每件事都有意義，只是我們看不透",
+    "owner": {
+      "id": "541dc406f85de03a49f78420",
+      "name": "Abaddon Huang"
+    }
+  },
+  {
+    "_id": "543d521353312e9b0cd91f37",
+    "vts_id": "5435576b33cddfab26057696",
+    "owner_id": "5415a6b6309407a359360fd7",
+    "topic": "回味",
+    "message": "人的眼睛有5.76億像素\n掃描我們一切所發生的事、物\n透過大腦去記憶\n久而可以回味過去\n些許片刻的相片更是幫助人們回憶\n相片是個很偉大的發明",
+    "owner": {
+      "id": "5415a6b6309407a359360fd7",
+      "name": "喇滴熊"
+    }
+  },
+  {
+    "_id": "543d541b53312e9b0cd91f45",
+    "vts_id": "5435576b33cddfab26057696",
+    "owner_id": "54159495694ab8d24e4d4d5b",
+    "topic": "佇立欣賞",
+    "message": "時間的永恆",
+    "owner": {
+      "id": "54159495694ab8d24e4d4d5b",
+      "name": "Cyril Hong"
+    }
+  }
+]

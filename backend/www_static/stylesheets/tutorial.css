@@ -1,0 +1,30 @@
+/* color */
+.tutorial {
+  z-index: 1;
+}
+
+.bx-viewport {
+  height: 100% !important;
+}
+.bx-viewport h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+.bx-viewport a {
+  color: #AFAFAF;
+}
+.bx-viewport p {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+.bx-viewport .bxslider {
+  padding: 5px;
+}
+
+@media screen and (max-width: 999px) {
+  .bx-controls-direction {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=tutorial.css.map */
