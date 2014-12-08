@@ -8,17 +8,14 @@ var express = require('express'),
 var passport = require('passport'),
   FacebookStrategy = require('passport-facebook').Strategy;
 
-// var FACEBOOK_APP_ID = "754983211225886";
-// var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
-// var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
+var FACEBOOK_APP_ID = "754983211225886";
+var FACEBOOK_APP_SECRET = "593acf13a4ae2cbdc176e8763a3cc74b";
+var FACEBOOK_CALLBACK_URI = "http://localhost:3000/auth/facebook/callback";
 
 // server //
 // var FACEBOOK_APP_ID = "781476481883407";
 // var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
-// var FACEBOOK_CALLBACK_URI = "http://virtualmonument.co/auth/facebook/callback";
-var FACEBOOK_APP_ID = "781476481883407";
-var FACEBOOK_APP_SECRET = "5f42a96dd2950b4be69ce0fcf8dd69c8";
-var FACEBOOK_CALLBACK_URI = "http://virtualmemorial.co/auth/facebook/callback";
+// var FACEBOOK_CALLBACK_URI = "http://virtualmemorial.co/auth/facebook/callback";
 
 // Cyril app ID //
 // var FACEBOOK_APP_ID = "754983211225886";
